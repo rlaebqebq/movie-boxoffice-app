@@ -1,0 +1,106 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/levels';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/responsive';
+@use '/src/styles/mixins/position';
+
+.boxofficeWrapper {
+  position: relative;
+  width: 360px;
+  height: 720px;
+  padding: 40px 30px;
+  overflow-y: scroll;
+  color: colors.$WHITE;
+  background: colors.$BG;
+  border-radius: 60px;
+
+  @include responsive.after(ML) {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+  }
+
+  .title {
+    h1 {
+      margin: 10px 0 12px;
+      font-size: 24px;
+      font-weight: 500;
+      color: colors.$GRAYE;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 30px;
+      font-size: 13px;
+      color: colors.$PRIMARY;
+      text-align: center;
+      letter-spacing: 0.1em;
+    }
+  }
+
+  .movieWrapper {
+    max-width: 360px;
+    margin: 0 auto;
+
+    .innerWrapper {
+      display: flex;
+      width: 100%;
+      padding: 20px 15px;
+      line-height: 30px;
+      background-color: rgba($color: #aaaaaa, $alpha: 20%);
+      border-radius: 10px;
+
+      .rank,
+      .info {
+        @include flexbox.flexbox($jc: between, $ai: stretch, $fd: col);
+      }
+
+      .rank {
+        width: 50px;
+        min-width: 50px;
+        margin-right: 20px;
+        font-size: 16px;
+        text-align: center;
+        border: 1px solid colors.$PRIMARY;
+        border-radius: 10px;
+
+        dt {
+          font-size: 20px;
+          color: colors.$GRAYD;
+        }
+
+        dd {
+          font-size: 13px;
+          color: colors.$GRAYA;
+        }
+      }
+
+      .info {
+        max-width: 260px;
+        text-align: left;
+
+        dt {
+          width: 200px;
+          overflow: hidden;
+          font-size: 18px;
+          color: colors.$GRAYD;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+
+          @include responsive.after(ML) {
+            width: 260px;
+          }
+        }
+
+        dd {
+          font-size: 13px;
+          color: colors.$GRAYA;
+        }
+      }
+    }
+
+    li + li {
+      margin-top: 20px;
+    }
+  }
+}
