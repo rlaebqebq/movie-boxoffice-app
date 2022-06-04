@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import useAxios, { configure } from './useAxiosCore'
-import { instance, plainInstance as plainAxios, CancelToken, isCancel } from 'utils/axios'
+import { instance, plainInstance as plainAxios, CancelToken, isCancel } from 'hooks/worker/axios'
 
 configure({ axios: instance })
 
