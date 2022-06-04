@@ -11,7 +11,17 @@ const GetSunday = () => {
   return lastSunday
 }
 
-export const targetDtState = atom<Dayjs>({
-  key: '#targetDtState',
+export const todayDtState = atom<Dayjs>({
+  key: '#todayDtState',
+  default: dayjs().subtract(1, 'day'),
+})
+
+export const weekDtState = atom<Dayjs>({
+  key: '#weekDtState',
   default: GetSunday(),
+})
+
+export const targetMovieState = atom<string>({
+  key: '#targetMovieState',
+  default: '',
 })
