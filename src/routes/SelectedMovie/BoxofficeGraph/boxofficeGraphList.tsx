@@ -1,7 +1,7 @@
-import { useRecoilValue } from 'recoil'
+// import { useRecoilValue } from 'recoil'
 
 import { IBoxofficeGraphAPIRes } from 'types/boxofficeGraph'
-import { targetMovieState } from 'states/movie'
+// import { targetMovieState } from 'states/movie'
 
 import styles from './boxofficeGraph.module.scss'
 
@@ -10,7 +10,7 @@ interface Props {
 }
 
 const BoxofficeList = ({ data }: Props) => {
-  const targetMovie = useRecoilValue(targetMovieState)
+  // const targetMovie = useRecoilValue(targetMovieState)
 
   // const movieCd = targetMovie.substring(10)
   // const movieDt = targetMovie.substring(0, 9)
