@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
+import { RecoilRoot } from 'recoil'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import App from 'routes'
 
 import reportWebVitals from './reportWebVitals'
 import './styles/index.scss'
-import { RecoilRoot } from 'recoil'
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { refetchOnMount: false } },
