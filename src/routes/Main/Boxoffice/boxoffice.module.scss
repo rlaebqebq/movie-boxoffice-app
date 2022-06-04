@@ -5,22 +5,11 @@
 @use '/src/styles/mixins/position';
 
 .boxofficeWrapper {
-  position: relative;
-  width: 360px;
-  height: 720px;
-  padding: 40px 30px;
-  overflow-y: scroll;
-  color: colors.$WHITE;
-  background: colors.$BG;
-  border-radius: 60px;
-
-  @include responsive.after(ML) {
-    width: 100%;
-    height: auto;
-    border-radius: 0;
-  }
-
   .title {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+
     h1 {
       margin: 10px 0 12px;
       font-size: 24px;
@@ -29,12 +18,36 @@
       text-align: center;
     }
 
-    h2 {
+    .innerWrapper {
+      @include flexbox.flexbox($jc: center, $ai: center, $gap: 8px);
       margin-bottom: 30px;
-      font-size: 13px;
-      color: colors.$PRIMARY;
-      text-align: center;
-      letter-spacing: 0.1em;
+
+      h2 {
+        font-size: 15px;
+        color: colors.$PRIMARY;
+        text-align: center;
+        letter-spacing: 0.1em;
+      }
+
+      button {
+        position: relative;
+
+        svg {
+          position: relative;
+          top: 1px;
+          height: 17px;
+          padding: 0 8px;
+          fill: colors.$PRIMARY;
+        }
+      }
+
+      button:first-of-type:hover {
+        left: -2px;
+      }
+
+      button:last-of-type:hover {
+        right: -2px;
+      }
     }
   }
 
