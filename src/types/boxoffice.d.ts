@@ -1,4 +1,4 @@
-interface IWeeklyBoxOfficeList {
+interface IDailyBoxOfficeList {
   rnum: string
   rank: string
   rankInten: string
@@ -22,10 +22,9 @@ interface IWeeklyBoxOfficeList {
 interface IBoxOfficeResult {
   boxofficeType: string
   showRange: string
-  yearWeekTime: string
-  weeklyBoxOfficeList: IWeeklyBoxOfficeList[]
+  dailyBoxOfficeList: IDailyBoxOfficeList[]
 }
 
-export interface IGetBoxofficeAPIRes {
+export interface IBoxofficeAPIRes {
   boxOfficeResult: IBoxOfficeResult
 }
