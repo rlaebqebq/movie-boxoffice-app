@@ -40,14 +40,14 @@ interface IMovieInfo {
   openDt: string
   prdtStatNm: string
   typeNm: string
-  nations: Nation[]
-  genres: Genre[]
-  directors: Director[]
-  actors: Actor[]
-  showTypes: ShowType[]
-  companys: Company[]
-  audits: Audit[]
-  staffs: Staff[]
+  nations: INation[]
+  genres: IGenre[]
+  directors: IDirector[]
+  actors: IActor[]
+  showTypes: IShowType[]
+  companys: ICompany[]
+  audits: IAudit[]
+  staffs: IStaff[]
 }
 
 interface IMovieInfoResult {
