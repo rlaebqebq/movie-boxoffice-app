@@ -1,5 +1,4 @@
 import { useRecoilValue } from 'recoil'
-import { groupBy } from 'lodash'
 
 import { IBoxofficeGraphAPIRes } from 'types/boxofficeGraph'
 import { targetMovieState } from 'states/movie'
@@ -11,7 +10,6 @@ interface Props {
 }
 
 const BoxofficeList = ({ data }: Props) => {
-  // const [sundayDt, setSundayDt] = useRecoilState(weekDtState)
   const targetMovie = useRecoilValue(targetMovieState)
 
   const movieCd = targetMovie.substring(10)
@@ -36,17 +34,17 @@ const BoxofficeList = ({ data }: Props) => {
   // const groupByData = groupBy(ned, 'showCnt')
   // console.log(groupByData)
 
-  let totalAudiCnt: string[] = []
-  data.boxOfficeResult.weeklyBoxOfficeList.map((item) => totalAudiCnt.push(item.audiCnt))
+  // let totalAudiCnt: string[] = []
+  // data.boxOfficeResult.weeklyBoxOfficeList.map((item) => totalAudiCnt.push(item.audiCnt))
 
-  let totalScrnCnt: string[] = []
-  data.boxOfficeResult.weeklyBoxOfficeList.map((item) => totalScrnCnt.push(item.scrnCnt))
+  // let totalScrnCnt: string[] = []
+  // data.boxOfficeResult.weeklyBoxOfficeList.map((item) => totalScrnCnt.push(item.scrnCnt))
 
-  let totalShowCnt: string[] = []
-  data.boxOfficeResult.weeklyBoxOfficeList.map((item) => totalShowCnt.push(item.showCnt))
+  // let totalShowCnt: string[] = []
+  // data.boxOfficeResult.weeklyBoxOfficeList.map((item) => totalShowCnt.push(item.showCnt))
 
-  let totalSalesAmt: string[] = []
-  data.boxOfficeResult.weeklyBoxOfficeList.map((item) => totalSalesAmt.push(item.salesAmt))
+  // let totalSalesAmt: string[] = []
+  // data.boxOfficeResult.weeklyBoxOfficeList.map((item) => totalSalesAmt.push(item.salesAmt))
 
   return (
     <div className={styles.title}>
