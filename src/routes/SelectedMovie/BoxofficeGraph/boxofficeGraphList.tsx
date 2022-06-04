@@ -12,8 +12,8 @@ interface Props {
 const BoxofficeList = ({ data }: Props) => {
   const targetMovie = useRecoilValue(targetMovieState)
 
-  const movieCd = targetMovie.substring(10)
-  const movieDt = targetMovie.substring(0, 9)
+  // const movieCd = targetMovie.substring(10)
+  // const movieDt = targetMovie.substring(0, 9)
 
   if (!data) return null
   // const handlePrevWeek = () => {
