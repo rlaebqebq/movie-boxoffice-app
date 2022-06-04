@@ -1,17 +1,17 @@
-import dayjs from 'dayjs'
+import { useRecoilValue } from 'recoil'
 import { useQuery } from 'react-query'
 
-import { isAxiosError } from 'utils/axios'
 import { getBoxofficeApi } from 'axios/movie'
+import { isAxiosError } from 'utils/axios'
+import { targetDtState } from 'states/movie'
+import LoadingPage from 'components/LoadingPage'
 
 import BoxofficeList from './boxofficeList'
 import styles from './boxoffice.module.scss'
 
 const Boxoffice = () => {
-  // const targetDt = String(dayjs().format('YYYYMMDD'))
-  // 매주 일요일에만 올라오는듯
-
-  const targetDt = '20120101'
+  const sundayDt = useRecoilValue(targetDtState)
+  const targetDt = sundayDt.format('YYYYMMDD')
 
   const { data, isLoading } = useQuery(
     ['getBoxofficeApi', targetDt],
@@ -29,7 +29,7 @@ const Boxoffice = () => {
 
   return (
     <div className={styles.boxofficeWrapper}>
-      {isLoading && 'loading...'}
+      {isLoading && <LoadingPage />}
       <BoxofficeList data={data} />
     </div>
   )
