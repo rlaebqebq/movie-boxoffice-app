@@ -53,6 +53,7 @@
   .movieWrapper {
     max-width: 450px;
     margin: 0 auto;
+    overflow: hidden;
 
     .innerWrapper {
       display: flex;
@@ -88,11 +89,10 @@
       }
 
       .info {
-        max-width: 260px;
         text-align: left;
 
         dt {
-          width: 200px;
+          max-width: 300px;
           overflow: hidden;
           font-size: 18px;
           color: colors.$GRAYD;
@@ -100,7 +100,7 @@
           white-space: nowrap;
 
           @include responsive.after(ML) {
-            width: 260px;
+            max-width: 340px;
           }
         }
 

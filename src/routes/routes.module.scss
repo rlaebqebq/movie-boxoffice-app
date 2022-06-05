@@ -10,13 +10,17 @@
 
   .innerWrapper {
     position: relative;
-    width: 100vw;
-    min-width: 360px;
+    width: 400px;
     height: 100vh;
-    min-height: 720px;
-    padding: 60px 30px;
+    padding: 60px 0;
     overflow-y: scroll;
     color: colors.$WHITE;
     background: colors.$BG;
+
+    @include responsive.after(ML) {
+      width: 100vw;
+      height: 100vh;
+      padding: 60px 30px;
+    }
   }
 }
