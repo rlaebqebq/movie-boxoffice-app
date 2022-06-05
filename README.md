@@ -8,7 +8,7 @@
 - **Github Repository URL** <br/> https://github.com/rlaebqebq/movie-boxoffice-app
 - **배포 URL** <br/> https://movie-boxoffice-app.netlify.app/
 
-![Kapture 2022-06-05 at 15 34 18](https://user-images.githubusercontent.com/50236673/172038638-613480e8-c746-4955-8d1c-6a8e3258279c.gif)
+![Kapture 2022-06-05 at 15 45 59](https://user-images.githubusercontent.com/50236673/172039061-5f17a5d0-8a90-4974-934d-2902fb95f066.gif)
 
 <br/>
 
