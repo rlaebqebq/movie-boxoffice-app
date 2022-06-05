@@ -1,8 +1,6 @@
 @use '/src/styles/constants/colors';
-@use '/src/styles/constants/levels';
 @use '/src/styles/mixins/flexbox';
 @use '/src/styles/mixins/responsive';
-@use '/src/styles/mixins/position';
 
 .pageWrapper {
   .title {
@@ -111,27 +109,27 @@
           color: colors.$GRAYA;
         }
       }
+    }
 
-      &:hover {
-        background-color: rgba($color: #aaaaaa, $alpha: 40%);
+    .innerWrapper:hover {
+      background-color: rgba($color: #aaaaaa, $alpha: 40%);
 
-        .rank {
-          border-color: 1px solid red !important;
+      .rank {
+        border-color: #b5a4ff;
 
-          dt {
-            color: colors.$WHITE;
-          }
-
-          dd {
-            font-size: 13px;
-            color: colors.$GRAYA;
-          }
+        dt {
+          color: colors.$WHITE;
         }
 
-        .info {
-          dt {
-            color: colors.$WHITE;
-          }
+        dd {
+          font-size: 13px;
+          color: colors.$GRAYA;
+        }
+      }
+
+      .info {
+        dt {
+          color: colors.$WHITE;
         }
       }
     }
