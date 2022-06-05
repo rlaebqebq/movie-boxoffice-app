@@ -5,19 +5,11 @@ const BoxofficeGraphStyle = {
     domainPadding: { x: 30, y: 0 },
     padding: { left: 55, right: 55, top: 20 },
   },
-  animate: {
-    duration: 1000,
-    onLoad: { duration: 2000 },
-  },
 
   bar: {
     barWidth: 10,
     barRatio: 1,
     cornerRadius: 0,
-    animate: {
-      duration: 500,
-      onLoad: { duration: 2000 },
-    },
     style: {
       data: {
         color: '#ffffff',
