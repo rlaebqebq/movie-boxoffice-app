@@ -49,7 +49,7 @@ const BoxofficeList = ({ data }: Props) => {
         <ul>
           {data.boxOfficeResult.dailyBoxOfficeList.map((item) => (
             <li key={item.rank}>
-              <Link to='/selectedmovie'>
+              <Link to='/movieinfo'>
                 <button
                   className={styles.innerWrapper}
                   value={item.openDt + item.movieCd}

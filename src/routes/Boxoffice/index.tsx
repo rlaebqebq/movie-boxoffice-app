@@ -7,6 +7,7 @@ import { isAxiosError } from 'hooks/worker/axios'
 
 import LoadingPage from 'components/LoadingPage'
 import BoxofficeList from './boxofficeList'
+
 import styles from './boxoffice.module.scss'
 
 const Boxoffice = () => {

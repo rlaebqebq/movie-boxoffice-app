@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import styles from './loadingPage.module.scss'
+
 import { SpinnerIcon } from 'assets/svg'
+import styles from './loadingPage.module.scss'
 
 const LoadingPage = () => {
   const [isFetching, setIsFetching] = useState<boolean>(true)
