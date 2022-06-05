@@ -7,6 +7,8 @@ const GetSunday = () => {
 
   if (today !== 0) {
     lastSunday = lastSunday.subtract(today, 'day')
+  } else {
+    lastSunday = lastSunday.subtract(7, 'day')
   }
   return lastSunday
 }
