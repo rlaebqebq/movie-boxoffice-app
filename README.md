@@ -1,5 +1,5 @@
-# 🗂 프로젝트 소개
-## 🍿영화 박스오피스 조회 어플리케이션
+# 🗂 프로젝트 소개 [![Netlify Status](https://api.netlify.com/api/v1/badges/44138556-c9f2-4b7c-8702-85f6c4337beb/deploy-status)](https://app.netlify.com/sites/movie-boxoffice-app/deploys)
+### 🍿영화 박스오피스 조회 어플리케이션
 
 - **개발 기간** 22.06.04 - 22.06.05
 - **프로젝트 개요** <br/>
@@ -115,10 +115,17 @@
 # 🏞 기능 설명
 
 ### 일별 박스오피스
-(사진)
+<img width="1101" alt="스크린샷 2022-06-05 오후 2 35 46" src="https://user-images.githubusercontent.com/50236673/172036813-47397c65-7bd3-4668-8cc3-60967ae6b666.png">
 
 <br/>
 
 ### 영화 상세정보
-(사진)
+
+<img width="1101" alt="스크린샷 2022-06-05 오후 2 28 43" src="https://user-images.githubusercontent.com/50236673/172036653-fe3b2a8b-d405-44bb-bf0a-3fa11c61528a.png">
+<img width="1101" alt="스크린샷 2022-06-05 오후 2 28 25" src="https://user-images.githubusercontent.com/50236673/172036644-694690d9-6d30-4b5a-ba65-cb067dfd212f.png">
+
+- 선택한 영화가 이번주에 박스오피스에 올랐다면 상영횟수, 스크린수, 관객수 정보가 없습니다
+
+### 앞으로 구현할 기능
+- 
 
