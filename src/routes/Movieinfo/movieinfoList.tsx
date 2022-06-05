@@ -23,17 +23,20 @@ const MovieinfoList = ({ data }: Props) => {
           const key = `genreNm-${item}-${index}`
           return (
             <p key={key} className={styles.primaryBox}>
-              {item.genreNm !== undefined && item.genreNm}
+              {item.genreNm !== (undefined || null) && item.genreNm}
             </p>
           )
         })}
         <p className={styles.primaryBox}>{data.movieInfoResult.movieInfo.typeNm}</p>
-        <p className={styles.primaryBox}>{data.movieInfoResult.movieInfo.showTm}분</p>
+        <p className={styles.primaryBox}>
+          {data.movieInfoResult.movieInfo.showTm !== (undefined || null) &&
+            `${data.movieInfoResult.movieInfo.showTm}분`}
+        </p>
         {data.movieInfoResult.movieInfo.audits.map((item, index) => {
           const key = `watchGradeNm-${item}-${index}`
           return (
             <p key={key} className={styles.primaryBox}>
-              {item.watchGradeNm !== undefined && item.watchGradeNm}
+              {item.watchGradeNm !== (undefined || null) && item.watchGradeNm}
             </p>
           )
         })}
@@ -41,26 +44,29 @@ const MovieinfoList = ({ data }: Props) => {
           const key = `showTypeNm-${item}-${index}`
           return (
             <p key={key} className={styles.primaryBox}>
-              {item.showTypeNm !== undefined && item.showTypeNm}
+              {item.showTypeNm !== (undefined || null) && item.showTypeNm}
             </p>
           )
         })}
-        <p className={styles.primaryBox}>개봉일&nbsp;:&nbsp;{data.movieInfoResult.movieInfo.openDt}</p>
+        <p className={styles.primaryBox}>
+          {data.movieInfoResult.movieInfo.openDt !== (undefined || null) &&
+            `개봉일${data.movieInfoResult.movieInfo.openDt}`}
+        </p>
         {data.movieInfoResult.movieInfo.directors.map((item, index) => {
           const key = `directors-${item}-${index}`
-          return <p key={key}>감독&nbsp;:&nbsp;{item.peopleNm !== undefined && item.peopleNm}</p>
+          return <p key={key}>감독&nbsp;:&nbsp;{item.peopleNm !== (undefined || null) && item.peopleNm}</p>
         })}
         {data.movieInfoResult.movieInfo.actors.map((item, index) => {
           const key = `actors-${item}-${index}`
-          return <p key={key}>출현&nbsp;:&nbsp;{item.peopleNm !== undefined && item.peopleNm}</p>
+          return <p key={key}>출현&nbsp;:&nbsp;{item.peopleNm !== (undefined || null) && item.peopleNm}</p>
         })}
         {data.movieInfoResult.movieInfo.companys.map((item, index) => {
           const key = `company-${item}-${index}`
           return (
             <p key={key}>
-              {item.companyPartNm !== undefined && item.companyPartNm}
+              {item.companyPartNm !== (undefined || null) && item.companyPartNm}
               &nbsp;:&nbsp;
-              {item.companyNm !== undefined && item.companyNm}
+              {item.companyNm !== (undefined || null) && item.companyNm}
             </p>
           )
         })}
