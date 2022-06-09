@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 
 import Boxoffice from './Boxoffice'
-import MovieInfo from './Movieinfo'
+import AboutMovie from './AboutMovie'
 
 import styles from './routes.module.scss'
 
@@ -11,7 +11,7 @@ const App = () => {
       <div className={styles.innerWrapper}>
         <Routes>
           <Route path='/' element={<Boxoffice />} />
-          <Route path='/movieinfo' element={<MovieInfo />} />
+          <Route path='/aboutmovie' element={<AboutMovie />} />
         </Routes>
       </div>
     </div>

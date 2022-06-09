@@ -1,9 +1,11 @@
-const BoxofficeGraphStyle = {
+const RecordGraphStyle = {
   chart: {
-    width: 400,
-    height: 130,
-    domainPadding: { x: 30, y: 0 },
-    padding: { left: 55, right: 55, top: 20 },
+    height: 160,
+    // width: 400,
+    // height: 130,
+    // domainPadding: { x: 0, y: 0 },
+    // padding: { left: 15, right: 15, top: 20, bottom: 25 },
+    // padding: { left: 55, right: 55 },
   },
 
   bar: {
@@ -38,4 +40,4 @@ const BoxofficeGraphStyle = {
   },
 }
 
-export default BoxofficeGraphStyle
+export default RecordGraphStyle

@@ -1,0 +1,9 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/responsive';
+
+.graphWrapper {
+  max-width: 650px;
+  margin: 20px auto 0;
+  background-color: black;
+}
