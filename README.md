@@ -8,7 +8,7 @@
 - **Github Repository URL** <br/> https://github.com/rlaebqebq/movie-boxoffice-app
 - **배포 URL** <br/> https://movie-boxoffice-app.netlify.app/
 
-![Kapture 2022-06-05 at 15 34 18](https://user-images.githubusercontent.com/50236673/172038638-613480e8-c746-4955-8d1c-6a8e3258279c.gif)
+![Kapture 2022-06-05 at 15 45 59](https://user-images.githubusercontent.com/50236673/172039061-5f17a5d0-8a90-4974-934d-2902fb95f066.gif)
 
 <br/>
 
@@ -116,13 +116,15 @@
 
 ### 일별 박스오피스
 - 일별로 박스오피스 순위를 확인할 수 있습니다.
-<img width="1101" alt="스크린샷 2022-06-05 오후 2 35 46" src="https://user-images.githubusercontent.com/50236673/172036813-47397c65-7bd3-4668-8cc3-60967ae6b666.png">
+
+![172036813-47397c65-7bd3-4668-8cc3-60967ae6b666](https://user-images.githubusercontent.com/50236673/172039162-a6d614fb-4a86-4029-9868-bf87479e2aed.jpg)
 
 ### 영화 상세정보
 - 선택한 영화가 저번주부터 이번주까지 박스오피스에 올랐다면 상영횟수, 스크린수, 관객수 정보를 그래프로 보여줍니다.
 - 선택한 영화가 이번주에 박스오피스에 올라왔다면 상영횟수, 스크린수, 관객수 정보가 없습니다.
-<img width="1101" alt="스크린샷 2022-06-05 오후 2 28 43" src="https://user-images.githubusercontent.com/50236673/172036653-fe3b2a8b-d405-44bb-bf0a-3fa11c61528a.png">
-<img width="1101" alt="스크린샷 2022-06-05 오후 2 28 25" src="https://user-images.githubusercontent.com/50236673/172036644-694690d9-6d30-4b5a-ba65-cb067dfd212f.png">
+
+![172038876-fdc54136-678c-4469-94b4-22e0c6573f5b](https://user-images.githubusercontent.com/50236673/172039175-73e721c7-8ca2-4aa8-83b8-6a2930b785f9.jpg)
+![172038883-c6574c69-e3fc-4091-965b-e7a0a4f74d59](https://user-images.githubusercontent.com/50236673/172039182-5564839b-e1ea-4786-859d-097b617169d4.jpg)
 
 ### 추후 구현할 기능, 개선할 점
 - 영화진흥위원회 api는 영화 포스터 이미지 제공을 안 하므로, 영화 포스터 가져오는 기능 추가 예정.
