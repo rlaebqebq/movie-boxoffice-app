@@ -1,11 +1,6 @@
 const RecordGraphStyle = {
   chart: {
     height: 160,
-    // width: 400,
-    // height: 130,
-    // domainPadding: { x: 0, y: 0 },
-    // padding: { left: 15, right: 15, top: 20, bottom: 25 },
-    // padding: { left: 55, right: 55 },
   },
 
   bar: {
