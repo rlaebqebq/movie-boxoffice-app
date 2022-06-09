@@ -3,24 +3,26 @@ import { useRecoilState } from 'recoil'
 import { MouseEvent } from 'react'
 import { Link } from 'react-router-dom'
 
-import { IBoxofficeAPIRes } from 'types/boxoffice'
-import { todayDtState, targetMovieState } from 'states/movie'
+import { IBoxOfficeResult } from 'types/dailyBoxoffice'
+import { todayDtState, targetMovieCdState, targetMovieOpenDtState } from 'states/movie'
 import { ArrowleftIcon, ArrowrightIcon } from 'assets/svg'
 
 import styles from './boxoffice.module.scss'
 
 interface Props {
-  data?: IBoxofficeAPIRes
+  data?: IBoxOfficeResult
 }
 
 const BoxofficeList = ({ data }: Props) => {
   const [todayDt, settodayDt] = useRecoilState(todayDtState)
-  const [, setTargetMovie] = useRecoilState(targetMovieState)
-
-  if (!data) return null
+  const [, setTargetMovieCd] = useRecoilState(targetMovieCdState)
+  const [, setTargetMovieOpenDt] = useRecoilState(targetMovieOpenDtState)
 
   const handleMovieTarget = (e: MouseEvent<HTMLButtonElement>) => {
-    setTargetMovie(e.currentTarget.value)
+    const movieCd = e.currentTarget.value.substring(10)
+    const movieOpenDt = e.currentTarget.value.substring(0, 10)
+    setTargetMovieCd(movieCd)
+    setTargetMovieOpenDt(dayjs(dayjs(movieOpenDt, 'YYYY-MM-DD').toDate()))
   }
 
   const handlePrevWeek = () => {
@@ -33,12 +35,12 @@ const BoxofficeList = ({ data }: Props) => {
   return (
     <>
       <div className={styles.title}>
-        <h1>{data.boxOfficeResult.boxofficeType}</h1>
+        <h1>{data?.boxofficeType}</h1>
         <div className={styles.innerWrapper}>
           <button type='button' className={styles.prevButton} onClick={handlePrevWeek}>
             <ArrowleftIcon />
           </button>
-          <h2>{data.boxOfficeResult.showRange.substring(0, 8)}</h2>
+          <h2>{data?.showRange.substring(0, 8)}</h2>
           <button type='button' className={styles.nextButton} onClick={handleNextWeek}>
             <ArrowrightIcon />
           </button>
@@ -47,9 +49,9 @@ const BoxofficeList = ({ data }: Props) => {
 
       <div className={styles.movieWrapper}>
         <ul>
-          {data.boxOfficeResult.dailyBoxOfficeList.map((item) => (
-            <li key={item.rank}>
-              <Link to='/movieinfo'>
+          {data?.dailyBoxOfficeList.map((item) => (
+            <li key={`${item.movieNm}-${item.rank}`}>
+              <Link to='/aboutmovie'>
                 <button
                   className={styles.innerWrapper}
                   value={item.openDt + item.movieCd}
