@@ -11,6 +11,7 @@ export const useSearchDailyQuery = (targetDt: string) => {
     () => getBoxofficeApi({ targetDt }).then((res) => res.data),
     {
       refetchOnWindowFocus: false,
+      suspense: true,
       onError(err) {
         if (isAxiosError(err)) {
           // eslint-disable-next-line no-console
@@ -27,6 +28,7 @@ export const useSearchDetailQuery = (movieCd: string) => {
     () => getMovieInfoApi({ movieCd }).then((res) => res.data),
     {
       refetchOnWindowFocus: false,
+      suspense: true,
       onError(err) {
         if (isAxiosError(err)) {
           // eslint-disable-next-line no-console
