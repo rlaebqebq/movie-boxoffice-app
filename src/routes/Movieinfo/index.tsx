@@ -20,6 +20,7 @@ const MovieInfo = () => {
   return (
     <div className={styles.pageWrapper}>
       <Suspense fallback={<LoadingPage />}>
+        <h1>CHECK TODAY BOX OFFICE</h1>
         <MovieinfoTitle data={data} />
         <BoxofficeRecord />
         <MovieinfoList data={data} />
