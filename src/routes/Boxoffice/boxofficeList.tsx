@@ -37,11 +37,11 @@ const BoxofficeList = ({ data }: Props) => {
       <div className={styles.title}>
         <h1>{data?.boxofficeType}</h1>
         <div className={styles.innerWrapper}>
-          <button type='button' className={styles.prevButton} onClick={handlePrevWeek}>
+          <button type='button' className={styles.prevButton} onClick={handlePrevWeek} aria-label='이전 날짜'>
             <ArrowleftIcon />
           </button>
           <h2>{data?.showRange.substring(0, 8)}</h2>
-          <button type='button' className={styles.nextButton} onClick={handleNextWeek}>
+          <button type='button' className={styles.nextButton} onClick={handleNextWeek} aria-label='다음 날짜'>
             <ArrowrightIcon />
           </button>
         </div>
@@ -51,7 +51,7 @@ const BoxofficeList = ({ data }: Props) => {
         <ul>
           {data?.dailyBoxOfficeList.map((item) => (
             <li key={`${item.movieNm}-${item.rank}`}>
-              <Link to='/aboutmovie'>
+              <Link to='/movieinfo'>
                 <button
                   className={styles.innerWrapper}
                   value={item.openDt + item.movieCd}

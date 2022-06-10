@@ -1,13 +1,15 @@
 import { useRecoilValue } from 'recoil'
-import { Suspense } from 'react'
+import { lazy, Suspense } from 'react'
 
 import { targetMovieOpenDtState, todayDtState } from 'states/movie'
 
 import LoadingPage from 'components/LoadingPage'
 import styles from './boxofficeRecord.module.scss'
 import RecordItem from './recordItem'
-import RecordGraph from './recordGraph'
+// import RecordGraph from './recordGraph'
 import { IWeekRecordData } from 'types/movie'
+
+const RecordGraph = lazy(() => import('./recordGraph'))
 
 const BoxofficeRecord = () => {
   const todayDt = useRecoilValue(todayDtState)
@@ -28,7 +30,8 @@ const BoxofficeRecord = () => {
   return (
     <div className={styles.graphWrapper}>
       <Suspense fallback={<LoadingPage />}>
-        {dateGap > 0 ? <RecordGraph {...weekRecord} /> : <p>개봉전입니다</p>}
+        {dateGap > 0 && <RecordGraph {...weekRecord} />}
+        {/* {dateGap > 0 ? <RecordGraph {...weekRecord} /> : <p>개봉전입니다</p>} */}
       </Suspense>
     </div>
   )
