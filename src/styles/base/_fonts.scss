@@ -5,8 +5,9 @@ body,
 button,
 input,
 textarea {
-  font-family: 'Spoqa Han Sans Neo', Inter, Arial, PingFangSC-Regular, 'Microsoft YaHei', sans-serif;
+  font-family: local('Spoqa Han Sans Neo'), Inter, Arial, PingFangSC-Regular, 'Microsoft YaHei', sans-serif;
   font-feature-settings: 'tnum';
+  font-display: swap;
 }
 
 input[type='number'] {
