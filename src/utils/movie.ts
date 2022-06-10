@@ -1,4 +1,5 @@
 import { axios } from 'hooks/worker'
+// import { cheerio } from 'cheerio'
 import { IBoxofficeAPIRes } from 'types/dailyBoxoffice'
 import { IMovieSearchAPIRes } from 'types/movieInfo.d'
 
@@ -27,3 +28,13 @@ export const getMovieInfoApi = (params: IMovieSearchParams) =>
       ...params,
     },
   })
+
+// export const getMoviePoster = (params: IMovieSearchParams) => {
+//   let $href = []
+//   axios.get(`https://thebook.io/080212`).then((dataa) => {
+//     const $ = cheerio.load(dataa.data)
+//     $('section.book-toc>ul>li>a').each((index: any, item: { attribs: { href: any } }) => {
+//       $href.push(item.attribs.href)
+//     })
+//   })
+// }
