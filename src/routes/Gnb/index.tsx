@@ -1,19 +1,27 @@
 import { NavLink, useLocation } from 'react-router-dom'
-import { BackIcon, MenuIcon } from 'assets/svg'
+import { BackIcon, CloseIcon, MenuIcon } from 'assets/svg'
 import styles from './gnb.module.scss'
 
 const Gnb = () => {
   const nowLocation = useLocation().pathname
   return (
     <>
-      {nowLocation !== '/' && (
+      {nowLocation === '/movieinfo' && (
         <NavLink to='/' className={styles.backIcon}>
           <BackIcon />
         </NavLink>
       )}
-      <NavLink to='mybookmark' className={styles.menuIcon}>
-        <MenuIcon />
-      </NavLink>
+      {nowLocation === '/mybookmark' && (
+        <NavLink to='/' className={styles.closeIcon}>
+          <CloseIcon />
+        </NavLink>
+      )}
+
+      {nowLocation !== '/mybookmark' && (
+        <NavLink to='/mybookmark' className={styles.menuIcon}>
+          <MenuIcon />
+        </NavLink>
+      )}
     </>
   )
 }
