@@ -13,9 +13,6 @@ export const useSearchDailyQuery = (targetDt: string) => {
     {
       refetchOnWindowFocus: false,
       suspense: true,
-      refetchOnMount: true,
-      refetchOnReconnect: true,
-      retry: 1,
       onError(err) {
         if (isAxiosError(err)) {
           // eslint-disable-next-line no-console
@@ -33,9 +30,6 @@ export const useSearchDetailQuery = (movieCd: string) => {
     {
       refetchOnWindowFocus: false,
       suspense: true,
-      refetchOnMount: true,
-      refetchOnReconnect: true,
-      retry: 1,
       onError(err) {
         if (isAxiosError(err)) {
           // eslint-disable-next-line no-console
@@ -53,8 +47,6 @@ export const useSearchPosterQuery = (title: string, releaseDts: string) => {
     {
       refetchOnWindowFocus: false,
       suspense: true,
-      refetchOnMount: true,
-      refetchOnReconnect: true,
       retry: 1,
       onError(err) {
         if (isAxiosError(err)) {
