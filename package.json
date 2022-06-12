@@ -30,7 +30,6 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
-    "@types/cheerio": "^0.22.31",
     "axios": "^0.27.2",
     "classnames": "^2.3.1",
     "dayjs": "^1.11.2",
@@ -40,6 +39,7 @@
     "react-query": "^3.39.0",
     "react-router-dom": "6",
     "react-scripts": "5.0.1",
+    "react-use": "^17.4.0",
     "recoil": "^0.7.3",
     "victory": "^36.4.1",
     "web-vitals": "^2.1.0"
