@@ -1,13 +1,12 @@
 import { useRecoilValue } from 'recoil'
 import { lazy, Suspense } from 'react'
 
-import { targetMovieOpenDtState, todayDtState } from 'states/movie'
-
 import LoadingPage from 'components/LoadingPage'
+import { targetMovieOpenDtState, todayDtState } from 'states/movie'
+import { IWeekRecordData } from 'types/movie'
+
 import styles from './boxofficeRecord.module.scss'
 import RecordItem from './recordItem'
-// import RecordGraph from './recordGraph'
-import { IWeekRecordData } from 'types/movie'
 
 const RecordGraph = lazy(() => import('./recordGraph'))
 

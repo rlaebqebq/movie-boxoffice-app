@@ -2,6 +2,7 @@ import cx from 'classnames'
 import dayjs from 'dayjs'
 import { BookmarkIcon } from 'assets/svg'
 import { useRecoilState, useRecoilValue } from 'recoil'
+import { NavLink } from 'react-router-dom'
 import { MouseEvent } from 'react'
 
 import { bookMarkList, targetMovieCdState, targetMovieNmState, targetMovieOpenDtState } from 'states/movie'
@@ -9,7 +10,6 @@ import { IBookmarkItem } from 'types/movie'
 import { isBookmarked } from 'utils/localStorage'
 
 import styles from './myBookmark.module.scss'
-import { NavLink } from 'react-router-dom'
 
 const MyBookmark = () => {
   const list = useRecoilValue<IBookmarkItem[]>(bookMarkList)

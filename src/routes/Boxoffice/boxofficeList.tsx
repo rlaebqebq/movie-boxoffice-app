@@ -8,6 +8,7 @@ import { ArrowleftIcon, ArrowrightIcon, BookmarkIcon } from 'assets/svg'
 import { todayDtState, targetMovieCdState, targetMovieOpenDtState, targetMovieNmState } from 'states/movie'
 import { IBoxOfficeResult } from 'types/dailyBoxoffice'
 import { isBookmarked } from 'utils/localStorage'
+
 import styles from './boxoffice.module.scss'
 
 interface Props {

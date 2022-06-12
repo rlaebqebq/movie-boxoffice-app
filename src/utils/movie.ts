@@ -1,10 +1,12 @@
 import { axios } from 'hooks/worker'
-// import { cheerio } from 'cheerio'
 import { IBoxofficeAPIRes } from 'types/dailyBoxoffice'
 import { IMovieSearchAPIRes } from 'types/movieInfo.d'
 import { IMoviePosterAPIRes } from 'types/moviePoster'
 
 const BASE_URL = 'https://kobis.or.kr/kobisopenapi/webservice/rest'
+
+const POSTER_BASE_URL =
+  'http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2'
 
 interface IBoxofficeParams {
   targetDt: string
@@ -34,9 +36,6 @@ export const getMovieInfoApi = (params: IMovieSearchParams) =>
       ...params,
     },
   })
-
-const POSTER_BASE_URL =
-  'http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2'
 
 export const getMoviePosterApi = (params: IMoviePosterParams) =>
   axios.get<IMoviePosterAPIRes>(POSTER_BASE_URL, {

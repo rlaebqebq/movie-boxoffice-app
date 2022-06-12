@@ -4,21 +4,21 @@
 
 .dropdown {
   position: relative;
-  width: 130px;
+  top: 1px;
   z-index: 100;
   display: inline-block;
-  top: 1px;
+  width: 130px;
   margin-bottom: 28px;
 
   .display {
     @include flexbox.flexbox($jc: between);
-    font-size: 14px;
-    color: colors.$WHITE;
     width: 100%;
     padding: 0 13px;
+    font-size: 14px;
+    line-height: 30px;
+    color: colors.$WHITE;
     border: 1px solid colors.$PRIMARY;
     border-radius: 5px;
-    line-height: 30px;
 
     svg {
       height: 13px;
@@ -57,18 +57,8 @@
     }
   }
 
-
-
   .isActive {
     opacity: 1;
     transform: scaleY(1);
-  }
-}
-
-.big {
-  width: 100%;
-
-  button {
-    height: 60px;
   }
 }

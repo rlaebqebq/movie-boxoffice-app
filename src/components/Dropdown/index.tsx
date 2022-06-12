@@ -1,8 +1,8 @@
-import { useState, MouseEvent } from 'react'
 import cx from 'classnames'
+import { useState, MouseEvent } from 'react'
 
-import styles from './dropdown.module.scss'
 import { ArrowIcon } from 'assets/svg'
+import styles from './dropdown.module.scss'
 
 interface Props {
   list: string[]

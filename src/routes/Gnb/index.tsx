@@ -1,5 +1,5 @@
-import { BackIcon, MenuIcon } from 'assets/svg'
 import { NavLink, useLocation } from 'react-router-dom'
+import { BackIcon, MenuIcon } from 'assets/svg'
 import styles from './gnb.module.scss'
 
 const Gnb = () => {

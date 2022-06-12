@@ -5,11 +5,11 @@
   background-size: contain;
 
   .bookmark {
-    fill: colors.$GRAYA;
-    width: 30px;
-    height: 30px;
     position: absolute;
     right: 30px;
+    width: 30px;
+    height: 30px;
+    fill: colors.$GRAYA;
   }
 
   .bookmarkChecked {
@@ -17,15 +17,9 @@
   }
 
   .bgWrapper {
-    /* width: 100vw; */
     height: 80vh;
-    /* filter: blur(1px); */
-    /* -webkit-filter: blur(10px); */
     background: no-repeat center center;
     background-size: cover;
-    /* position: absolute; */
-    /* top: 0; */
-    /* left: 0; */
   }
 
   .infoWrapper {
@@ -56,8 +50,8 @@
     }
 
     .contentWrapper {
-      background: colors.$BG_BLACK;
       padding: 30px 0 60px;
+      background: colors.$BG_BLACK;
 
       .innerWrapper {
         padding: 0 30px;
@@ -66,25 +60,16 @@
           margin: 0 auto;
         }
 
-        // .tagWrapper {
-        //   max-width: 650px;
-        //   margin: 20px auto 0;
-
-
-        // }
-        //  }
-
         .posterWrapper {
-          filter: blur(1px);
           -webkit-filter: blur(10px);
-          // margin: 0 auto;
-          // display: flex;
+          filter: blur(1px);
         }
 
         .plot {
           margin: 20px 0 40px;
           line-height: 30px;
         }
+
         .companys {
           line-height: 30px;
         }
@@ -94,9 +79,9 @@
 
   .tagWrapper {
     display: inline-block;
-    font-size: 14px;
     padding: 0 13px;
     margin: 8px 0;
+    font-size: 14px;
     line-height: 32px;
     color: colors.$PRIMARY;
     background-color: colors.$SECONDARY;
@@ -107,7 +92,7 @@
     content: '#';
   }
 
-  .tagWrapper+.tagWrapper {
+  .tagWrapper + .tagWrapper {
     margin-left: 8px;
   }
 
@@ -115,6 +100,4 @@
     color: colors.$GRAYF;
     background-color: colors.$PRIMARY;
   }
-
-
 }

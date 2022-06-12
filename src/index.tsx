@@ -1,11 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
 import { RecoilRoot } from 'recoil'
+import { BrowserRouter } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from 'react-query'
-import App from 'routes'
+import ReactDOM from 'react-dom/client'
+import React from 'react'
 
+import App from 'routes'
 import reportWebVitals from './reportWebVitals'
+
 import './styles/index.scss'
 
 const queryClient = new QueryClient({

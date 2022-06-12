@@ -1,13 +1,12 @@
 import { VictoryAxis, VictoryChart, VictoryTheme, VictoryBar } from 'victory'
-import cx from 'classnames'
-import RecordGraphStyle from './recordGraphStyle'
-import { IWeekRecordData } from 'types/movie'
-import { dailyBoxofficeDropdown, dailyBoxofficeStatus, statusKrToEn } from 'states/button'
-import { useRecoilState, useRecoilValue } from 'hooks/state'
 import { useMemo } from 'react'
 
-import styles from './boxofficeRecord.module.scss'
 import Dropdown from 'components/Dropdown'
+import { useRecoilState, useRecoilValue } from 'hooks/state'
+import { dailyBoxofficeDropdown, dailyBoxofficeStatus, statusKrToEn } from 'states/button'
+import { IWeekRecordData } from 'types/movie'
+
+import RecordGraphStyle from './recordGraphStyle'
 
 interface IChartProps {
   xdata: string[]
