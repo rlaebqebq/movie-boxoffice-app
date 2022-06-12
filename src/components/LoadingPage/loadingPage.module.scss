@@ -30,9 +30,9 @@
   width: 100vw;
   height: 100vh;
   background-color: colors.$BG;
-  animation: fadeIn 3s forwards;
+  animation: infinite forwards;
 
   svg {
-    animation: rotate 0.5s linear infinite;
+    animation: 3s linear 1s infinite rotate;
   }
 }

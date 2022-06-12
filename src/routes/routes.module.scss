@@ -6,21 +6,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: colors.$BG;
+  // background: colors.$BG;
+  height: 100vh;
 
   .innerWrapper {
     position: relative;
     width: 400px;
-    height: 100vh;
-    padding: 60px 0;
+    height: 844px;
+    // padding: 60px 30px;
     overflow-y: scroll;
     color: colors.$WHITE;
     background: colors.$BG;
+    border-radius: 20px;
 
-    @include responsive.after(ML) {
-      width: 100vw;
-      height: 100vh;
-      padding: 60px 30px;
-    }
+    // @include responsive.after(ML) {
+    //   width: 85vw;
+    //   height: 100vh;
+    //   padding: 60px 30px;
+    // }
   }
 }

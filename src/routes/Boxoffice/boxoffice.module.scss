@@ -3,12 +3,14 @@
 @use '/src/styles/mixins/responsive';
 
 .pageWrapper {
+  padding: 60px 30px;
+
   .title {
     position: relative;
     width: 300px;
     margin: 0 auto;
 
-    h1 {
+    h2 {
       margin: 10px 0 12px;
       font-size: 24px;
       font-weight: 500;
@@ -20,7 +22,7 @@
       @include flexbox.flexbox($jc: center, $ai: center, $gap: 8px);
       margin-bottom: 30px;
 
-      h2 {
+      h3 {
         font-size: 15px;
         line-height: 20px;
         color: colors.$PRIMARY;
@@ -55,6 +57,18 @@
     margin: 0 auto;
     overflow: hidden;
 
+    .bookmark {
+      fill: colors.$GRAY6;
+      width: 18px;
+      height: 18px;
+      position: absolute;
+      right: 45px;
+    }
+
+    .bookmarkChecked {
+      fill: colors.$PRIMARY;
+    }
+
     .innerWrapper {
       display: flex;
       width: 100%;
@@ -62,6 +76,7 @@
       line-height: 30px;
       background-color: rgba($color: #aaaaaa, $alpha: 20%);
       border-radius: 10px;
+      // align-items: center;
 
       .rank,
       .info {
@@ -92,16 +107,12 @@
         text-align: left;
 
         dt {
-          max-width: 300px;
+          max-width: 215px;
           overflow: hidden;
           font-size: 18px;
           color: colors.$GRAYD;
           text-overflow: ellipsis;
           white-space: nowrap;
-
-          @include responsive.after(ML) {
-            max-width: 340px;
-          }
         }
 
         dd {
@@ -134,7 +145,7 @@
       }
     }
 
-    li + li {
+    li+li {
       margin-top: 20px;
     }
   }
