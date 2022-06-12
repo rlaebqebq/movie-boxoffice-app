@@ -1,12 +1,13 @@
+import cx from 'classnames'
 import dayjs from 'dayjs'
 import { useRecoilState } from 'recoil'
 import { MouseEvent } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
+import { ArrowleftIcon, ArrowrightIcon, BookmarkIcon } from 'assets/svg'
+import { todayDtState, targetMovieCdState, targetMovieOpenDtState, targetMovieNmState } from 'states/movie'
 import { IBoxOfficeResult } from 'types/dailyBoxoffice'
-import { todayDtState, targetMovieCdState, targetMovieOpenDtState } from 'states/movie'
-import { ArrowleftIcon, ArrowrightIcon } from 'assets/svg'
-
+import { isBookmarked } from 'utils/localStorage'
 import styles from './boxoffice.module.scss'
 
 interface Props {
@@ -17,13 +18,7 @@ const BoxofficeList = ({ data }: Props) => {
   const [todayDt, settodayDt] = useRecoilState(todayDtState)
   const [, setTargetMovieCd] = useRecoilState(targetMovieCdState)
   const [, setTargetMovieOpenDt] = useRecoilState(targetMovieOpenDtState)
-
-  const handleMovieTarget = (e: MouseEvent<HTMLButtonElement>) => {
-    const movieCd = e.currentTarget.value.substring(10)
-    const movieOpenDt = e.currentTarget.value.substring(0, 10)
-    setTargetMovieCd(movieCd)
-    setTargetMovieOpenDt(dayjs(dayjs(movieOpenDt, 'YYYY-MM-DD').toDate()))
-  }
+  const [, setTargetMovieNmState] = useRecoilState(targetMovieNmState)
 
   const handlePrevWeek = () => {
     settodayDt(todayDt.subtract(1, 'day'))
@@ -32,10 +27,18 @@ const BoxofficeList = ({ data }: Props) => {
     if (dayjs().diff(todayDt, 'day') > 1) settodayDt(todayDt.add(1, 'day'))
   }
 
+  const handleMovieTarget = (e: MouseEvent<HTMLButtonElement>) => {
+    const movieData = e.currentTarget.value.split('/')
+    setTargetMovieOpenDt(dayjs(dayjs(movieData[0], 'YYYY-MM-DD').toDate()))
+    setTargetMovieCd(movieData[1])
+    setTargetMovieNmState(movieData[2])
+  }
+
   return (
     <>
       <div className={styles.title}>
-        <h1>{data?.boxofficeType}</h1>
+        <h2>Ranking</h2>
+        {/* <h2>{data?.boxofficeType}</h2> */}
         <div className={styles.innerWrapper}>
           <button type='button' className={styles.prevButton} onClick={handlePrevWeek} aria-label='이전 날짜'>
             <ArrowleftIcon />
@@ -51,10 +54,13 @@ const BoxofficeList = ({ data }: Props) => {
         <ul>
           {data?.dailyBoxOfficeList.map((item) => (
             <li key={`${item.movieNm}-${item.rank}`}>
-              <Link to='/movieinfo'>
+              <div className={cx(styles.bookmark, { [styles.bookmarkChecked]: isBookmarked(item.movieCd) })}>
+                <BookmarkIcon />
+              </div>
+              <NavLink to='/movieinfo'>
                 <button
                   className={styles.innerWrapper}
-                  value={item.openDt + item.movieCd}
+                  value={`${item.openDt}/${item.movieCd}/${item.movieNm}`}
                   type='button'
                   onClick={handleMovieTarget}
                 >
@@ -67,7 +73,7 @@ const BoxofficeList = ({ data }: Props) => {
                     <dd>{item.openDt}</dd>
                   </dl>
                 </button>
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>
