@@ -1,6 +1,7 @@
 const RecordGraphStyle = {
   chart: {
-    height: 160,
+    height: 140,
+    padding: { left: 19, right: 19, top: 25, bottom: 25 },
   },
 
   bar: {
@@ -10,8 +11,8 @@ const RecordGraphStyle = {
     style: {
       data: {
         color: '#ffffff',
-        fill: '#6d53df',
-        stroke: '#6d53df',
+        fill: '#586df5 ',
+        stroke: '#586df5 ',
       },
     },
   },
