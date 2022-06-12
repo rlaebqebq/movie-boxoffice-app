@@ -5,7 +5,8 @@ import { IMoviePosterAPIRes } from 'types/moviePoster'
 
 const BASE_URL = 'https://kobis.or.kr/kobisopenapi/webservice/rest'
 
-const POSTER_BASE_URL = '//api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2'
+const POSTER_BASE_URL =
+  'http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2'
 
 interface IBoxofficeParams {
   targetDt: string
