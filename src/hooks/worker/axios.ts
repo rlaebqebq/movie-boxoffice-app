@@ -6,7 +6,7 @@ const { CancelToken } = axios
 const { isCancel } = axios
 
 const baseSettings = {
-  timeout: 10 * 1000,
+  timeout: 30 * 1000,
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
