@@ -1,4 +1,4 @@
-import { VictoryAxis, VictoryChart, VictoryTheme, VictoryBar } from 'victory'
+import { VictoryAxis, VictoryChart, VictoryTheme, VictoryBar, VictoryScatter, VictoryLine } from 'victory'
 import { useMemo } from 'react'
 
 import Dropdown from 'components/Dropdown'
@@ -15,6 +15,7 @@ interface IChartProps {
 
 const DrawGraph = ({ xdata, ydata }: IChartProps) => {
   const [dailyState] = useRecoilState(dailyBoxofficeStatus)
+  const state = statusKrToEn(dailyState)
 
   const dateFormat = (date: string) => {
     const newdate = `${date.substring(4, 6)}/${date.substring(6, 8)}`
@@ -26,25 +27,22 @@ const DrawGraph = ({ xdata, ydata }: IChartProps) => {
     chartData.push({ x: dateFormat(xdata[i]), y: ydata[i] })
   }
 
-  const checkDailyState = () => {
-    const state = statusKrToEn(dailyState)
-    if (state === 'audiCnt' || state === 'scrnCnt' || state === 'showCnt') return true
-    return false
+  const checkDailyState = (datumy: number) => {
+    if (state === 'audiCnt' || state === 'scrnCnt' || state === 'showCnt')
+      return `${Number((datumy / 1000).toFixed(1).toString())}K`
+    if (state === 'salesAmt') return `${Number((datumy / 1000000).toFixed(0).toString())}M`
+    return datumy
   }
 
   return (
     <VictoryChart theme={VictoryTheme.material} {...RecordGraphStyle.chart}>
-      <VictoryBar
-        data={chartData}
-        labels={
-          checkDailyState()
-            ? ({ datum }) => `${Number((datum.y / 1000).toFixed(1).toString())}K`
-            : ({ datum }) => datum.y
-        }
-        {...RecordGraphStyle.bar}
-      />
-
-      <VictoryAxis invertAxis {...RecordGraphStyle.axis} />
+      {state === 'rank' ? (
+        <VictoryLine data={chartData} labels={({ datum }) => checkDailyState(datum.y)} {...RecordGraphStyle.line} />
+      ) : (
+        <VictoryBar data={chartData} labels={({ datum }) => checkDailyState(datum.y)} {...RecordGraphStyle.bar} />
+      )}
+      <VictoryAxis {...RecordGraphStyle.axisX} />
+      {state === 'rank' && <VictoryAxis invertAxis dependentAxis {...RecordGraphStyle.axisY} />}
     </VictoryChart>
   )
 }
@@ -57,19 +55,21 @@ const RecordGraph = (props: IWeekRecordData[]) => {
 
   const filterData = useMemo(() => {
     const state = statusKrToEn(dailyState)
-    if (state === 'rank') {
-      return Object.values(props).map((item) => (item.data?.rank === undefined ? 0 : 11 - item.data.rank))
+    switch (state) {
+      case 'salesAmt':
+        return Object.values(props).map((item) => (item.data?.salesAmt === undefined ? 0 : Number(item.data.salesAmt)))
+
+      case 'audiCnt':
+        return Object.values(props).map((item) => (item.data?.audiCnt === undefined ? 0 : Number(item.data.audiCnt)))
+
+      case 'scrnCnt':
+        return Object.values(props).map((item) => (item.data?.scrnCnt === undefined ? 0 : Number(item.data.scrnCnt)))
+
+      case 'showCnt':
+        return Object.values(props).map((item) => (item.data?.showCnt === undefined ? 0 : Number(item.data.showCnt)))
+      default:
+        return Object.values(props).map((item) => (item.data?.rank === undefined ? 0 : Number(item.data.rank)))
     }
-    if (state === 'salesAmt') {
-      return Object.values(props).map((item) => (item.data?.salesAmt === undefined ? 0 : Number(item.data.salesAmt)))
-    }
-    if (state === 'audiCnt') {
-      return Object.values(props).map((item) => (item.data?.salesAmt === undefined ? 0 : Number(item.data.audiCnt)))
-    }
-    if (state === 'scrnCnt') {
-      return Object.values(props).map((item) => (item.data?.salesAmt === undefined ? 0 : Number(item.data.scrnCnt)))
-    }
-    return Object.values(props).map((item) => (item.data?.audiCnt === undefined ? 0 : Number(item.data.showCnt)))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dailyState])
 

@@ -5,7 +5,6 @@ import LoadingPage from 'components/LoadingPage'
 import { targetMovieOpenDtState, todayDtState } from 'states/movie'
 import { IWeekRecordData } from 'types/movie'
 
-import styles from './boxofficeRecord.module.scss'
 import RecordItem from './recordItem'
 
 const RecordGraph = lazy(() => import('./recordGraph'))
@@ -26,11 +25,7 @@ const BoxofficeRecord = () => {
   }
   ranges.map((item) => weekRecord.push({ date: item, data: RecordItem(item) }))
 
-  return (
-    <div className={styles.graphWrapper}>
-      <Suspense fallback={<LoadingPage />}>{dateGap > 0 && <RecordGraph {...weekRecord} />}</Suspense>
-    </div>
-  )
+  return <Suspense fallback={<LoadingPage />}>{dateGap > 0 && <RecordGraph {...weekRecord} />}</Suspense>
 }
 
 export default BoxofficeRecord

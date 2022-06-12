@@ -1,7 +1,7 @@
 const RecordGraphStyle = {
   chart: {
-    height: 140,
-    padding: { left: 19, right: 19, top: 25, bottom: 25 },
+    height: 180,
+    padding: { left: 19, right: 19, top: 25, bottom: 65 },
   },
 
   bar: {
@@ -17,7 +17,17 @@ const RecordGraphStyle = {
     },
   },
 
-  axis: {
+  line: {
+    style: {
+      data: {
+        color: '#ffffff',
+        stroke: '#586df5 ',
+        strokeLinecap: 'round',
+      },
+    },
+  },
+
+  axisX: {
     style: {
       axis: {
         stroke: 'transparent',
@@ -31,6 +41,22 @@ const RecordGraphStyle = {
       tickLabels: {
         strokeWidth: 3,
         fill: '#bdc7cf',
+      },
+    },
+  },
+  axisY: {
+    style: {
+      axis: {
+        stroke: 'transparent',
+      },
+      grid: {
+        stroke: 'transparent',
+      },
+      ticks: {
+        stroke: 'transparent',
+      },
+      tickLabels: {
+        fill: 'transparent',
       },
     },
   },
