@@ -13,7 +13,7 @@ const LoadingPage = () => {
 
     setTimeout(() => {
       setIsFetching(false)
-    }, 2000)
+    }, 3000)
   }, [location.pathname])
 
   if (!isFetching) return null
