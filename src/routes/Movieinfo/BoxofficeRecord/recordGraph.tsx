@@ -1,7 +1,13 @@
 import { VictoryAxis, VictoryChart, VictoryTheme, VictoryBar } from 'victory'
-
+import cx from 'classnames'
 import RecordGraphStyle from './recordGraphStyle'
 import { IWeekRecordData } from 'types/movie'
+import { dailyBoxofficeDropdown, dailyBoxofficeStatus, statusKrToEn } from 'states/button'
+import { useRecoilState, useRecoilValue } from 'hooks/state'
+import { useMemo } from 'react'
+
+import styles from './boxofficeRecord.module.scss'
+import Dropdown from 'components/Dropdown'
 
 interface IChartProps {
   xdata: string[]
@@ -9,6 +15,8 @@ interface IChartProps {
 }
 
 const DrawGraph = ({ xdata, ydata }: IChartProps) => {
+  const [dailyState] = useRecoilState(dailyBoxofficeStatus)
+
   const dateFormat = (date: string) => {
     const newdate = `${date.substring(4, 6)}/${date.substring(6, 8)}`
     return newdate
@@ -19,19 +27,61 @@ const DrawGraph = ({ xdata, ydata }: IChartProps) => {
     chartData.push({ x: dateFormat(xdata[i]), y: ydata[i] })
   }
 
+  const checkDailyState = () => {
+    const state = statusKrToEn(dailyState)
+    if (state === 'audiCnt' || state === 'scrnCnt' || state === 'showCnt') return true
+    return false
+  }
+
   return (
     <VictoryChart theme={VictoryTheme.material} {...RecordGraphStyle.chart}>
-      <VictoryBar data={chartData} labels={({ datum }) => datum.y} {...RecordGraphStyle.bar} />
+      <VictoryBar
+        data={chartData}
+        labels={
+          checkDailyState()
+            ? ({ datum }) => `${Number((datum.y / 1000).toFixed(1).toString())}K`
+            : ({ datum }) => datum.y
+        }
+        // labels={({ datum }) => datum.y}
+        {...RecordGraphStyle.bar}
+      />
+
       <VictoryAxis invertAxis {...RecordGraphStyle.axis} />
     </VictoryChart>
   )
 }
 
 const RecordGraph = (props: IWeekRecordData[]) => {
+  const [dailyState, setDailyState] = useRecoilState(dailyBoxofficeStatus)
+  const adList = useRecoilValue(dailyBoxofficeDropdown)
+
   const xdata = Object.values(props).map((item) => item.date)
+
   const ydataRank = Object.values(props).map((item) => (item.data?.rank === undefined ? 0 : 11 - item.data.rank))
 
-  return <DrawGraph xdata={xdata} ydata={ydataRank} />
+  const filterData = useMemo(() => {
+    const state = statusKrToEn(dailyState)
+    if (state === 'rank') {
+      return Object.values(props).map((item) => (item.data?.rank === undefined ? 0 : 11 - item.data.rank))
+    }
+    if (state === 'salesAmt') {
+      return Object.values(props).map((item) => (item.data?.salesAmt === undefined ? 0 : Number(item.data.salesAmt)))
+    }
+    if (state === 'audiCnt') {
+      return Object.values(props).map((item) => (item.data?.salesAmt === undefined ? 0 : Number(item.data.audiCnt)))
+    }
+    if (state === 'scrnCnt') {
+      return Object.values(props).map((item) => (item.data?.salesAmt === undefined ? 0 : Number(item.data.scrnCnt)))
+    }
+    return Object.values(props).map((item) => (item.data?.audiCnt === undefined ? 0 : Number(item.data.showCnt)))
+  }, [dailyState])
+
+  return (
+    <>
+      <Dropdown list={adList} action={setDailyState} selected={dailyState} />
+      <DrawGraph xdata={xdata} ydata={filterData} />
+    </>
+  )
 }
 
 export default RecordGraph

@@ -1,0 +1,74 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/position';
+@use '/src/styles/mixins/flexbox';
+
+.dropdown {
+  position: relative;
+  width: 130px;
+  z-index: 100;
+  display: inline-block;
+  top: 1px;
+  margin-bottom: 28px;
+
+  .display {
+    @include flexbox.flexbox($jc: between);
+    font-size: 14px;
+    color: colors.$WHITE;
+    width: 100%;
+    padding: 0 13px;
+    border: 1px solid colors.$PRIMARY;
+    border-radius: 5px;
+    line-height: 30px;
+
+    svg {
+      height: 13px;
+      fill: colors.$PRIMARY;
+    }
+  }
+
+  .displayActive {
+    border: 1px solid colors.$GRAYE;
+
+    svg {
+      fill: colors.$GRAYE;
+    }
+  }
+
+  .list {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    background-color: colors.$GRAYE;
+    border-radius: 5px;
+    box-shadow: colors.$DROP_DOWN_SHADOW;
+    opacity: 0;
+    transition: 150ms;
+    transform: scaleY(0);
+    transform-origin: top;
+
+    .listItem {
+      width: 100%;
+      padding: 12px 20px;
+      text-align: left;
+
+      &:hover {
+        color: colors.$PRIMARY;
+      }
+    }
+  }
+
+
+
+  .isActive {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+.big {
+  width: 100%;
+
+  button {
+    height: 60px;
+  }
+}
