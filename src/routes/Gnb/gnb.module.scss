@@ -1,7 +1,8 @@
 @use '/src/styles/constants/colors';
 
 .backIcon,
-.menuIcon {
+.menuIcon,
+.closeIcon {
   position: absolute;
   top: 40px;
   width: 20px;
@@ -13,10 +14,16 @@
   }
 }
 
+.closeIcon {
+  top: 36px;
+  width: 16px;
+}
+
 .backIcon {
   left: 30px;
 }
 
-.menuIcon {
+.menuIcon,
+.closeIcon {
   right: 30px;
 }

@@ -1,6 +1,5 @@
 @use '/src/styles/constants/colors';
 @use '/src/styles/mixins/flexbox';
-@use '/src/styles/mixins/responsive';
 
 .pageWrapper {
   padding: 60px 30px;
@@ -74,7 +73,7 @@
       width: 100%;
       padding: 20px 15px;
       line-height: 30px;
-      background-color: rgba($color: #aaaaaa, $alpha: 20%);
+      background-color: rgba($color: colors.$GRAYA, $alpha: 20%);
       border-radius: 10px;
 
       .rank,
@@ -99,6 +98,14 @@
         dd {
           font-size: 13px;
           color: colors.$GRAYA;
+
+          svg {
+            width: 12px;
+          }
+        }
+
+        .rankIntenPlus::before {
+          content: '+';
         }
       }
 
@@ -122,10 +129,10 @@
     }
 
     .innerWrapper:hover {
-      background-color: rgba($color: #aaaaaa, $alpha: 40%);
+      background-color: rgba($color: colors.$GRAYA, $alpha: 40%);
 
       .rank {
-        border-color: #b5a4ff;
+        border-color: colors.$HIGHLIGHT;
 
         dt {
           color: colors.$WHITE;

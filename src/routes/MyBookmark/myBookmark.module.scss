@@ -1,6 +1,5 @@
 @use '/src/styles/constants/colors';
 @use '/src/styles/mixins/flexbox';
-@use '/src/styles/mixins/responsive';
 
 .pageWrapper {
   padding: 60px 30px;
@@ -11,44 +10,11 @@
     margin: 0 auto;
 
     h2 {
-      margin: 10px 0 12px;
+      margin: 10px 0 30px;
       font-size: 24px;
       font-weight: 500;
       color: colors.$GRAYE;
       text-align: center;
-    }
-
-    .innerWrapper {
-      @include flexbox.flexbox($jc: center, $ai: center, $gap: 8px);
-      margin-bottom: 30px;
-
-      h3 {
-        font-size: 15px;
-        line-height: 20px;
-        color: colors.$PRIMARY;
-        text-align: center;
-        letter-spacing: 0.1em;
-      }
-
-      button {
-        position: relative;
-
-        svg {
-          position: relative;
-          top: 1px;
-          height: 17px;
-          padding: 0 12px;
-          fill: colors.$PRIMARY;
-        }
-      }
-
-      button:first-of-type:hover {
-        left: -2px;
-      }
-
-      button:last-of-type:hover {
-        right: -2px;
-      }
     }
   }
 
@@ -74,35 +40,12 @@
       width: 100%;
       padding: 20px 15px;
       line-height: 30px;
-      background-color: rgba($color: #aaaaaa, $alpha: 20%);
+      background-color: rgba($color: colors.$GRAYA, $alpha: 20%);
       border-radius: 10px;
 
-      .rank,
       .info {
         @include flexbox.flexbox($jc: between, $ai: stretch, $fd: col);
-      }
-
-      .rank {
-        width: 50px;
-        min-width: 50px;
-        margin-right: 20px;
-        font-size: 16px;
-        text-align: center;
-        border: 1px solid colors.$PRIMARY;
-        border-radius: 10px;
-
-        dt {
-          font-size: 20px;
-          color: colors.$GRAYD;
-        }
-
-        dd {
-          font-size: 13px;
-          color: colors.$GRAYA;
-        }
-      }
-
-      .info {
+        margin-left: 10px;
         text-align: left;
 
         dt {
@@ -122,20 +65,7 @@
     }
 
     .innerWrapper:hover {
-      background-color: rgba($color: #aaaaaa, $alpha: 40%);
-
-      .rank {
-        border-color: #b5a4ff;
-
-        dt {
-          color: colors.$WHITE;
-        }
-
-        dd {
-          font-size: 13px;
-          color: colors.$GRAYA;
-        }
-      }
+      background-color: rgba($color: colors.$GRAYA, $alpha: 40%);
 
       .info {
         dt {
