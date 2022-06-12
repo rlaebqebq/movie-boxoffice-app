@@ -11,6 +11,16 @@ const MovieinfoList = ({ data }: Props) => {
 
   return (
     <>
+      {data.audits.map((item, index) => {
+        const key = `watchGradeNm-${item}-${index}`
+        return (
+          <p key={key} className={styles.tagWrapper}>
+            {item.watchGradeNm !== (undefined || null) && item.watchGradeNm}
+          </p>
+        )
+      })}
+      <p className={styles.tagWrapper}>{data.showTm !== (undefined || null) && `${data.showTm}분`}</p>
+      <br />
       {data.genres.map((item, index) => {
         const key = `genreNm-${item}-${index}`
         return (
