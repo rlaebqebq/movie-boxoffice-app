@@ -48,7 +48,7 @@ const MyBookmark = () => {
                     >
                       <dl className={styles.info}>
                         <dt>{item.title}</dt>
-                        <dd>{item.openDt}</dd>
+                        <dd>개봉일&nbsp;:&nbsp;{item.openDt}</dd>
                       </dl>
                     </button>
                   </NavLink>
