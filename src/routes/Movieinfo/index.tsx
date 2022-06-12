@@ -8,10 +8,10 @@ import { useSearchDetailQuery, useSearchPosterQuery } from 'hooks/movieQuery'
 import { bookMarkList, targetMovieCdState, targetMovieNmState, targetMovieOpenDtState } from 'states/movie'
 import { delBookmark, addBookmark, isBookmarked } from 'utils/localStorage'
 
-import MovieinfoBasic from './MovieinfoDetail/movieinfoBasic'
 import MovieinfoCompany from './MovieinfoDetail/movieinfoCompany'
 import MovieinfoTitle from './MovieinfoDetail/movieinfoTitle'
-import MovieInfoPosterEtc from './MovieInfoPoster/movieinfoPosterEtc'
+import MovieInfoPosterTag from './MovieInfoPoster/movieinfoPosterTag'
+import MovieInfoPosterPlot from './MovieInfoPoster/movieinfoPosterEtc'
 import styles from './movieinfo.module.scss'
 
 const MovieinfoList = lazy(() => import('./MovieinfoDetail/movieinfoList'))
@@ -49,7 +49,6 @@ const MovieInfo = () => {
         {/* {checkMovieCd() && <MovieInfoPoster data={posterData} />} */}
         <div className={styles.infoWrapper}>
           <div className={styles.title}>
-            <MovieinfoBasic data={infoData} />
             <div className={styles.titleWrapper}>
               <button
                 onClick={onClickHandler}
@@ -63,8 +62,11 @@ const MovieInfo = () => {
           </div>
           <div className={styles.contentWrapper}>
             <div className={styles.innerWrapper}>
-              <MovieinfoList data={infoData} />
-              {checkMovieCd() && <MovieInfoPosterEtc data={posterData} />}
+              <div className={styles.largeWrapper}>
+                <MovieinfoList data={infoData} />
+                {checkMovieCd() && <MovieInfoPosterTag data={posterData} />}
+              </div>
+              {checkMovieCd() && <MovieInfoPosterPlot data={posterData} />}
               <BoxofficeRecord />
               <MovieinfoCompany data={infoData} />
             </div>
