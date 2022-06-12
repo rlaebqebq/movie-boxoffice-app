@@ -1,9 +1,10 @@
 import { useQuery } from 'react-query'
 
 import { isAxiosError } from 'hooks/worker/axios'
-import { getBoxofficeApi, getMovieInfoApi } from 'utils/movie'
+import { getBoxofficeApi, getMovieInfoApi, getMoviePosterApi } from 'utils/movie'
 import { IBoxofficeAPIRes } from 'types/dailyBoxoffice'
 import { IMovieSearchAPIRes } from 'types/movieInfo'
+import { IMoviePosterAPIRes } from 'types/moviePoster'
 
 export const useSearchDailyQuery = (targetDt: string) => {
   return useQuery<IBoxofficeAPIRes, Error>(
@@ -29,6 +30,24 @@ export const useSearchDetailQuery = (movieCd: string) => {
     {
       refetchOnWindowFocus: false,
       suspense: true,
+      onError(err) {
+        if (isAxiosError(err)) {
+          // eslint-disable-next-line no-console
+          console.log(err)
+        }
+      },
+    }
+  )
+}
+
+export const useSearchPosterQuery = (title: string, releaseDts: string) => {
+  return useQuery<IMoviePosterAPIRes, Error>(
+    ['getMoviePosterApi', title, releaseDts],
+    () => getMoviePosterApi({ title, releaseDts }).then((res) => res.data),
+    {
+      refetchOnWindowFocus: false,
+      suspense: true,
+      retry: 1,
       onError(err) {
         if (isAxiosError(err)) {
           // eslint-disable-next-line no-console
