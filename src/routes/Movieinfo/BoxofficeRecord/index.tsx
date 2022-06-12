@@ -28,10 +28,7 @@ const BoxofficeRecord = () => {
 
   return (
     <div className={styles.graphWrapper}>
-      <Suspense fallback={<LoadingPage />}>
-        {dateGap > 0 && <RecordGraph {...weekRecord} />}
-        {/* {dateGap > 0 ? <RecordGraph {...weekRecord} /> : <p>개봉전입니다</p>} */}
-      </Suspense>
+      <Suspense fallback={<LoadingPage />}>{dateGap > 0 && <RecordGraph {...weekRecord} />}</Suspense>
     </div>
   )
 }

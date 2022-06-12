@@ -41,7 +41,6 @@ const DrawGraph = ({ xdata, ydata }: IChartProps) => {
             ? ({ datum }) => `${Number((datum.y / 1000).toFixed(1).toString())}K`
             : ({ datum }) => datum.y
         }
-        // labels={({ datum }) => datum.y}
         {...RecordGraphStyle.bar}
       />
 
@@ -55,8 +54,6 @@ const RecordGraph = (props: IWeekRecordData[]) => {
   const adList = useRecoilValue(dailyBoxofficeDropdown)
 
   const xdata = Object.values(props).map((item) => item.date)
-
-  const ydataRank = Object.values(props).map((item) => (item.data?.rank === undefined ? 0 : 11 - item.data.rank))
 
   const filterData = useMemo(() => {
     const state = statusKrToEn(dailyState)
@@ -73,6 +70,7 @@ const RecordGraph = (props: IWeekRecordData[]) => {
       return Object.values(props).map((item) => (item.data?.salesAmt === undefined ? 0 : Number(item.data.scrnCnt)))
     }
     return Object.values(props).map((item) => (item.data?.audiCnt === undefined ? 0 : Number(item.data.showCnt)))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dailyState])
 
   return (
