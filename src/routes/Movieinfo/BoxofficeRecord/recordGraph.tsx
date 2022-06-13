@@ -1,4 +1,4 @@
-import { VictoryAxis, VictoryChart, VictoryTheme, VictoryBar, VictoryScatter, VictoryLine } from 'victory'
+import { VictoryAxis, VictoryChart, VictoryTheme, VictoryBar, VictoryLine } from 'victory'
 import { useMemo } from 'react'
 
 import Dropdown from 'components/Dropdown'
