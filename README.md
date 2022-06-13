@@ -159,7 +159,7 @@
 
 |![Kapture 2022-06-13 at 11 15 26 복사본](https://user-images.githubusercontent.com/50236673/173267733-dfe58766-d737-4dd3-b51a-4a24cef2af93.gif)|![Kapture 2022-06-13 at 11 15 26](https://user-images.githubusercontent.com/50236673/173267666-ecceaf0c-cfec-426b-9058-3eb592e3d297.gif)|
 |:---:|:---:|
-|![Kapture 2022-06-13 at 10 56 33](https://user-images.githubusercontent.com/50236673/173266653-2b5dc8f2-6473-4ecf-b9a9-e74f40b03043.gif)|![Kapture 2022-06-13 at 10 58 04](https://user-images.githubusercontent.com/50236673/173266699-c6d0431a-2829-4149-b7fd-97e3079ffec0.gif)|
+|![Kapture 2022-06-13 at 10 56 33](https://user-images.githubusercontent.com/50236673/173266653-2b5dc8f2-6473-4ecf-b9a9-e74f40b03043.gif)|![Kapture 2022-06-13 at 11 59 07](https://user-images.githubusercontent.com/50236673/173271766-df57edde-9181-4968-853c-8258ff028497.gif)|
 
 ### 내 즐겨찾기
 - 선택한 영화를 내 즐겨찾기에 넣고 뺄 수 있습니다.
