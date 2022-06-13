@@ -1,34 +1,48 @@
-import { useRecoilValue } from 'recoil'
-import { lazy, Suspense, useMemo } from 'react'
+import { useRecoilState, useRecoilValue } from 'recoil'
+import { useMemo } from 'react'
 
-import LoadingPage from 'components/LoadingPage'
-import { targetMovieOpenDtState, todayDtState } from 'states/movie'
 import { IWeekRecordData } from 'types/movie'
+import Dropdown from 'components/Dropdown'
+import { dailyBoxofficeStatus, dailyBoxofficeDropdown, statusKrToEn } from 'states/button'
 
-import RecordItem from './recordItem'
+import DrawGraph from './drawGraph'
 
-const RecordGraph = lazy(() => import('./recordGraph'))
+interface Props {
+  data: IWeekRecordData[]
+}
 
-const BoxofficeRecord = () => {
-  const todayDt = useRecoilValue(todayDtState)
-  const movieOpenDt = useRecoilValue(targetMovieOpenDtState)
+const BoxofficeRecord = ({ data }: Props) => {
+  const [dailyState, setDailyState] = useRecoilState(dailyBoxofficeStatus)
+  const adList = useRecoilValue(dailyBoxofficeDropdown)
 
-  const ranges = []
-  const weekRecord: IWeekRecordData[] = []
-  const dateGap = todayDt.diff(movieOpenDt, 'day')
+  const xdata = Object.values(data).map((item) => item.date)
 
-  let currentDate = useMemo(() => {
-    if (dateGap < 7) return movieOpenDt
-    return todayDt.subtract(7, 'day')
-  }, [dateGap, movieOpenDt, todayDt])
+  const filterData = useMemo(() => {
+    const state = statusKrToEn(dailyState)
+    switch (state) {
+      case 'salesAmt':
+        return Object.values(data).map((item) => Number(item.data.salesAmt))
 
-  while (currentDate.isBefore(todayDt, 'day')) {
-    currentDate = currentDate.add(1, 'day')
-    ranges.push(currentDate.format('YYYYMMDD'))
-  }
-  ranges.map((item) => weekRecord.push({ date: item, data: RecordItem(item) }))
+      case 'audiCnt':
+        return Object.values(data).map((item) => Number(item.data.audiCnt))
 
-  return <Suspense fallback={<LoadingPage />}>{dateGap > 0 && <RecordGraph {...weekRecord} />}</Suspense>
+      case 'scrnCnt':
+        return Object.values(data).map((item) => Number(item.data.scrnCnt))
+
+      case 'showCnt':
+        return Object.values(data).map((item) => Number(item.data.showCnt))
+      default:
+        return Object.values(data).map((item) => Number(item.data.rank))
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dailyState])
+
+  return (
+    <>
+      <Dropdown list={adList} action={setDailyState} selected={dailyState} />
+      <DrawGraph xdata={xdata} ydata={filterData} />
+    </>
+  )
 }
 
 export default BoxofficeRecord
