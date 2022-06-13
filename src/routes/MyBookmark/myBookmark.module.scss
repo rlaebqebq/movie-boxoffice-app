@@ -20,6 +20,7 @@
 
   .movieWrapper {
     max-width: 450px;
+    height: 660px;
     margin: 0 auto;
     overflow: hidden;
 
@@ -76,6 +77,10 @@
 
     li + li {
       margin-top: 20px;
+    }
+
+    .defaultMSG {
+      text-align: center;
     }
   }
 }

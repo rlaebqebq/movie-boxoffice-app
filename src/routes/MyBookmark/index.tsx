@@ -57,7 +57,7 @@ const MyBookmark = () => {
             })}
           </ul>
         ) : (
-          <p>북마크가 비었습니다.</p>
+          <p className={styles.defaultMSG}>북마크가 비었습니다.</p>
         )}
       </div>
     </div>

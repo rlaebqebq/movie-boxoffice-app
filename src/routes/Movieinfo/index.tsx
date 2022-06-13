@@ -46,7 +46,6 @@ const MovieInfo = () => {
   return (
     <Suspense fallback={<LoadingPage />}>
       <div className={styles.pageWrapper} style={{ backgroundImage: `url(${imgUrl})` }}>
-        {/* {checkMovieCd() && <MovieInfoPoster data={posterData} />} */}
         <div className={styles.infoWrapper}>
           <div className={styles.title}>
             <div className={styles.titleWrapper}>
