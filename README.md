@@ -1,11 +1,9 @@
 # 🗂 프로젝트 소개 [![Netlify Status](https://api.netlify.com/api/v1/badges/44138556-c9f2-4b7c-8702-85f6c4337beb/deploy-status)](https://app.netlify.com/sites/movie-boxoffice-app/deploys)
-### 🍿영화 박스오피스 조회 플리케이션
+### 🍿박스오피스 어플리케이션
 
 - **개발 기간** 22.06.04 - 22.06.05
 - **프로젝트 개요** <br/>
 영화진흥위원회 api를 사용한 박스오피스 및 영화 상세정보 조회 애플리케이션입니다.
-
-- **Github Repository URL** <br/> https://github.com/rlaebqebq/movie-boxoffice-app
 - **배포 URL** <br/> <s>https://movie-boxoffice-app.netlify.app/</s> api가 https에 응답을 안하고 http에만 응답함
 
 |![Kapture 2022-06-13 at 10 46 00](https://user-images.githubusercontent.com/50236673/173265812-ec3b3fca-6c88-4b7e-bf19-5f47305fb74a.gif)|![Kapture 2022-06-13 at 10 52 44](https://user-images.githubusercontent.com/50236673/173265819-2a2eb75f-dc6f-4ed5-b61b-46e3c556ef8f.gif)|
