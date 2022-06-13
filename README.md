@@ -6,7 +6,7 @@
 영화진흥위원회 api를 사용한 박스오피스 및 영화 상세정보 조회 애플리케이션입니다.
 
 - **Github Repository URL** <br/> https://github.com/rlaebqebq/movie-boxoffice-app
-- **배포 URL** <br/> <s>https://movie-boxoffice-app.netlify.app/</s> api가 https에 응답을 안하고 http에만 
+- **배포 URL** <br/> <s>https://movie-boxoffice-app.netlify.app/</s> api가 https에 응답을 안하고 http에만 응답함
 
 ![Kapture 2022-06-05 at 15 45 59](https://user-images.githubusercontent.com/50236673/172039061-5f17a5d0-8a90-4974-934d-2902fb95f066.gif)
 
