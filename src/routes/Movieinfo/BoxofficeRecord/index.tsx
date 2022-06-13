@@ -1,5 +1,5 @@
 import { useRecoilValue } from 'recoil'
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense, useMemo } from 'react'
 
 import LoadingPage from 'components/LoadingPage'
 import { targetMovieOpenDtState, todayDtState } from 'states/movie'
@@ -17,8 +17,11 @@ const BoxofficeRecord = () => {
   const weekRecord: IWeekRecordData[] = []
   const dateGap = todayDt.diff(movieOpenDt, 'day')
 
-  let currentDate
-  dateGap < 7 ? (currentDate = movieOpenDt) : (currentDate = todayDt.subtract(7, 'day'))
+  let currentDate = useMemo(() => {
+    if (dateGap < 7) return movieOpenDt
+    return todayDt.subtract(7, 'day')
+  }, [dateGap, movieOpenDt, todayDt])
+
   while (currentDate.isBefore(todayDt, 'day')) {
     currentDate = currentDate.add(1, 'day')
     ranges.push(currentDate.format('YYYYMMDD'))
