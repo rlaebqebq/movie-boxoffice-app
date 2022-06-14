@@ -4,6 +4,7 @@ import { lazy, Suspense, useEffect, useState } from 'react'
 
 import LoadingPage from 'components/LoadingPage'
 import { BookmarkIcon } from 'assets/svg'
+import emptyPoster from 'assets/emptyPoster.png'
 import { useSearchDetailQuery, useSearchPosterQuery } from 'hooks/movieQuery'
 import {
   bookMarkList,
@@ -36,6 +37,7 @@ const MovieInfo = () => {
   const infoData = useSearchDetailQuery(movieCd).data?.movieInfoResult.movieInfo
   const posterData = useSearchPosterQuery(title, movieOpenDt.format('YYYYMMDD'))
 
+  const hasData = posterData.data?.Data[0].TotalCount !== 0
   const dateGap = todayDt.diff(movieOpenDt, 'day')
   const weekRecord = CalcWeek({ todayDt, movieOpenDt, dateGap })
 
@@ -44,23 +46,22 @@ const MovieInfo = () => {
     setBookmarkList(isBookmark ? delBookmark(movieCd) : addBookmark({ title, openDt, movieCd }))
   }
 
+  const checkPosterNum = () => {
+    if (posterData.data?.Data[0].Result[0].posters.includes('|')) {
+      return posterData.data?.Data[0].Result[0].posters.split('|')[0]
+    }
+    return posterData.data?.Data[0].Result[0].posters
+  }
+  const posterImg = hasData ? checkPosterNum() : emptyPoster
+
   useEffect(() => {
     setIsBookmark(isBookmarked(movieCd))
   }, [bookmarkList, movieCd])
 
-  const checkMovieCd = () => {
-    if (posterData.data?.Data[0].Count !== 0) {
-      if (posterData.data?.Data[0].Result[0].CommCodes.CommCode[0].CodeNo && movieCd) return true
-    }
-    return false
-  }
-
-  const imgUrl = checkMovieCd() ? posterData.data?.Data[0].Result[0].posters.split('|')[0] : 'none'
-
   return (
     <Suspense fallback={<LoadingPage />}>
-      <div className={styles.pageWrapper} style={{ backgroundImage: `url(${imgUrl})` }}>
-        <div className={cx(styles.infoWrapper, { [styles.nobgWrapper]: !checkMovieCd() })}>
+      <div className={styles.pageWrapper} style={{ backgroundImage: `url(${posterImg})` }}>
+        <div className={cx(styles.infoWrapper)}>
           <div className={styles.title}>
             <div className={styles.titleWrapper}>
               <button
@@ -77,9 +78,9 @@ const MovieInfo = () => {
             <div className={styles.innerWrapper}>
               <div className={styles.largeWrapper}>
                 <MovieinfoList data={infoData} />
-                {checkMovieCd() && <MovieInfoPosterTag data={posterData.data?.Data[0].Result[0]} />}
+                {hasData && <MovieInfoPosterTag data={posterData.data?.Data[0].Result[0].type} />}
               </div>
-              {checkMovieCd() && <MovieInfoPosterPlot data={posterData.data?.Data[0].Result[0]} />}
+              {hasData && <MovieInfoPosterPlot data={posterData.data?.Data[0].Result[0].plots.plot[0].plotText} />}
               {dateGap > 0 && <BoxofficeRecord data={weekRecord} />}
               <MovieinfoCompany data={infoData} />
             </div>
