@@ -1,13 +1,12 @@
 import styles from '../movieinfo.module.scss'
-import { Result } from 'types/moviePoster'
 import cx from 'classnames'
 
 interface Props {
-  data?: Result
+  data?: string
 }
 
 const MovieInfoPosterTag = ({ data }: Props) => {
-  return <p className={cx(styles.tagWrapper, styles.primaryTag)}>{data?.type}</p>
+  return <p className={cx(styles.tagWrapper, styles.primaryTag)}>{data}</p>
 }
 
 export default MovieInfoPosterTag
