@@ -1,17 +1,6 @@
-@use '/src/styles/constants/colors';
 @use '/src/styles/mixins/flexbox';
 
-@keyframes fadeIn {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes rotate {
+@keyframes spin {
   0% {
     transform: rotate(0deg);
   }
@@ -26,13 +15,10 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
   width: 100vw;
   height: 100vh;
-  background-color: colors.$BG;
-  animation: infinite forwards;
 
   svg {
-    animation: 3s linear 1s infinite rotate;
+    animation: spin 1s linear infinite;
   }
 }
