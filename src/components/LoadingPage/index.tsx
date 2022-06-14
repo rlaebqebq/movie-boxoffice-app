@@ -10,10 +10,6 @@ const LoadingPage = () => {
 
   useEffect(() => {
     setIsFetching(true)
-
-    setTimeout(() => {
-      setIsFetching(false)
-    }, 3000)
   }, [location.pathname])
 
   if (!isFetching) return null
