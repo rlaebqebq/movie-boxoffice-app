@@ -16,6 +16,7 @@ export const useSearchDailyQuery = (targetDt: string) => {
       refetchOnMount: true,
       refetchOnReconnect: true,
       retry: 1,
+      staleTime: 1000 * 60 * 5,
       onError(err) {
         if (isAxiosError(err)) {
           // eslint-disable-next-line no-console
@@ -33,9 +34,6 @@ export const useSearchDetailQuery = (movieCd: string) => {
     {
       refetchOnWindowFocus: false,
       suspense: true,
-      refetchOnMount: true,
-      refetchOnReconnect: true,
-      retry: 1,
       onError(err) {
         if (isAxiosError(err)) {
           // eslint-disable-next-line no-console
