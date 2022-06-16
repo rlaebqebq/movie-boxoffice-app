@@ -14,6 +14,9 @@ export const useSearchDailyQuery = (targetDt: string) => {
     {
       refetchOnWindowFocus: false,
       suspense: true,
+      refetchOnMount: true,
+      refetchOnReconnect: true,
+      retry: 3,
       onError(err) {
         if (isAxiosError(err)) {
           // eslint-disable-next-line no-console
@@ -33,7 +36,7 @@ export const useSearchDetailQuery = (movieCd: string) => {
       suspense: true,
       refetchOnMount: true,
       refetchOnReconnect: true,
-      retry: 1,
+      retry: 3,
       onError(err) {
         if (isAxiosError(err)) {
           // eslint-disable-next-line no-console
@@ -53,7 +56,7 @@ export const useSearchPosterQuery = (title: string, releaseDts: string) => {
       suspense: true,
       refetchOnMount: true,
       refetchOnReconnect: true,
-      retry: 1,
+      retry: 3,
       staleTime: 21600000,
       onError(err) {
         if (isAxiosError(err)) {
@@ -77,7 +80,7 @@ export const useTmdbSearchQuery = (language: string, query: string, primary_rele
       suspense: true,
       refetchOnMount: true,
       refetchOnReconnect: true,
-      retry: 1,
+      retry: 3,
       staleTime: 21600000,
       onError(err) {
         if (isAxiosError(err)) {
