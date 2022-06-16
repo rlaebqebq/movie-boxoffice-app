@@ -14,10 +14,6 @@ export const useSearchDailyQuery = (targetDt: string) => {
     {
       refetchOnWindowFocus: false,
       suspense: true,
-      refetchOnMount: true,
-      refetchOnReconnect: true,
-      retry: 1,
-      staleTime: 21600000,
       onError(err) {
         if (isAxiosError(err)) {
           // eslint-disable-next-line no-console
