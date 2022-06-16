@@ -4,6 +4,9 @@
 영화진흥위원회, TMDB api를 사용한 박스오피스 및 영화 상세정보 조회 어플리케이션입니다.
 - **배포 URL** <br/> https://movie-boxoffice-app.netlify.app/
 
+|![Kapture 2022-06-16 at 19 19 40](https://user-images.githubusercontent.com/50236673/174049693-3ccab5a3-7e7a-4e08-a4e5-b6337f724ac0.gif)|![Kapture 2022-06-16 at 19 19 22](https://user-images.githubusercontent.com/50236673/174049557-040632f8-b702-41bd-8cbc-8644da3dca36.gif)|![Kapture 2022-06-16 at 19 18 31](https://user-images.githubusercontent.com/50236673/174049457-69c149f2-e573-47fc-81d4-8fb752d2ccf2.gif)
+|:---:|:---:|:---:|
+
 <br/>
 
 # 실행 방법
@@ -141,8 +144,9 @@
 ### 일별 박스오피스
 - 일별로 박스오피스 순위를 확인할 수 있습니다.
 
-|![Kapture 2022-06-13 at 11 06 27 복사본](https://user-images.githubusercontent.com/50236673/173267323-a2ffc4ee-97fc-4a19-974a-718eecf63e27.gif)|![Kapture 2022-06-13 at 11 06 27](https://user-images.githubusercontent.com/50236673/173267190-5a803a3a-d80a-4c4a-b7b7-18e9fa176d79.gif)||
+|![Kapture 2022-06-16 at 19 05 23](https://user-images.githubusercontent.com/50236673/174047080-a272e434-a734-461d-bec1-39897f6e2727.gif)|![Kapture 2022-06-16 at 19 04 45](https://user-images.githubusercontent.com/50236673/174047221-f3695cf9-30d6-447a-bcfd-4a7e906bf2da.gif)|![Kapture 2022-06-16 at 18 54 25](https://user-images.githubusercontent.com/50236673/174046527-db8b661c-01a0-40b6-8398-1544c92e79aa.gif)|
 |:---:|:---:|:---:|
+
 
 ### 영화 상세정보
 - 선택한 영화가 저번주부터 이번주까지 박스오피스에 올랐다면 박스오피스 순위, 매출액, 관객수, 스크린수, 상영횟수를 그래프로 보여줍니다.
@@ -156,12 +160,12 @@
 - 선택한 영화를 내 즐겨찾기에 넣고 뺄 수 있습니다.
 - 즐겨찾기에 추가된 영화는 목록에서 확인 가능합니다.
 
-|![Kapture 2022-06-16 at 18 41 16](https://user-images.githubusercontent.com/50236673/174042335-5348e6ad-cc1c-47cc-9d80-47400f8aca1a.gif)|![Kapture 2022-06-16 at 18 48 15](https://user-images.githubusercontent.com/50236673/174043987-fc9d7721-0cad-4425-aa4c-e833a2cd2f37.gif)|![Kapture 2022-06-16 at 18 48 55](https://user-images.githubusercontent.com/50236673/174044012-03ecccc8-1932-4697-b918-33232c0f4cc3.gif)|
+|![Kapture 2022-06-16 at 18 41 16](https://user-images.githubusercontent.com/50236673/174042335-5348e6ad-cc1c-47cc-9d80-47400f8aca1a.gif)|![Kapture 2022-06-16 at 18 48 15](https://user-images.githubusercontent.com/50236673/174043987-fc9d7721-0cad-4425-aa4c-e833a2cd2f37.gif)|![Kapture 2022-06-16 at 19 09 35](https://user-images.githubusercontent.com/50236673/174049416-5abfb024-a510-46f9-83b4-5195756b5019.gif)|
 |:---:|:---:|:---:|
 
 <br />
 
 ### 추후 구현할 기능, 개선할 점
-- <s>영화진흥위원회 api는 영화 포스터 이미지 제공을 안 하므로, 영화 포스터 가져오는 기능 추가 예정.</s>
-- <s>영화 상세정보 그래프를 영화가 개봉한 날짜부터 조회한 날짜까지의 박스오피스 순위 변화, 스크린수, 관객 수, 그래프로 변경 예정. (고려해야 하는 사항_재개봉 영화가 박스오피스 영화에 올랐을 경우</s>
-- <s>영화 포스터 api https로 요청했을 때 응답안하는 점</s>
+- [X] 영화진흥위원회 api는 영화 포스터 이미지 제공을 안 하므로, 영화 포스터 가져오는 기능 추가 예정
+- [X] 영화 상세정보 그래프를 영화가 개봉한 날짜부터 조회한 날짜까지의 박스오피스 순위 변화, 스크린수, 관객 수, 그래프로 변경 예정.
+- [X] 한국영화데이터베이스 api는 https로 요청했을 때 응답안하는 점 (https 지원안함)
