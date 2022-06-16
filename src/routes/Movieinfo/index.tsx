@@ -1,8 +1,8 @@
 import cx from 'classnames'
-import { useRecoilState, useRecoilValue } from 'recoil'
 import { lazy, Suspense, useEffect, useState } from 'react'
 
 import LoadingPage from 'components/LoadingPage'
+import { useRecoil, useRecoilState, useRecoilValue } from 'hooks/state'
 import { BookmarkIcon } from 'assets/svg'
 import emptyPoster from 'assets/emptyPoster.png'
 import { useSearchDetailQuery, useSearchPosterQuery, useTmdbSearchQuery } from 'hooks/movieQuery'
@@ -11,6 +11,7 @@ import {
   targetMovieCdState,
   targetMovieNmState,
   targetMovieOpenDtState,
+  targetPosterLinkState,
   todayDtState,
 } from 'states/movie'
 import { delBookmark, addBookmark, isBookmarked } from 'utils/localStorage'
@@ -33,35 +34,30 @@ const MovieInfo = () => {
   const title = useRecoilValue(targetMovieNmState)
   const movieOpenDt = useRecoilValue(targetMovieOpenDtState)
   const todayDt = useRecoilValue(todayDtState)
+  const [posterLink, setPosterLink] = useRecoil(targetPosterLinkState)
 
   const infoData = useSearchDetailQuery(movieCd).data?.movieInfoResult.movieInfo
-  const posterData = useSearchPosterQuery(title, movieOpenDt.format('YYYYMMDD'))
+  // const posterData = useSearchPosterQuery(title, movieOpenDt.format('YYYYMMDD'))
   const openDt = movieOpenDt.format('YYYYMMDD')
 
   const tmdbData = useTmdbSearchQuery('ko', String(infoData?.movieNmEn), Number(openDt.substring(0, 4)))
 
   console.log(tmdbData)
 
-  // const hasData = posterData.data?.Data[0].TotalCount !== 0
   const hasData = tmdbData.data?.total_results !== 0
   const dateGap = todayDt.diff(movieOpenDt, 'day')
   const weekRecord = CalcWeek({ todayDt, movieOpenDt, dateGap })
 
   const onClickHandler = () => {
-    setBookmarkList(isBookmark ? delBookmark(movieCd) : addBookmark({ title, openDt, movieCd }))
+    setBookmarkList(isBookmark ? delBookmark(movieCd) : addBookmark({ title, openDt, movieCd, posterLink }))
   }
-
-  // const checkPosterNum = () => {
-  //   if (posterData.data?.Data[0].Result[0].posters.includes('|')) {
-  //     return posterData.data?.Data[0].Result[0].posters.split('|')[0]
-  //   }
-  //   return posterData.data?.Data[0].Result[0].posters
-  // }
 
   const checkPosterNum = () => {
     return `https://image.tmdb.org/t/p/w500${tmdbData.data?.results[0].poster_path}`
   }
-  const posterImg = hasData ? checkPosterNum() : emptyPoster
+  useEffect(() => {
+    setPosterLink(hasData ? checkPosterNum() : emptyPoster)
+  }, [])
 
   useEffect(() => {
     setIsBookmark(isBookmarked(movieCd))
@@ -69,7 +65,7 @@ const MovieInfo = () => {
 
   return (
     <Suspense fallback={<LoadingPage />}>
-      <div className={styles.pageWrapper} style={{ backgroundImage: `url(${posterImg})` }}>
+      <div className={styles.pageWrapper} style={{ backgroundImage: `url(${posterLink})` }}>
         <div className={cx(styles.infoWrapper)}>
           <div className={styles.title}>
             <div className={styles.titleWrapper}>

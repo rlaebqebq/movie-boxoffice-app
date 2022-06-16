@@ -22,6 +22,11 @@ export const targetMovieOpenDtState = atom<Dayjs>({
   default: dayjs(),
 })
 
+export const targetPosterLinkState = atom<string>({
+  key: '#targetPosterLinkState',
+  default: '',
+})
+
 export const bookMarkList = atom<IBookmarkItem[]>({
   key: '#bookmarkList',
   default: [],

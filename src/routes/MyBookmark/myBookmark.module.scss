@@ -24,64 +24,69 @@
     margin: 0 auto;
     overflow: hidden;
 
-    .bookmark {
-      position: absolute;
-      right: 45px;
-      width: 18px;
-      height: 18px;
-      fill: colors.$GRAY6;
-    }
+    li {
+      background: no-repeat left top;
+      background-size: contain;
 
-    .bookmarkChecked {
-      fill: colors.$PRIMARY;
-    }
+      .bookmark {
+        position: absolute;
+        right: 45px;
+        width: 18px;
+        height: 18px;
+        fill: colors.$GRAY6;
+      }
 
-    .innerWrapper {
-      display: flex;
-      width: 100%;
-      padding: 20px 15px;
-      line-height: 30px;
-      background-color: rgba($color: colors.$GRAYA, $alpha: 20%);
-      border-radius: 10px;
+      .bookmarkChecked {
+        fill: colors.$PRIMARY;
+      }
 
-      .info {
-        @include flexbox.flexbox($jc: between, $ai: stretch, $fd: col);
-        margin-left: 10px;
-        text-align: left;
+      .innerWrapper {
+        display: flex;
+        width: 100%;
+        padding: 20px 15px;
+        line-height: 30px;
+        background-color: rgba($color: colors.$GRAYA, $alpha: 20%);
+        border-radius: 10px;
 
-        dt {
-          max-width: 215px;
-          overflow: hidden;
-          font-size: 18px;
-          color: colors.$GRAYD;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-        }
+        .info {
+          @include flexbox.flexbox($jc: between, $ai: stretch, $fd: col);
+          margin-left: 10px;
+          text-align: left;
 
-        dd {
-          font-size: 13px;
-          color: colors.$GRAYA;
+          dt {
+            max-width: 215px;
+            overflow: hidden;
+            font-size: 18px;
+            color: colors.$GRAYD;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+
+          dd {
+            font-size: 13px;
+            color: colors.$GRAYA;
+          }
         }
       }
-    }
 
-    .innerWrapper:hover {
-      background-color: rgba($color: colors.$GRAYA, $alpha: 40%);
+      .innerWrapper:hover {
+        background-color: rgba($color: colors.$GRAYA, $alpha: 40%);
 
-      .info {
-        dt {
-          color: colors.$WHITE;
+        .info {
+          dt {
+            color: colors.$WHITE;
+          }
         }
       }
-    }
 
-    li + li {
-      margin-top: 20px;
-    }
+      li+li {
+        margin-top: 20px;
+      }
 
-    .defaultMSG {
-      line-height: 640px;
-      text-align: center;
+      .defaultMSG {
+        line-height: 640px;
+        text-align: center;
+      }
     }
   }
 }

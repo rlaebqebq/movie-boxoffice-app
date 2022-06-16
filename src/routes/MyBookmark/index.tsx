@@ -5,7 +5,13 @@ import { useRecoilState, useRecoilValue } from 'recoil'
 import { NavLink } from 'react-router-dom'
 import { MouseEvent } from 'react'
 
-import { bookMarkList, targetMovieCdState, targetMovieNmState, targetMovieOpenDtState } from 'states/movie'
+import {
+  bookMarkList,
+  targetMovieCdState,
+  targetMovieNmState,
+  targetMovieOpenDtState,
+  targetPosterLinkState,
+} from 'states/movie'
 import { IBookmarkItem } from 'types/movie'
 import { isBookmarked } from 'utils/localStorage'
 
@@ -16,6 +22,7 @@ const MyBookmark = () => {
   const [, setTargetMovieCd] = useRecoilState(targetMovieCdState)
   const [, setTargetMovieOpenDt] = useRecoilState(targetMovieOpenDtState)
   const [, setTargetMovieNmState] = useRecoilState(targetMovieNmState)
+  const posterLink = useRecoilValue(targetPosterLinkState)
 
   const handleMovieTarget = (e: MouseEvent<HTMLButtonElement>) => {
     const movieData = e.currentTarget.value.split('/')
@@ -35,7 +42,7 @@ const MyBookmark = () => {
           <ul>
             {list.map((item) => {
               return (
-                <li key={item.movieCd}>
+                <li key={item.movieCd} style={{ backgroundImage: `url(${posterLink})` }}>
                   <div className={cx(styles.bookmark, { [styles.bookmarkChecked]: isBookmarked(item.movieCd) })}>
                     <BookmarkIcon />
                   </div>

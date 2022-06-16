@@ -9,4 +9,5 @@ export interface IBookmarkItem {
   title: string
   openDt: string
   movieCd: string
+  posterLink: string
 }
