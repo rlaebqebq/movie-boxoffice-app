@@ -11,8 +11,8 @@ const RecordGraphStyle = {
     style: {
       data: {
         color: '#ffffff',
-        fill: '#586df5 ',
-        stroke: '#586df5 ',
+        fill: '#6d53df',
+        stroke: '#6d53df',
       },
     },
   },
@@ -20,7 +20,7 @@ const RecordGraphStyle = {
   scatter: {
     style: {
       data: {
-        fill: '#586df5',
+        fill: '#6d53df',
       },
     },
   },
@@ -29,7 +29,7 @@ const RecordGraphStyle = {
     style: {
       data: {
         color: '#ffffff',
-        stroke: '#586df5 ',
+        stroke: '#6d53df',
         strokeLinecap: 'round',
       },
     },
