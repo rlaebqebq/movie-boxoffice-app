@@ -1,7 +1,6 @@
 import cx from 'classnames'
 import { IMovieInfo } from 'types/movieInfo'
 import styles from '../movieinfo.module.scss'
-import { genreDict } from './genreDict'
 
 interface Props {
   data?: IMovieInfo

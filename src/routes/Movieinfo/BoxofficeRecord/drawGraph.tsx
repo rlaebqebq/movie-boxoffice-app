@@ -4,7 +4,6 @@ import { useRecoilState } from 'hooks/state'
 import { dailyBoxofficeStatus, statusKrToEn } from 'states/button'
 
 import RecordGraphStyle from './recordGraphStyle'
-import { numberToDot } from 'utils/numbertoDot'
 
 interface IChartProps {
   xdata: string[]

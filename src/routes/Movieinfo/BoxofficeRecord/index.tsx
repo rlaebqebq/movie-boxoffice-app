@@ -34,8 +34,7 @@ const BoxofficeRecord = ({ data }: Props) => {
       default:
         return Object.values(data).map((item) => Number(item.data.rank))
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dailyState])
+  }, [dailyState, data])
 
   return (
     <>
