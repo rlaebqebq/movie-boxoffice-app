@@ -25,8 +25,8 @@
     overflow: hidden;
 
     li {
-      background: no-repeat left top;
-      background-size: contain;
+      background: no-repeat left center;
+      background-size: cover;
 
       .bookmark {
         position: absolute;
@@ -45,7 +45,7 @@
         width: 100%;
         padding: 20px 15px;
         line-height: 30px;
-        background-color: rgba($color: colors.$GRAYA, $alpha: 20%);
+        background-color: rgba($color: colors.$GRAYA, $alpha: 35%);
         border-radius: 10px;
 
         .info {
@@ -57,7 +57,7 @@
             max-width: 215px;
             overflow: hidden;
             font-size: 18px;
-            color: colors.$GRAYD;
+            color: colors.$WHITE;
             text-overflow: ellipsis;
             white-space: nowrap;
           }
@@ -79,7 +79,7 @@
         }
       }
 
-      li+li {
+      li + li {
         margin-top: 20px;
       }
 

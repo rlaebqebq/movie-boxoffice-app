@@ -22,6 +22,11 @@ export const targetMovieOpenDtState = atom<Dayjs>({
   default: dayjs(),
 })
 
+export const targetBackdropLinkState = atom<string>({
+  key: '#targetBackdropLinkState',
+  default: '',
+})
+
 export const targetPosterLinkState = atom<string>({
   key: '#targetPosterLinkState',
   default: '',

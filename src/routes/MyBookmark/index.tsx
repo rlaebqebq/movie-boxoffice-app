@@ -7,10 +7,10 @@ import { MouseEvent } from 'react'
 
 import {
   bookMarkList,
+  targetBackdropLinkState,
   targetMovieCdState,
   targetMovieNmState,
   targetMovieOpenDtState,
-  targetPosterLinkState,
 } from 'states/movie'
 import { IBookmarkItem } from 'types/movie'
 import { isBookmarked } from 'utils/localStorage'
@@ -22,7 +22,7 @@ const MyBookmark = () => {
   const [, setTargetMovieCd] = useRecoilState(targetMovieCdState)
   const [, setTargetMovieOpenDt] = useRecoilState(targetMovieOpenDtState)
   const [, setTargetMovieNmState] = useRecoilState(targetMovieNmState)
-  const posterLink = useRecoilValue(targetPosterLinkState)
+  const backdropLink = useRecoilValue(targetBackdropLinkState)
 
   const handleMovieTarget = (e: MouseEvent<HTMLButtonElement>) => {
     const movieData = e.currentTarget.value.split('/')
@@ -42,7 +42,7 @@ const MyBookmark = () => {
           <ul>
             {list.map((item) => {
               return (
-                <li key={item.movieCd} style={{ backgroundImage: `url(${posterLink})` }}>
+                <li key={item.movieCd} style={{ backgroundImage: `url(${backdropLink})` }}>
                   <div className={cx(styles.bookmark, { [styles.bookmarkChecked]: isBookmarked(item.movieCd) })}>
                     <BookmarkIcon />
                   </div>

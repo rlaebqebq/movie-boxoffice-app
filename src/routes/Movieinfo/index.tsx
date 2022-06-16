@@ -8,6 +8,7 @@ import emptyPoster from 'assets/emptyPoster.png'
 import { useSearchDetailQuery, useSearchPosterQuery, useTmdbSearchQuery } from 'hooks/movieQuery'
 import {
   bookMarkList,
+  targetBackdropLinkState,
   targetMovieCdState,
   targetMovieNmState,
   targetMovieOpenDtState,
@@ -34,6 +35,7 @@ const MovieInfo = () => {
   const title = useRecoilValue(targetMovieNmState)
   const movieOpenDt = useRecoilValue(targetMovieOpenDtState)
   const todayDt = useRecoilValue(todayDtState)
+  const [, setBackdropLink] = useRecoil(targetBackdropLinkState)
   const [posterLink, setPosterLink] = useRecoil(targetPosterLinkState)
 
   const infoData = useSearchDetailQuery(movieCd).data?.movieInfoResult.movieInfo
@@ -52,12 +54,13 @@ const MovieInfo = () => {
     setBookmarkList(isBookmark ? delBookmark(movieCd) : addBookmark({ title, openDt, movieCd, posterLink }))
   }
 
-  const checkPosterNum = () => {
-    return `https://image.tmdb.org/t/p/w500${tmdbData.data?.results[0].poster_path}`
+  const checkHasImage = (sourceLink: string) => {
+    return `https://image.tmdb.org/t/p/w500${sourceLink}`
   }
   useEffect(() => {
-    setPosterLink(hasData ? checkPosterNum() : emptyPoster)
-  }, [])
+    setPosterLink(hasData ? checkHasImage(String(tmdbData.data?.results[0].poster_path)) : emptyPoster)
+    setBackdropLink(hasData ? checkHasImage(String(tmdbData.data?.results[0].backdrop_path)) : emptyPoster)
+  }, [hasData, setBackdropLink, setPosterLink, tmdbData.data?.results])
 
   useEffect(() => {
     setIsBookmark(isBookmarked(movieCd))
