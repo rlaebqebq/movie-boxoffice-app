@@ -5,6 +5,7 @@
 .closeIcon {
   position: absolute;
   top: 40px;
+  z-index: 100;
   width: 20px;
   fill: colors.$GRAYE;
   transition: fill ease 0.2s;

@@ -5,13 +5,7 @@ import { useRecoilState, useRecoilValue } from 'recoil'
 import { NavLink } from 'react-router-dom'
 import { MouseEvent } from 'react'
 
-import {
-  bookMarkList,
-  targetBackdropLinkState,
-  targetMovieCdState,
-  targetMovieNmState,
-  targetMovieOpenDtState,
-} from 'states/movie'
+import { bookMarkList, targetMovieCdState, targetMovieNmState, targetMovieOpenDtState } from 'states/movie'
 import { IBookmarkItem } from 'types/movie'
 import { isBookmarked } from 'utils/localStorage'
 

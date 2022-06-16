@@ -5,7 +5,7 @@ import LoadingPage from 'components/LoadingPage'
 import { useRecoil, useRecoilState, useRecoilValue } from 'hooks/state'
 import { BookmarkIcon } from 'assets/svg'
 import emptyPoster from 'assets/emptyPoster.png'
-import { useSearchDetailQuery, useSearchPosterQuery, useTmdbSearchQuery } from 'hooks/movieQuery'
+import { useSearchDetailQuery, useTmdbSearchQuery } from 'hooks/movieQuery'
 import {
   bookMarkList,
   targetBackdropLinkState,
@@ -30,7 +30,6 @@ const BoxofficeRecord = lazy(() => import('./BoxofficeRecord'))
 const MovieInfo = () => {
   const [isBookmark, setIsBookmark] = useState(false)
   const [bookmarkList, setBookmarkList] = useRecoilState(bookMarkList)
-
   const movieCd = useRecoilValue(targetMovieCdState)
   const title = useRecoilValue(targetMovieNmState)
   const movieOpenDt = useRecoilValue(targetMovieOpenDtState)
@@ -41,8 +40,8 @@ const MovieInfo = () => {
   const openDt = movieOpenDt.format('YYYYMMDD')
 
   const infoData = useSearchDetailQuery(movieCd).data?.movieInfoResult.movieInfo
-
   const tmdbData = useTmdbSearchQuery('ko', String(infoData?.movieNmEn), Number(openDt.substring(0, 4)))
+
   const hasData = tmdbData.data?.total_results !== 0
   const dateGap = todayDt.diff(movieOpenDt, 'day')
   const weekRecord = CalcWeek({ todayDt, movieOpenDt, dateGap })

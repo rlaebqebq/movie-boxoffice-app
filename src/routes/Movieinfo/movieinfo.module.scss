@@ -101,3 +101,13 @@
     padding-top: 15px;
   }
 }
+
+.pageWrapper::before {
+  position: absolute;
+  top: -70px;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  content: '';
+  background: colors.$BG_TRANSPARENT_REVERSE;
+}
