@@ -79,14 +79,14 @@
         }
       }
 
-      li + li {
-        margin-top: 20px;
-      }
-
       .defaultMSG {
         line-height: 640px;
         text-align: center;
       }
+    }
+
+    li + li {
+      margin-top: 20px;
     }
   }
 }

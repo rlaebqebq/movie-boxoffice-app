@@ -35,23 +35,20 @@ const MovieInfo = () => {
   const title = useRecoilValue(targetMovieNmState)
   const movieOpenDt = useRecoilValue(targetMovieOpenDtState)
   const todayDt = useRecoilValue(todayDtState)
-  const [, setBackdropLink] = useRecoil(targetBackdropLinkState)
+  const [backdropLink, setBackdropLink] = useRecoil(targetBackdropLinkState)
   const [posterLink, setPosterLink] = useRecoil(targetPosterLinkState)
 
-  const infoData = useSearchDetailQuery(movieCd).data?.movieInfoResult.movieInfo
-  // const posterData = useSearchPosterQuery(title, movieOpenDt.format('YYYYMMDD'))
   const openDt = movieOpenDt.format('YYYYMMDD')
 
+  const infoData = useSearchDetailQuery(movieCd).data?.movieInfoResult.movieInfo
+
   const tmdbData = useTmdbSearchQuery('ko', String(infoData?.movieNmEn), Number(openDt.substring(0, 4)))
-
-  console.log(tmdbData)
-
   const hasData = tmdbData.data?.total_results !== 0
   const dateGap = todayDt.diff(movieOpenDt, 'day')
   const weekRecord = CalcWeek({ todayDt, movieOpenDt, dateGap })
 
   const onClickHandler = () => {
-    setBookmarkList(isBookmark ? delBookmark(movieCd) : addBookmark({ title, openDt, movieCd, posterLink }))
+    setBookmarkList(isBookmark ? delBookmark(movieCd) : addBookmark({ title, openDt, movieCd, backdropLink }))
   }
 
   const checkHasImage = (sourceLink: string) => {

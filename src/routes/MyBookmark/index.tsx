@@ -22,7 +22,6 @@ const MyBookmark = () => {
   const [, setTargetMovieCd] = useRecoilState(targetMovieCdState)
   const [, setTargetMovieOpenDt] = useRecoilState(targetMovieOpenDtState)
   const [, setTargetMovieNmState] = useRecoilState(targetMovieNmState)
-  const backdropLink = useRecoilValue(targetBackdropLinkState)
 
   const handleMovieTarget = (e: MouseEvent<HTMLButtonElement>) => {
     const movieData = e.currentTarget.value.split('/')
@@ -42,7 +41,7 @@ const MyBookmark = () => {
           <ul>
             {list.map((item) => {
               return (
-                <li key={item.movieCd} style={{ backgroundImage: `url(${backdropLink})` }}>
+                <li key={item.movieCd} style={{ backgroundImage: `url(${item.backdropLink})` }}>
                   <div className={cx(styles.bookmark, { [styles.bookmarkChecked]: isBookmarked(item.movieCd) })}>
                     <BookmarkIcon />
                   </div>
