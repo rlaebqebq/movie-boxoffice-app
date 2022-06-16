@@ -56,7 +56,7 @@ const MovieInfo = () => {
   }
   useEffect(() => {
     setPosterLink(hasData ? checkHasImage(String(tmdbData.data?.results[0].poster_path)) : emptyPoster)
-    setBackdropLink(hasData ? checkHasImage(String(tmdbData.data?.results[0].backdrop_path)) : emptyPoster)
+    setBackdropLink(hasData ? checkHasImage(String(tmdbData.data?.results[0].backdrop_path)) : '')
   }, [hasData, setBackdropLink, setPosterLink, tmdbData.data?.results])
 
   useEffect(() => {

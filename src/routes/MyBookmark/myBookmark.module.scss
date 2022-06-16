@@ -54,7 +54,7 @@
           text-align: left;
 
           dt {
-            max-width: 215px;
+            max-width: 290px;
             overflow: hidden;
             font-size: 18px;
             color: colors.$WHITE;
@@ -64,7 +64,7 @@
 
           dd {
             font-size: 13px;
-            color: colors.$GRAYA;
+            color: colors.$GRAYD;
           }
         }
       }
@@ -82,6 +82,13 @@
 
     li + li {
       margin-top: 20px;
+    }
+
+    li::before {
+      width: 340px;
+      height: 100px;
+      content: '';
+      background-color: colors.$BLACK;
     }
 
     .defaultMSG {
