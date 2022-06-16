@@ -6,7 +6,7 @@ interface Props {
   data?: number[]
 }
 
-const MovieinfoPosterTag = ({ data }: Props) => {
+const InfoGenreEN = ({ data }: Props) => {
   if (!data) return null
 
   return (
@@ -23,4 +23,4 @@ const MovieinfoPosterTag = ({ data }: Props) => {
   )
 }
 
-export default MovieinfoPosterTag
+export default InfoGenreEN

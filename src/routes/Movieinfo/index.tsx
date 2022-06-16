@@ -17,14 +17,15 @@ import {
 } from 'states/movie'
 import { delBookmark, addBookmark, isBookmarked } from 'utils/localStorage'
 
-import CalcWeek from './calcWeek'
-import MovieinfoCompany from './MovieinfoDetail/movieinfoCompany'
-import MovieinfoTitle from './MovieinfoDetail/movieinfoTitle'
-import MovieInfoPosterTag from './MovieInfoPoster/movieinfoPosterTag'
-import MovieInfoPosterPlot from './MovieInfoPoster/movieinfoPosterEtc'
+import CalcWeek from './MovieinfoDetail/calcWeek'
+import InfoCompany from './MovieinfoDetail/infoCompany'
+import InfoTitle from './MovieinfoDetail/infoTitle'
+import InfoGenreKR from './MovieinfoDetail/infoGenreKR'
+import InfoGenreEN from './MovieinfoDetail/infoGenreEN'
+import InfoPlot from './MovieinfoDetail/infoPlot'
 import styles from './movieinfo.module.scss'
 
-const MovieinfoList = lazy(() => import('./MovieinfoDetail/movieinfoList'))
+const InfoTags = lazy(() => import('./MovieinfoDetail/infoTags'))
 const BoxofficeRecord = lazy(() => import('./BoxofficeRecord'))
 
 const MovieInfo = () => {
@@ -75,18 +76,19 @@ const MovieInfo = () => {
               >
                 <BookmarkIcon />
               </button>
-              <MovieinfoTitle data={infoData} />
+              <InfoTitle data={infoData} />
             </div>
           </div>
           <div className={styles.contentWrapper}>
             <div className={styles.innerWrapper}>
               <div className={styles.largeWrapper}>
-                <MovieinfoList data={infoData} />
-                {hasData && <MovieInfoPosterTag data={tmdbData.data?.results[0].genre_ids} />}
+                <InfoTags data={infoData} />
+                <InfoGenreKR data={infoData} />
+                {hasData && <InfoGenreEN data={tmdbData.data?.results[0].genre_ids} />}
               </div>
-              {hasData && <MovieInfoPosterPlot data={tmdbData.data?.results[0].overview} />}
+              {hasData && <InfoPlot data={tmdbData.data?.results[0].overview} />}
               {dateGap > 0 && <BoxofficeRecord data={weekRecord} />}
-              <MovieinfoCompany data={infoData} />
+              <InfoCompany data={infoData} />
             </div>
           </div>
         </div>

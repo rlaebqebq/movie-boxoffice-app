@@ -6,7 +6,7 @@ interface Props {
   data?: IMovieInfo
 }
 
-const MovieinfoList = ({ data }: Props) => {
+const InfoTags = ({ data }: Props) => {
   if (!data) return null
 
   return (
@@ -20,16 +20,6 @@ const MovieinfoList = ({ data }: Props) => {
         )
       })}
       <p className={styles.tagWrapper}>{data.showTm !== (undefined || null) && `${data.showTm}분`}</p>
-      <br />
-      {data.genres.map((item, index) => {
-        const key = `genreNm-${item}-${index}`
-        return (
-          <p key={key} className={cx(styles.tagWrapper, styles.primaryTag)}>
-            {item.genreNm !== (undefined || null) && item.genreNm}
-          </p>
-        )
-      })}
-      <p className={cx(styles.tagWrapper, styles.primaryTag)}>{data.typeNm}</p>
       {data.nations.map((item, index) => {
         const key = `nations-${item}-${index}`
         return (
@@ -38,8 +28,9 @@ const MovieinfoList = ({ data }: Props) => {
           </p>
         )
       })}
+      <p className={cx(styles.tagWrapper, styles.primaryTag)}>{data.typeNm}</p>
     </>
   )
 }
 
-export default MovieinfoList
+export default InfoTags

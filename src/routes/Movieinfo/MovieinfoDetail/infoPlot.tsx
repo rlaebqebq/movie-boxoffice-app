@@ -4,8 +4,8 @@ interface Props {
   data?: string
 }
 
-const MovieInfoPosterPlot = ({ data }: Props) => {
+const InfoPlot = ({ data }: Props) => {
   return <p className={styles.plot}>{data}</p>
 }
 
-export default MovieInfoPosterPlot
+export default InfoPlot

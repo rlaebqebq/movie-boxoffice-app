@@ -5,7 +5,7 @@ interface Props {
   data?: IMovieInfo
 }
 
-const MovieinfoCompany = ({ data }: Props) => {
+const InfoCompany = ({ data }: Props) => {
   if (!data) return null
 
   return (
@@ -24,4 +24,4 @@ const MovieinfoCompany = ({ data }: Props) => {
   )
 }
 
-export default MovieinfoCompany
+export default InfoCompany
