@@ -26,7 +26,6 @@ const DrawGraph = ({ xdata, ydata }: IChartProps) => {
   }
 
   const checkDailyState = (datumy: number) => {
-    console.log(datumy)
     if (datumy > 1000 && datumy < 1000000) return `${Number((datumy / 1000).toFixed(1).toString())}K`
     if (datumy > 1000000) return `${Number((datumy / 1000000).toFixed(0).toString())}M`
     return datumy
