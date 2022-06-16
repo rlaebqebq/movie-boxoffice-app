@@ -1,6 +1,6 @@
-import { useRecoilValue } from 'recoil'
 import { Suspense } from 'react'
 
+import { useRecoilValue } from 'hooks/state'
 import { useSearchDailyQuery } from 'hooks/movieQuery'
 import { todayDtState } from 'states/movie'
 

@@ -1,10 +1,10 @@
 import cx from 'classnames'
 import dayjs from 'dayjs'
-import { BookmarkIcon } from 'assets/svg'
-import { useRecoilState, useRecoilValue } from 'recoil'
 import { NavLink } from 'react-router-dom'
 import { MouseEvent } from 'react'
 
+import { BookmarkIcon } from 'assets/svg'
+import { useRecoilState, useRecoilValue } from 'hooks/state'
 import { bookMarkList, targetMovieCdState, targetMovieNmState, targetMovieOpenDtState } from 'states/movie'
 import { IBookmarkItem } from 'types/movie'
 import { isBookmarked } from 'utils/localStorage'

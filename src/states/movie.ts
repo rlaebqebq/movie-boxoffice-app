@@ -1,5 +1,5 @@
 import dayjs, { Dayjs } from 'dayjs'
-import { atom } from 'recoil'
+import { atom } from 'hooks/state'
 import { IBookmarkItem } from 'types/movie'
 
 export const todayDtState = atom<Dayjs>({

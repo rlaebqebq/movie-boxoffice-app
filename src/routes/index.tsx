@@ -1,9 +1,9 @@
-import { useSetRecoilState } from 'recoil'
 import { Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { useMount } from 'react-use'
 
 import LoadingPage from 'components/LoadingPage'
+import { useSetRecoilState } from 'hooks/state'
 import { bookMarkList } from 'states/movie'
 import { IBookmarkItem } from 'types/movie'
 import { getBookmark } from 'utils/localStorage'

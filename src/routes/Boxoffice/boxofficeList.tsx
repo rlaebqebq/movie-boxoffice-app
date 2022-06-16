@@ -1,10 +1,10 @@
 import cx from 'classnames'
 import dayjs from 'dayjs'
-import { useRecoilState } from 'recoil'
 import { MouseEvent } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import { ArrowleftIcon, ArrowrightIcon, BookmarkIcon } from 'assets/svg'
+import { useRecoilState } from 'hooks/state'
 import { todayDtState, targetMovieCdState, targetMovieOpenDtState, targetMovieNmState } from 'states/movie'
 import { IBoxOfficeResult } from 'types/dailyBoxoffice'
 import { isBookmarked } from 'utils/localStorage'
