@@ -1,12 +1,13 @@
-import { Suspense } from 'react'
+import { lazy, Suspense } from 'react'
 
 import { useRecoilValue } from 'hooks/state'
 import { useSearchDailyQuery } from 'hooks/movieQuery'
 import { todayDtState } from 'states/movie'
 
 import LoadingPage from 'components/LoadingPage'
-import BoxofficeList from './boxofficeList'
 import styles from './boxoffice.module.scss'
+
+const BoxofficeList = lazy(() => import('./boxofficeList'))
 
 const Boxoffice = () => {
   const todayDt = useRecoilValue(todayDtState)
