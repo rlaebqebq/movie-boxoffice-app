@@ -17,6 +17,14 @@ const RecordGraphStyle = {
     },
   },
 
+  scatter: {
+    style: {
+      data: {
+        fill: '#586df5',
+      },
+    },
+  },
+
   line: {
     style: {
       data: {
