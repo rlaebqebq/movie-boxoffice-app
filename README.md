@@ -159,6 +159,7 @@
 
 - 선택한 영화를 내 즐겨찾기에 넣고 뺄 수 있습니다.
 - 즐겨찾기에 추가된 영화는 목록에서 확인 가능합니다.
+- 즐겨찾기 추가한 영화는 localStorage에 저장이 되므로 탭이나 창을 닫아도 데이터는 브라우저에 그대로 남아있어 이후에도 확인 가능합니다.
 
 |![Kapture 2022-06-16 at 18 41 16](https://user-images.githubusercontent.com/50236673/174042335-5348e6ad-cc1c-47cc-9d80-47400f8aca1a.gif)|![Kapture 2022-06-16 at 18 48 15](https://user-images.githubusercontent.com/50236673/174043987-fc9d7721-0cad-4425-aa4c-e833a2cd2f37.gif)|![Kapture 2022-06-16 at 19 09 35](https://user-images.githubusercontent.com/50236673/174049416-5abfb024-a510-46f9-83b4-5195756b5019.gif)|
 |:---:|:---:|:---:|
