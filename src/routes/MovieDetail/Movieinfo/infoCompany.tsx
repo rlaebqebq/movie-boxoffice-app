@@ -1,5 +1,5 @@
 import { IMovieInfo } from 'types/movieInfo'
-import styles from '../movieinfo.module.scss'
+import styles from '../movieDetail.module.scss'
 
 interface Props {
   data?: IMovieInfo
@@ -13,7 +13,7 @@ const InfoCompany = ({ data }: Props) => {
       {data.companys.map((item, index) => {
         const key = `company-${item}-${index}`
         return (
-          <p key={key} className={styles.companys}>
+          <p key={key}>
             {item.companyPartNm !== (undefined || null) && item.companyPartNm}
             &nbsp;:&nbsp;
             {item.companyNm !== (undefined || null) && item.companyNm}

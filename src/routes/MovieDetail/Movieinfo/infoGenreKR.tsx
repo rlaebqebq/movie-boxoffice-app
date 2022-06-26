@@ -1,6 +1,6 @@
 import cx from 'classnames'
 import { IMovieInfo } from 'types/movieInfo'
-import styles from '../movieinfo.module.scss'
+import styles from '../movieDetail.module.scss'
 
 interface Props {
   data?: IMovieInfo
@@ -14,7 +14,7 @@ const InfoGenreKR = ({ data }: Props) => {
       {data.genres.map((item, index) => {
         const key = `genreNm-${item}-${index}`
         return (
-          <p key={key} className={cx(styles.tagWrapper, styles.primaryTag)}>
+          <p key={key} className={cx(styles.primaryTag, styles.basicTag)}>
             {item.genreNm !== (undefined || null) && item.genreNm}
           </p>
         )

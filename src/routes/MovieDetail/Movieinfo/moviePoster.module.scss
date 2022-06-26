@@ -29,7 +29,7 @@
     margin: 0 auto;
   }
 
-  .tagWrapper {
+  .primaryTag {
     max-width: 650px;
     margin: 20px auto 0;
 
@@ -43,7 +43,7 @@
       border-radius: 10px;
     }
 
-    .primaryTag {
+    .basicTag {
       color: colors.$GRAYF;
       background-color: colors.$PRIMARY;
     }

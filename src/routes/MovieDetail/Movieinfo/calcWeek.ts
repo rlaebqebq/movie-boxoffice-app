@@ -1,6 +1,6 @@
 import { Dayjs } from 'dayjs'
 import { useMemo } from 'react'
-import { IWeekRecordData } from 'types/movie'
+import { IWeekRecordData } from 'types/weekRecord'
 import RecordItem from '../BoxofficeRecord/recordItem'
 
 interface Props {

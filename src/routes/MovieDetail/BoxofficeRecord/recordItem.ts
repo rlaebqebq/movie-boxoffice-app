@@ -1,4 +1,4 @@
-import { useSearchDailyQuery } from 'hooks/movieQuery'
+import { useSearchDailyQuery } from 'hooks/kobisQuery'
 import { useRecoilValue } from 'hooks/state'
 import { targetMovieCdState } from 'states/movie'
 import { IDailyBoxOfficeList } from 'types/dailyBoxoffice'

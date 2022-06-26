@@ -1,9 +1,9 @@
 import { useRecoilState, useRecoilValue } from 'recoil'
 import { useMemo } from 'react'
 
-import { IWeekRecordData } from 'types/movie'
+import { IWeekRecordData } from 'types/weekRecord'
 import Dropdown from 'components/Dropdown'
-import { dailyBoxofficeStatus, dailyBoxofficeDropdown, statusKrToEn } from 'states/button'
+import { dailyBoxofficeStatus, dailyBoxofficeDropdown, statusKrToEn } from 'states/dropdown'
 
 import DrawGraph from './drawGraph'
 

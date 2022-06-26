@@ -1,4 +1,4 @@
-import styles from '../movieinfo.module.scss'
+import styles from '../movieDetail.module.scss'
 
 interface Props {
   data?: string
