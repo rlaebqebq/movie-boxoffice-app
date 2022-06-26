@@ -1,5 +1,4 @@
 import { IMovieInfo } from 'types/movieInfo'
-import styles from '../movieDetail.module.scss'
 
 interface Props {
   data?: IMovieInfo
