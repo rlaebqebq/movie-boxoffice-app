@@ -21,8 +21,7 @@ import { delBookmark, addBookmark, isBookmarked } from 'utils/localStorage'
 import CalcWeek from './Movieinfo/calcWeek'
 import InfoCompany from './Movieinfo/infoCompany'
 import InfoTitle from './Movieinfo/infoTitle'
-import InfoGenreKR from './Movieinfo/infoGenreKR'
-import InfoGenreEN from './Movieinfo/infoGenreEN'
+import InfoGenre from './Movieinfo/infoGenre'
 import InfoPlot from './Movieinfo/infoPlot'
 import styles from './movieDetail.module.scss'
 import { NavLink } from 'react-router-dom'
@@ -86,8 +85,7 @@ const MovieDetail = () => {
           <div className={styles.innerWrapper}>
             <div className={styles.tagWrapper}>
               <InfoTags data={infoData} />
-              <InfoGenreKR data={infoData} />
-              {hasData && <InfoGenreEN data={tmdbData.data?.results[0].genre_ids} />}
+              {hasData && <InfoGenre dataKR={infoData?.genres} dataEN={tmdbData.data?.results[0].genre_ids} />}
             </div>
             {hasData && <InfoPlot data={tmdbData.data?.results[0].overview} />}
             {dateGap > 0 && <BoxofficeRecord data={weekRecord} />}
