@@ -1,66 +1,58 @@
 @use '/src/styles/constants/colors';
 @use '/src/styles/mixins/flexbox';
 
-.pageWrapper {
-  padding: 60px 30px;
+.wrapper {
+  padding: 40px 30px 0;
 
   .title {
-    position: relative;
-    width: 300px;
-    margin: 0 auto;
+    @include flexbox.flexbox($jc: center, $ai: center, $gap: 8px);
+    margin-bottom: 30px;
 
-    h2 {
-      margin: 10px 0 12px;
-      font-size: 24px;
-      font-weight: 500;
-      color: colors.$GRAYE;
-      text-align: center;
+    h3 {
+      font-size: 20px;
+      line-height: 20px;
+      color: colors.$PRIMARY;
+      letter-spacing: 0.1em;
     }
 
-    .innerWrapper {
-      @include flexbox.flexbox($jc: center, $ai: center, $gap: 8px);
-      margin-bottom: 30px;
+    button {
+      position: relative;
 
-      h3 {
-        font-size: 15px;
-        line-height: 20px;
-        color: colors.$PRIMARY;
-        text-align: center;
-        letter-spacing: 0.1em;
-      }
-
-      button {
+      svg {
         position: relative;
-
-        svg {
-          position: relative;
-          top: 1px;
-          height: 17px;
-          padding: 0 12px;
-          fill: colors.$PRIMARY;
-        }
+        top: 1px;
+        height: 17px;
+        padding: 0 5px;
+        fill: colors.$PRIMARY;
       }
+    }
 
-      button:first-of-type:hover {
-        left: -2px;
-      }
+    button:first-of-type:hover {
+      left: -2px;
+    }
 
-      button:last-of-type:hover {
-        right: -2px;
-      }
+    button:last-of-type:hover {
+      right: -2px;
     }
   }
 
-  .movieWrapper {
-    max-width: 450px;
-    margin: 0 auto;
-    overflow: hidden;
+  .overflowWrapper {
+    height: 627px;
+    overflow-y: scroll;
+
+    li {
+      position: relative;
+    }
+
+    li + li {
+      margin-top: 20px;
+    }
 
     .bookmark {
       position: absolute;
-      right: 45px;
-      width: 18px;
-      height: 18px;
+      right: 12px;
+      width: 25px;
+      height: 25px;
       fill: colors.$GRAY6;
     }
 
@@ -73,7 +65,7 @@
       width: 100%;
       padding: 20px 15px;
       line-height: 30px;
-      background-color: rgba($color: colors.$GRAYA, $alpha: 20%);
+      background-color: colors.$PRIMARY_GRAY;
       border-radius: 10px;
 
       .rank,
@@ -87,7 +79,7 @@
         margin-right: 20px;
         font-size: 16px;
         text-align: center;
-        border: 1px solid colors.$PRIMARY;
+        border: 1px solid colors.$GRAY6;
         border-radius: 10px;
 
         dt {
@@ -116,7 +108,7 @@
           max-width: 215px;
           overflow: hidden;
           font-size: 18px;
-          color: colors.$GRAYD;
+          color: colors.$GRAYE;
           text-overflow: ellipsis;
           white-space: nowrap;
         }
@@ -132,27 +124,20 @@
       background-color: rgba($color: colors.$GRAYA, $alpha: 40%);
 
       .rank {
-        border-color: colors.$HIGHLIGHT;
+        border-color: colors.$PRIMARY;
 
-        dt {
-          color: colors.$WHITE;
-        }
-
+        dt,
         dd {
-          font-size: 13px;
-          color: colors.$GRAYA;
+          color: colors.$PRIMARY;
         }
       }
 
       .info {
-        dt {
-          color: colors.$WHITE;
+        dt,
+        dd {
+          color: colors.$PRIMARY;
         }
       }
-    }
-
-    li + li {
-      margin-top: 20px;
     }
   }
 }

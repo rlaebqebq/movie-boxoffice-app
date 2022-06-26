@@ -14,22 +14,14 @@
     width: 100%;
     padding: 0 13px;
     font-size: 14px;
-    line-height: 30px;
-    color: colors.$WHITE;
-    border: 1px solid colors.$PRIMARY;
+    line-height: 32px;
+    color: colors.$BG;
+    background: colors.$PRIMARY;
     border-radius: 5px;
 
     svg {
       height: 13px;
-      fill: colors.$PRIMARY;
-    }
-  }
-
-  .displayActive {
-    border: 1px solid colors.$GRAYE;
-
-    svg {
-      fill: colors.$GRAYE;
+      fill: colors.$BG;
     }
   }
 
@@ -37,7 +29,7 @@
     position: absolute;
     width: 100%;
     overflow: hidden;
-    background-color: colors.$GRAYE;
+    background-color: colors.$PRIMARY_GRAY;
     border-radius: 5px;
     opacity: 0;
     transition: 150ms;
@@ -47,6 +39,7 @@
     .listItem {
       width: 100%;
       padding: 12px 20px;
+      color: colors.$GRAYE;
       text-align: left;
 
       &:hover {
