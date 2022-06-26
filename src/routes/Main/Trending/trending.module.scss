@@ -1,0 +1,103 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/flexbox';
+
+.wrapper {
+  height: 350px;
+  overflow-y: scroll;
+  position: relative;
+
+  li {
+    background: no-repeat center top;
+    background-size: cover;
+
+    display: flex;
+    width: 100%;
+    padding: 20px 15px;
+    line-height: 30px;
+    background-color: colors.$PRIMARY_GRAY;
+    border-radius: 10px;
+
+    .rank,
+    .info {
+      @include flexbox.flexbox($jc: between, $ai: stretch, $fd: col);
+    }
+
+    .rank {
+      width: 50px;
+      min-width: 50px;
+      margin-right: 20px;
+      font-size: 16px;
+      text-align: center;
+      border: 1px solid colors.$GRAY6;
+      border-radius: 10px;
+
+      dt {
+        font-size: 20px;
+        color: colors.$GRAYD;
+      }
+
+      dd {
+        font-size: 13px;
+        color: colors.$GRAYA;
+
+        svg {
+          width: 12px;
+        }
+      }
+
+      .rankIntenPlus::before {
+        content: '+';
+      }
+    }
+
+    .info {
+      background-color: rgba(#35353d, $alpha: 50%);
+
+      dt {
+        max-width: 215px;
+        overflow: hidden;
+        font-size: 18px;
+        color: colors.$GRAYE;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      dd {
+        font-size: 13px;
+        color: colors.$GRAYA;
+      }
+    }
+  }
+  li:hover {
+    background-color: rgba($color: colors.$GRAYA, $alpha: 40%);
+
+    .rank {
+      border-color: colors.$PRIMARY;
+
+      dt,
+      dd {
+        color: colors.$PRIMARY;
+      }
+    }
+
+    .info {
+
+      dt,
+      dd {
+        color: colors.$PRIMARY;
+      }
+    }
+  }
+  li + li {
+    margin-top: 20px;
+  }
+
+  li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 340px;
+    height: 100px;
+  }
+}

@@ -1,28 +1,29 @@
-import { NavLink, useLocation } from 'react-router-dom'
-import { BackIcon, CloseIcon, MenuIcon } from 'assets/svg'
+import { NavLink } from 'react-router-dom'
+import cx from 'classnames'
+import { BookmarkIcon, BoxofficeIcon, HomeIcon } from 'assets/svg'
 import styles from './gnb.module.scss'
 
 const Gnb = () => {
-  const nowLocation = useLocation().pathname
   return (
-    <>
-      {nowLocation === '/movieinfo' && (
-        <NavLink to='/' className={styles.backIcon}>
-          <BackIcon />
-        </NavLink>
-      )}
-      {nowLocation === '/mybookmark' && (
-        <NavLink to='/' className={styles.closeIcon}>
-          <CloseIcon />
-        </NavLink>
-      )}
-
-      {nowLocation !== '/mybookmark' && (
-        <NavLink to='/mybookmark' className={styles.menuIcon}>
-          <MenuIcon />
-        </NavLink>
-      )}
-    </>
+    <nav className={styles.gnb}>
+      <ul>
+        <li>
+          <NavLink to='/' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
+            <HomeIcon />
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to='/boxoffice' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
+            <BoxofficeIcon />
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to='/mybookmark' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
+            <BookmarkIcon />
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
   )
 }
 
