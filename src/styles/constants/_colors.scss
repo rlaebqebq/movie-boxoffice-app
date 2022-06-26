@@ -8,11 +8,14 @@ $GRAYD: #dddddd;
 $GRAYE: #eeeeee;
 $GRAYF: #f5f5f5;
 
-$PRIMARY: #6d53df;
-$HIGHLIGHT: #b5a4ff;
+// $PRIMARY: #6d53df;
+$PRIMARY: #ffb43a;
+$PRIMARY_GRAY: #2b2c34;
+$HIGHLIGHT: #ffa719;
 $SECONDARY: #bdc7cf;
 
-$BG: linear-gradient(28deg, rgba(#101010, 100%) 0%, rgba(#0b0b41, 100%) 100%);
+// $BG: linear-gradient(28deg, rgba(#101010, 100%) 0%, rgba(#0b0b41, 100%) 100%);
+$BG: #20212c;
 $BG_BLACK: linear-gradient(0deg, #000000 60%, #24292b 100%);
 $BG_TRANSPARENT: linear-gradient(0deg, #000000 50%, transparent 100%);
 $BG_TRANSPARENT_REVERSE: linear-gradient(180deg, #000000 0%, transparent 100%);
