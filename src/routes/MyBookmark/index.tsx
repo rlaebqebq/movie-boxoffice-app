@@ -5,8 +5,9 @@ import { MouseEvent } from 'react'
 
 import { BookmarkIcon } from 'assets/svg'
 import { useRecoilState, useRecoilValue } from 'hooks/state'
-import { bookMarkList, targetMovieCdState, targetMovieNmState, targetMovieOpenDtState } from 'states/movie'
-import { IBookmarkItem } from 'types/movie'
+import { targetMovieCdState, targetMovieNmState, targetMovieOpenDtState } from 'states/movie'
+import { bookMarkList } from 'states/bookmark'
+import { IBookmarkItem } from 'types/bookmark'
 import { isBookmarked } from 'utils/localStorage'
 
 import styles from './myBookmark.module.scss'
@@ -25,20 +26,17 @@ const MyBookmark = () => {
   }
 
   return (
-    <div className={styles.pageWrapper}>
-      <div className={styles.title}>
-        <h2>My Favorites</h2>
-      </div>
-
-      <div className={styles.movieWrapper}>
+    <div className={styles.wrapper}>
+      <h2>My Favorites</h2>
+      <div className={styles.overflowWrapper}>
         {list.length > 0 ? (
-          <ul>
+          <ul className={styles.movieWrapper}>
             {list.map((item) => {
               return (
                 <li key={item.movieCd} style={{ backgroundImage: `url(${item.backdropLink})` }}>
-                  <div className={cx(styles.bookmark, { [styles.bookmarkChecked]: isBookmarked(item.movieCd) })}>
-                    <BookmarkIcon />
-                  </div>
+                  <BookmarkIcon
+                    className={cx(styles.bookmark, { [styles.bookmarkChecked]: isBookmarked(item.movieCd) })}
+                  />
                   <NavLink to='/movieinfo'>
                     <button
                       className={styles.innerWrapper}

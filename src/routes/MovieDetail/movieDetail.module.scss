@@ -1,0 +1,134 @@
+@use '/src/styles/constants/colors';
+
+.wrapper {
+  position: relative;
+  height: 764px;
+  overflow-y: scroll;
+
+  .backIcon {
+    position: absolute;
+    top: 40px;
+    left: 30px;
+    z-index: 100;
+    width: 20px;
+    fill: colors.$GRAYE;
+    transition: fill ease 0.2s;
+
+    &:hover {
+      fill: colors.$PRIMARY;
+    }
+  }
+
+  .bookmark {
+    position: absolute;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    fill: colors.$GRAYA;
+  }
+
+  .bookmarkChecked {
+    fill: colors.$PRIMARY;
+  }
+
+  .infoWrapper {
+    padding-top: 340px;
+    background: no-repeat center top;
+    background-size: contain;
+
+    &::before {
+      position: absolute;
+      top: -70px;
+      left: 0;
+      width: 100%;
+      height: 150px;
+      content: '';
+      background: colors.$BG_TRANSPARENT_REVERSE;
+    }
+
+    .poster {
+      width: 250px;
+    }
+
+    .title {
+      padding: 80px 30px 20px;
+      line-height: 25px;
+      background: colors.$BG_TRANSPARENT;
+
+      h2 {
+        position: relative;
+        top: -3px;
+        width: 290px;
+        margin-bottom: 12px;
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 1.3;
+        color: colors.$WHITE;
+        text-align: left;
+      }
+
+      h3 {
+        font-size: 15px;
+        line-height: 20px;
+        color: colors.$PRIMARY;
+        text-align: left;
+        letter-spacing: 0.1em;
+      }
+
+      p {
+        color: colors.$GRAYD;
+
+        &:first-of-type {
+          margin-top: 8px;
+        }
+      }
+    }
+
+    .innerWrapper {
+      padding: 0 30px;
+      font-size: 14px;
+      background-color: colors.$BG;
+
+      .tagWrapper {
+        padding-top: 30px;
+        margin: 0 -8px 30px;
+
+        .primaryTag {
+          display: inline-block;
+          padding: 0 13px;
+          margin: 8px;
+          line-height: 32px;
+          color: colors.$BG;
+          background-color: colors.$PRIMARY;
+          border-radius: 5px;
+        }
+
+        .basicTag {
+          color: colors.$GRAYF;
+          background-color: colors.$GRAY6;
+          border: none;
+        }
+
+        .basicTag::before {
+          content: '#';
+        }
+      }
+
+      .plot {
+        margin-bottom: 30px;
+        line-height: 30px;
+        color: colors.$GRAYD;
+      }
+
+      .companyWrapper {
+        padding-top: 30px;
+        border-top: 1px solid colors.$GRAY6;
+
+        p {
+          line-height: 30px;
+          color: colors.$GRAYD;
+        }
+      }
+    }
+  }
+}
