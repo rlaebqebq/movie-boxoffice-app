@@ -4,15 +4,16 @@ import { useMount } from 'react-use'
 
 import LoadingPage from 'components/LoadingPage'
 import { useSetRecoilState } from 'hooks/state'
-import { bookMarkList } from 'states/movie'
-import { IBookmarkItem } from 'types/movie'
+import { bookMarkList } from 'states/bookmark'
+import { IBookmarkItem } from 'types/bookmark'
 import { getBookmark } from 'utils/localStorage'
 
-import Boxoffice from './Boxoffice'
 import Gnb from './Gnb'
-import MovieInfo from './Movieinfo'
-import styles from './routes.module.scss'
+import Main from './Main'
+import Boxoffice from './Boxoffice'
+import MovieDetail from './MovieDetail'
 import MyBookmark from './MyBookmark'
+import styles from './routes.module.scss'
 
 const App = () => {
   const initialBookmark = useSetRecoilState<IBookmarkItem[]>(bookMarkList)
@@ -27,8 +28,9 @@ const App = () => {
         <Gnb />
         <Suspense fallback={<LoadingPage />}>
           <Routes>
-            <Route path='/' element={<Boxoffice />} />
-            <Route path='movieinfo' element={<MovieInfo />} />
+            <Route path='/' element={<Main />} />
+            <Route path='boxoffice' element={<Boxoffice />} />
+            <Route path='movieinfo' element={<MovieDetail />} />
             <Route path='mybookmark' element={<MyBookmark />} />
           </Routes>
         </Suspense>
