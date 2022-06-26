@@ -55,6 +55,6 @@ interface IMovieInfoResult {
   source: string
 }
 
-export interface IMovieSearchAPIRes {
+export interface IMovieDetailAPIRes {
   movieInfoResult: IMovieInfoResult
 }
