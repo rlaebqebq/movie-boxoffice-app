@@ -1,6 +1,5 @@
 import dayjs, { Dayjs } from 'dayjs'
 import { atom } from 'hooks/state'
-import { IBookmarkItem } from 'types/movie'
 
 export const todayDtState = atom<Dayjs>({
   key: '#todayDtState',
@@ -30,9 +29,4 @@ export const targetBackdropLinkState = atom<string>({
 export const targetPosterLinkState = atom<string>({
   key: '#targetPosterLinkState',
   default: '',
-})
-
-export const bookMarkList = atom<IBookmarkItem[]>({
-  key: '#bookmarkList',
-  default: [],
 })
