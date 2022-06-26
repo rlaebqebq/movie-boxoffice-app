@@ -1,8 +1,4 @@
-import { lazy, Suspense } from 'react'
-
-import { useRecoilValue } from 'hooks/state'
-import { useSearchDailyQuery } from 'hooks/kobisQuery'
-import { todayDtState } from 'states/movie'
+import { Suspense } from 'react'
 
 import LoadingPage from 'components/LoadingPage'
 import styles from './main.module.scss'

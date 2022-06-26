@@ -4,7 +4,7 @@ import { useRecoilState } from 'hooks/state'
 import { useSearchDailyQuery } from 'hooks/kobisQuery'
 import { todayDtState } from 'states/movie'
 
-import { ArrowleftIcon, ArrowrightIcon, BoxofficeIcon } from 'assets/svg'
+import { ArrowleftIcon, ArrowrightIcon } from 'assets/svg'
 import LoadingPage from 'components/LoadingPage'
 import styles from './boxoffice.module.scss'
 import dayjs from 'dayjs'
