@@ -3,16 +3,16 @@ import dayjs from 'dayjs'
 import { NavLink } from 'react-router-dom'
 import { MouseEvent } from 'react'
 
-import { BookmarkIcon } from 'assets/svg'
 import { useRecoilState } from 'hooks/state'
-import { targetMovieCdState, targetMovieOpenDtState, targetMovieNmState } from 'states/movie'
-import { IBoxOfficeResult } from 'types/dailyBoxoffice'
+import { targetMovieCdState, targetMovieOpenDtState, targetMovieNmState } from 'states'
+import { IDailyBoxOfficeResult } from 'types'
 import { isBookmarked } from 'utils/localStorage'
 
+import { BookmarkIcon } from 'assets/svg'
 import styles from './boxoffice.module.scss'
 
 interface IProps {
-  data?: IBoxOfficeResult
+  data?: IDailyBoxOfficeResult
 }
 
 const BoxofficeList = ({ data }: IProps) => {

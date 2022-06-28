@@ -1,0 +1,62 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/flexbox';
+
+input[type='checkbox'] {
+  display: none;
+  height: 36px;
+
+  & ~ .toggleLabel .toggleCheck::before {
+    left: 0;
+    content: attr(data-unchecked);
+  }
+
+  & ~ .toggleLabel .toggleCheck::after {
+    left: 60px;
+    content: attr(data-checked);
+  }
+
+  &:checked ~ .toggleLabel .toggleCheck::before {
+    left: 60px;
+    content: attr(data-checked);
+  }
+
+  &:checked ~ .toggleLabel .toggleCheck::after {
+    left: 0;
+    content: attr(data-unchecked);
+  }
+}
+
+.toggleLabel {
+  @include flexbox.flexbox(center center);
+
+  .toggleCheck {
+    position: relative;
+    box-sizing: content-box;
+    flex: 0 0 120px;
+    height: 36px;
+    // font-weight: 700;
+    color: colors.$BG;
+    text-align: center;
+    cursor: pointer;
+    background: colors.$PRIMARY;
+    // border: 2px solid colors.$GRAYD;
+    border-radius: 10px;
+
+    &::before,
+    &::after {
+      position: absolute;
+      width: 60px;
+      line-height: 36px;
+    }
+
+    &::after {
+      color: colors.$GRAYF;
+    }
+
+    &::before {
+      background: colors.$WHITE;
+      border-radius: 10px;
+      transition: all ease 0.2s;
+    }
+  }
+}

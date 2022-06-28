@@ -1,43 +1,47 @@
+import dayjs from 'dayjs'
 import { lazy, Suspense } from 'react'
 
+import { Loading } from 'components'
 import { useRecoilState } from 'hooks/state'
-import { useSearchDailyQuery } from 'hooks/kobisQuery'
-import { todayDtState } from 'states/movie'
+import { useSearchWeeklyQuery } from 'hooks/query'
+import { latestSundayDtState } from 'states'
 
 import { ArrowleftIcon, ArrowrightIcon } from 'assets/svg'
-import LoadingPage from 'components/LoadingPage'
 import styles from './boxoffice.module.scss'
-import dayjs from 'dayjs'
 
 const BoxofficeList = lazy(() => import('./boxofficeList'))
 
-const Boxoffice = () => {
-  const [todayDt, settodayDt] = useRecoilState(todayDtState)
-  const data = useSearchDailyQuery(todayDt.format('YYYYMMDD')).data?.boxOfficeResult
+interface IProps {
+  inView: boolean
+}
+
+const WeeklyBoxoffice = ({ inView }: IProps) => {
+  const [lastSundayDt, setLastSundayDt] = useRecoilState(latestSundayDtState)
+  const data = useSearchWeeklyQuery(lastSundayDt.format('YYYYMMDD')).data?.boxOfficeResult
 
   const handlePrevWeek = () => {
-    settodayDt(todayDt.subtract(1, 'day'))
+    setLastSundayDt(lastSundayDt.subtract(7, 'day'))
   }
   const handleNextWeek = () => {
-    if (dayjs().diff(todayDt, 'day') > 1) settodayDt(todayDt.add(1, 'day'))
+    if (dayjs().diff(lastSundayDt, 'day') > 1) setLastSundayDt(lastSundayDt.add(7, 'day'))
   }
-
+  if (!inView) return null
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.outerWrapper}>
       <div className={styles.title}>
         <button type='button' className={styles.prevButton} onClick={handlePrevWeek} aria-label='이전 날짜'>
           <ArrowleftIcon />
         </button>
-        <h3>Daily BoxOffice{data?.showRange.substring(0, 8)}</h3>
+        <p>{data?.showRange}</p>
         <button type='button' className={styles.nextButton} onClick={handleNextWeek} aria-label='다음 날짜'>
           <ArrowrightIcon />
         </button>
       </div>
-      <Suspense fallback={<LoadingPage />}>
+      <Suspense fallback={<Loading />}>
         <BoxofficeList data={data} />
       </Suspense>
     </div>
   )
 }
 
-export default Boxoffice
+export default WeeklyBoxoffice

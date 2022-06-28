@@ -1,0 +1,142 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/flexbox';
+
+.outerWrapper {
+  // padding: 40px 30px 0;
+
+  .title {
+    @include flexbox.flexbox($jc: center, $ai: center, $fd: col, $gap: 8px);
+    margin: 10px 0 30px;
+
+    @include flexbox.flexbox($jc: center, $ai: center, $gap: 8px);
+    font-size: 18px;
+    line-height: 25px;
+    color: colors.$PRIMARY;
+    letter-spacing: 0.1em;
+
+    button {
+      position: relative;
+
+      svg {
+        position: relative;
+        top: 1px;
+        height: 17px;
+        padding: 0 5px;
+        fill: colors.$PRIMARY;
+      }
+    }
+
+    button:first-of-type:hover {
+      left: -2px;
+    }
+
+    button:last-of-type:hover {
+      right: -2px;
+    }
+  }
+
+  .overflowWrapper {
+    height: 627px;
+    overflow-y: scroll;
+
+    li {
+      position: relative;
+    }
+
+    li + li {
+      margin-top: 20px;
+    }
+
+    .bookmark {
+      position: absolute;
+      right: 12px;
+      width: 25px;
+      height: 25px;
+      fill: colors.$GRAY6;
+    }
+
+    .bookmarkChecked {
+      fill: colors.$PRIMARY;
+    }
+
+    .innerWrapper {
+      display: flex;
+      width: 100%;
+      padding: 20px 15px;
+      line-height: 30px;
+      background-color: colors.$PRIMARY_GRAY;
+      border-radius: 10px;
+
+      .rank,
+      .info {
+        @include flexbox.flexbox($jc: between, $ai: stretch, $fd: col);
+      }
+
+      .rank {
+        width: 50px;
+        min-width: 50px;
+        margin-right: 20px;
+        font-size: 16px;
+        text-align: center;
+        border: 1px solid colors.$GRAY6;
+        border-radius: 10px;
+
+        dt {
+          font-size: 20px;
+          color: colors.$GRAYD;
+        }
+
+        dd {
+          font-size: 13px;
+          color: colors.$GRAYA;
+
+          svg {
+            width: 12px;
+          }
+        }
+
+        .rankIntenPlus::before {
+          content: '+';
+        }
+      }
+
+      .info {
+        text-align: left;
+
+        dt {
+          max-width: 215px;
+          overflow: hidden;
+          font-size: 18px;
+          color: colors.$GRAYE;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        dd {
+          font-size: 13px;
+          color: colors.$GRAYA;
+        }
+      }
+    }
+
+    .innerWrapper:hover {
+      background-color: rgba($color: colors.$GRAYA, $alpha: 40%);
+
+      .rank {
+        border-color: colors.$PRIMARY;
+
+        dt,
+        dd {
+          color: colors.$PRIMARY;
+        }
+      }
+
+      .info {
+        dt,
+        dd {
+          color: colors.$PRIMARY;
+        }
+      }
+    }
+  }
+}

@@ -1,43 +1,21 @@
 @use '/src/styles/constants/colors';
 @use '/src/styles/mixins/flexbox';
 
-.wrapper {
-  padding: 40px 30px 0;
+.outerWrapper {
+  // padding: 40px 30px 0;
 
   .title {
-    @include flexbox.flexbox($jc: center, $ai: center, $gap: 8px);
-    margin-bottom: 30px;
-
-    h3 {
-      font-size: 20px;
-      line-height: 20px;
-      color: colors.$PRIMARY;
-      letter-spacing: 0.1em;
-    }
-
-    button {
-      position: relative;
-
-      svg {
-        position: relative;
-        top: 1px;
-        height: 17px;
-        padding: 0 5px;
-        fill: colors.$PRIMARY;
-      }
-    }
-
-    button:first-of-type:hover {
-      left: -2px;
-    }
-
-    button:last-of-type:hover {
-      right: -2px;
+    h2 {
+      margin: 10px 0 30px;
+      font-size: 24px;
+      font-weight: 500;
+      color: colors.$GRAYE;
+      text-align: center;
     }
   }
 
   .overflowWrapper {
-    height: 627px;
+    height: 660px;
     overflow-y: scroll;
 
     li {

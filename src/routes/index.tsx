@@ -1,18 +1,19 @@
-import { Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { useMount } from 'react-use'
+import { Suspense } from 'react'
 
-import LoadingPage from 'components/LoadingPage'
+import { Loading } from 'components'
 import { useSetRecoilState } from 'hooks/state'
-import { bookMarkList } from 'states/bookmark'
-import { IBookmarkItem } from 'types/bookmark'
+import { bookMarkList } from 'states'
+import { IBookmarkItem } from 'types'
 import { getBookmark } from 'utils/localStorage'
 
 import Gnb from './Gnb'
 import Main from './Main'
-import Boxoffice from './Boxoffice'
+import Search from 'components/Search'
 import MovieDetail from './MovieDetail'
 import MyBookmark from './MyBookmark'
+
 import styles from './routes.module.scss'
 
 const App = () => {
@@ -26,10 +27,10 @@ const App = () => {
     <div className={styles.appWrapper}>
       <div className={styles.innerWrapper}>
         <Gnb />
-        <Suspense fallback={<LoadingPage />}>
+        <Suspense fallback={<Loading />}>
           <Routes>
             <Route path='/' element={<Main />} />
-            <Route path='boxoffice' element={<Boxoffice />} />
+            {/* <Route path='searchResult' element={<Search />} /> */}
             <Route path='movieinfo' element={<MovieDetail />} />
             <Route path='mybookmark' element={<MyBookmark />} />
           </Routes>
