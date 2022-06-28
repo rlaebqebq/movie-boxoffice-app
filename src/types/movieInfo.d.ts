@@ -22,7 +22,7 @@ interface IDirector {
   peopleNmEn: string
 }
 
-interface IGenre {
+export interface IGenre {
   genreNm: string
 }
 
@@ -30,7 +30,7 @@ interface INation {
   nationNm: string
 }
 
-interface IMovieInfo {
+export interface IMovieInfo {
   movieCd: string
   movieNm: string
   movieNmEn: string
