@@ -1,12 +1,10 @@
 import cx from 'classnames'
+import { NavLink } from 'react-router-dom'
 import { lazy, Suspense, useEffect, useState } from 'react'
 
-import LoadingPage from 'components/LoadingPage'
+import { Loading } from 'components'
 import { useRecoilState, useRecoilValue } from 'hooks/state'
-import { BackIcon, BookmarkIcon } from 'assets/svg'
-import emptyPoster from 'assets/emptyPoster.png'
-import { useSearchDetailQuery } from 'hooks/kobisQuery'
-import { useTmdbSearchQuery } from 'hooks/tmdbQuery'
+import { useSearchDetailQuery, useTmdbSearchQuery } from 'hooks/query'
 import {
   targetBackdropLinkState,
   targetMovieCdState,
@@ -14,17 +12,16 @@ import {
   targetMovieOpenDtState,
   targetPosterLinkState,
   todayDtState,
-} from 'states/movie'
-import { bookMarkList } from 'states/bookmark'
+  bookMarkList,
+} from 'states'
 import { delBookmark, addBookmark, isBookmarked } from 'utils/localStorage'
+import CalcWeek from 'utils/calcWeek'
 
-import CalcWeek from './Movieinfo/calcWeek'
-import InfoCompany from './Movieinfo/infoCompany'
-import InfoTitle from './Movieinfo/infoTitle'
-import InfoGenre from './Movieinfo/infoGenre'
-import InfoPlot from './Movieinfo/infoPlot'
+import { InfoCompany, InfoTitle, InfoGenre, InfoPlot } from './Movieinfo'
+
+import emptyPoster from 'assets/emptyPoster.png'
+import { BackIcon, BookmarkIcon } from 'assets/svg'
 import styles from './movieDetail.module.scss'
-import { NavLink } from 'react-router-dom'
 
 const InfoTags = lazy(() => import('./Movieinfo/infoTags'))
 const BoxofficeRecord = lazy(() => import('./BoxofficeRecord'))
@@ -59,14 +56,11 @@ const MovieDetail = () => {
   useEffect(() => {
     setPosterLink(hasData ? checkHasImage(String(tmdbData.data?.results[0].poster_path)) : emptyPoster)
     setBackdropLink(hasData ? checkHasImage(String(tmdbData.data?.results[0].backdrop_path)) : '')
-  }, [hasData, setBackdropLink, setPosterLink, tmdbData.data?.results])
-
-  useEffect(() => {
     setIsBookmark(isBookmarked(movieCd))
-  }, [bookmarkList, movieCd])
+  }, [hasData, movieCd, bookmarkList, setBackdropLink, setPosterLink, tmdbData.data?.results])
 
   return (
-    <Suspense fallback={<LoadingPage />}>
+    <Suspense fallback={<Loading />}>
       <div className={styles.wrapper}>
         <NavLink to='/' className={styles.backIcon}>
           <BackIcon />

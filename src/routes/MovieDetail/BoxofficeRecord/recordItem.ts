@@ -1,7 +1,7 @@
-import { useSearchDailyQuery } from 'hooks/kobisQuery'
 import { useRecoilValue } from 'hooks/state'
-import { targetMovieCdState } from 'states/movie'
-import { IDailyBoxOfficeList } from 'types/dailyBoxoffice'
+import { useSearchDailyQuery } from 'hooks/query'
+import { targetMovieCdState } from 'states'
+import { IDailyBoxOfficeList } from 'types'
 
 const RecordItem = (date: string) => {
   const movieCd = useRecoilValue(targetMovieCdState)

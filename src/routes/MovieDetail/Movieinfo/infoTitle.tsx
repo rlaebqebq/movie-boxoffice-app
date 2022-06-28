@@ -1,4 +1,4 @@
-import { IMovieInfo } from 'types/movieInfo'
+import { IMovieInfo } from 'types'
 
 interface Props {
   data?: IMovieInfo

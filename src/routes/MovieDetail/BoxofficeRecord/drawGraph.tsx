@@ -1,7 +1,7 @@
 import { VictoryAxis, VictoryChart, VictoryTheme, VictoryBar, VictoryScatter, VictoryLabel, VictoryLine } from 'victory'
 
 import { useRecoilState } from 'hooks/state'
-import { dailyBoxofficeStatus, statusKrToEn } from 'states/dropdown'
+import { dailyBoxofficeStatus, statusKrToEn } from 'states'
 
 import RecordGraphStyle from './recordGraphStyle'
 

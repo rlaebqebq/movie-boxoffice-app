@@ -1,7 +1,9 @@
 import cx from 'classnames'
-import { IGenre } from 'types/movieInfo'
-import styles from '../movieDetail.module.scss'
+import { IGenre } from 'types'
+
 import { genreDict, IGenreDict } from './genreDict'
+
+import styles from '../movieDetail.module.scss'
 
 interface Props {
   dataKR?: IGenre[]
