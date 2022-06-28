@@ -1,4 +1,4 @@
-import { IBookmarkItem } from 'types/bookmark'
+import { IBookmarkItem } from 'types'
 
 export const getBookmark = (): IBookmarkItem[] => {
   const bookmark = localStorage.getItem('bookmark')
