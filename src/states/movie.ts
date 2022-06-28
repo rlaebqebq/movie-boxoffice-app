@@ -1,11 +1,6 @@
 import dayjs, { Dayjs } from 'dayjs'
 import { atom } from 'hooks/state'
 
-export const todayDtState = atom<Dayjs>({
-  key: '#todayDtState',
-  default: dayjs().subtract(1, 'day'),
-})
-
 export const targetMovieCdState = atom<string>({
   key: '#targetMovieCdState',
   default: '',
