@@ -1,13 +1,13 @@
 import { useQuery } from 'react-query'
 
 import { isAxiosError } from 'hooks/worker/axios'
-import { getMoviePosterApi } from 'utils/koreafilm'
-import { IMoviePosterAPIRes } from 'types/moviePoster'
+import { getTmdbImageApi } from 'utils/tmdb'
+import { ITmdbImageAPIRes } from 'types'
 
-export const useSearchPosterQuery = (title: string, releaseDts: string) => {
-  return useQuery<IMoviePosterAPIRes, Error>(
-    ['getMoviePosterApi', title, releaseDts],
-    () => getMoviePosterApi({ title, releaseDts }).then((res) => res.data),
+export const useTmdbSearchQuery = (query: string, primaryReleaseYear: number) => {
+  return useQuery<ITmdbImageAPIRes, Error>(
+    ['getTmdbImageApi', query, primaryReleaseYear],
+    () => getTmdbImageApi({ query, primaryReleaseYear }).then((res) => res.data),
     {
       refetchOnWindowFocus: false,
       suspense: true,
