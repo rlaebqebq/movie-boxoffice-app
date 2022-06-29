@@ -11,15 +11,13 @@ interface IProps {
 const Toggle = ({ dataLeft, dataRight }: IProps) => {
   const [mediaType, setMediaType] = useRecoilState(showTypeState)
 
-  // const handleClickMovie = () => setMediaType('today')
-  // const handleClickTVShows = () => setMediaType('week')
-  const handleToggle2 = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleToggle = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.currentTarget.checked === false) setMediaType('daily')
-    else setMediaType('week')
+    else setMediaType('weekly')
   }
   return (
-    <>
-      <input type='checkbox' id='toggleTitle' onChange={handleToggle2} value='dsfs' />
+    <div className={styles.toggleWrapper}>
+      <input type='checkbox' id='toggleTitle' onChange={handleToggle} />
       <label className={styles.toggleLabel} htmlFor='toggleTitle'>
         <div
           role='button'
@@ -30,7 +28,7 @@ const Toggle = ({ dataLeft, dataRight }: IProps) => {
           data-checked={dataRight}
         />
       </label>
-    </>
+    </div>
   )
 }
 
