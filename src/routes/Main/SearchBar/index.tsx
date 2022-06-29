@@ -1,13 +1,13 @@
 import { ChangeEvent, FormEvent, useState } from 'react'
-
+import cx from 'classnames'
 import { SearchIcon } from 'assets/svg'
 // import { AnimationControls, motion, useAnimation } from 'framer-motion'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { useClickAway } from 'react-use'
 
-import styles from './searchBar.module.scss'
+import styles from '../main.module.scss'
 import { useRecoil } from 'hooks/state'
-import { showResultState } from 'states/toggle'
+import { openSearchBarState, showResultState } from 'states/toggle'
 
 // interface IProps {
 //   homeLogoAnimation: AnimationControls
@@ -22,12 +22,15 @@ interface ISearchForm {
 const SearchBar = () => {
   const navigate = useNavigate()
   const [movieNm, setmovieNm] = useState('')
+  const [searchOpen, setSearchOpen] = useState<boolean>(false)
+  const [openSearchBar, setopenSearchBar] = useRecoil(openSearchBarState)
+
   // const { register, handleSubmit, setValue } = useForm<ISearchForm>()
   const [, setSearchParams] = useSearchParams()
   const [showResult, setShowResult] = useRecoil(showResultState)
+
   const submitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-
     if (!movieNm.trim()) {
       return
     }
@@ -35,16 +38,17 @@ const SearchBar = () => {
 
     // navigate('searchResult')
     setmovieNm('')
+    setShowResult(true)
   }
   // const handleBlockSpace = (e: React.ChangeEvent<HTMLInputElement>) => {
   //   setValue('movieNm', e.target.value.trim())
   // }
 
-  const [searchOpen, setSearchOpen] = useState<boolean>(false)
   // const inputAnimation = useAnimation()
   // const handleToggleSeachOpen = () => {
   //   setSearchOpen((prev) => !prev)
   // }
+
   // useClickAway(headerRef, () => {
   //   if (!searchOpen) return
   //   handleToggleSeachOpen()
@@ -54,7 +58,7 @@ const SearchBar = () => {
   }
   // if (!inView) return null
   return (
-    <form className={styles.search} onSubmit={submitHandler}>
+    <form onSubmit={submitHandler}>
       <input
         type='text'
         value={movieNm}
@@ -62,9 +66,7 @@ const SearchBar = () => {
         autoComplete='off'
         autoCapitalize='off'
         placeholder='검색어를 입력해 주세요.'
-        // style={{
-        //   display: showResult ? `block` : `none`,
-        // }}
+        className={cx({ [styles.open]: openSearchBar })}
       />
       <button type='submit'>
         <SearchIcon type='button' />

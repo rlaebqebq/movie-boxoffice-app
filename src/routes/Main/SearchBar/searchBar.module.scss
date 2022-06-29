@@ -1,18 +1,40 @@
 @use '/src/styles/constants/colors';
 @use '/src/styles/mixins/flexbox';
 
-// form {
-//   input {
-//     display: none;
-//   }
+.search {
 
-//   button {
-//     width: 20px;
-//     height: 20px;
+  input {
+    display: none;
+    margin-left: 25px;
+    color: colors.$GRAYE;
+    // width: 0;
+    line-height: 23px;
+    // width: 300px;
+  }
 
-//     svg {
-//       width: 16px;
-//       fill: colors.$GRAYE;
-//     }
-//   }
-// }
+  input.open {
+    display: block;
+  }
+
+  button {
+    position: absolute;
+    right: 30px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    line-height: 23px;
+
+    svg {
+      width: 20px;
+      fill: colors.$GRAYE;
+    }
+  }
+}
+
+.search.open {
+  width: 300px;
+}
+
+.open {
+  display: block;
+}
