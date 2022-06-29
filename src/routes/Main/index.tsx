@@ -1,44 +1,64 @@
+import cx from 'classnames'
+import useClickAway from 'react-use/lib/useClickAway'
+import { useRef } from 'react'
+
 import { Toggle } from 'components'
-import Search from 'components/Search'
 import { useRecoil, useRecoilValue } from 'hooks/state'
-import { ChangeEvent, useState } from 'react'
 import { showTypeState } from 'states'
-import { showResultState } from 'states/toggle'
+import { openSearchBarState, showResultState } from 'states/toggle'
 
-import DailyBoxoffice from './DailyBoxoffice'
+import Search from './SearchResult'
 import SearchBar from './SearchBar'
-import WeeklyBoxoffice from './WeeklyBoxoffice'
+import DailyBoxoffice from './Boxoffice/DailyBoxoffice'
+import WeeklyBoxoffice from './Boxoffice/WeeklyBoxoffice'
 
+import userImage from 'assets/userImage.png'
 import styles from './main.module.scss'
 
 const Main = () => {
   const showTypeValue = useRecoilValue(showTypeState)
+  const showResult = useRecoilValue(showResultState)
+  const [openSearchBar, setopenSearchBar] = useRecoil(openSearchBarState)
 
-  const [showResult, setShowResult] = useRecoil(showResultState)
+  const useclickAwayRef = useRef<HTMLDivElement>(null)
 
   const handleChange = () => {
-    setShowResult(true)
+    setopenSearchBar(true)
   }
+
+  useClickAway(useclickAwayRef, () => {
+    if (!openSearchBar) return
+    setopenSearchBar(false)
+  })
+
   return (
     <div className={styles.wrapper}>
-      <p>Welcome stranger!</p>
-      <p>Let&apos;s relax and watch a movie!</p>
-      <button className={styles.searchBar} type='button' onClick={handleChange}>
-        <SearchBar />
-      </button>
       {showResult ? (
         <Search />
       ) : (
-        <div className={styles.pageWrapper}>
-          <div className={styles.titleWrapper}>
-            <h1>boxoffice</h1>
-            <div className={styles.toggleWrapper}>
-              <Toggle dataLeft='today' dataRight='week' />
+        <>
+          <div className={styles.searchBarWrapper} ref={useclickAwayRef}>
+            <div className={cx({ [styles.open]: openSearchBar })}>
+              <img src={userImage} alt={userImage} />
+              <span>Welcome stranger! 👋</span>
+              <br />
+              <span>Let&apos;s relax and watch a movie</span>
+            </div>
+            <div
+              className={cx(styles.searchBar, { [styles.open]: openSearchBar })}
+              onClick={handleChange}
+              role='button'
+              tabIndex={0}
+              aria-label='background'
+            >
+              <SearchBar />
             </div>
           </div>
+          <h1>Boxoffice Ranking 🏆</h1>
+          <Toggle dataLeft='today' dataRight='week' />
           <DailyBoxoffice inView={showTypeValue === 'daily'} />
-          <WeeklyBoxoffice inView={showTypeValue === 'week'} />
-        </div>
+          <WeeklyBoxoffice inView={showTypeValue === 'weekly'} />
+        </>
       )}
     </div>
   )

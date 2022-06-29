@@ -1,0 +1,107 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/flexbox';
+
+.movieCard {
+  position: relative;
+  overflow: hidden;
+  background: no-repeat left center;
+  background-size: cover;
+  border-radius: 10px;
+
+  .bookmark {
+    position: absolute;
+    right: 12px;
+    width: 25px;
+    height: 25px;
+    fill: colors.$GRAY6;
+  }
+
+  .bookmarkChecked {
+    fill: colors.$PRIMARY;
+  }
+
+  .innerWrapper {
+    display: flex;
+    width: 100%;
+    padding: 20px 15px;
+    line-height: 30px;
+    // background-color: colors.$PRIMARY_GRAY;
+    background-color: rgba($color: colors.$PRIMARY_GRAY, $alpha: 40%);
+    border-radius: 10px;
+
+    .rank,
+    .info {
+      @include flexbox.flexbox($jc: between, $ai: stretch, $fd: col);
+    }
+
+    .rank {
+      width: 50px;
+      min-width: 50px;
+      margin-right: 20px;
+      font-size: 16px;
+      text-align: center;
+      border: 1px solid colors.$GRAY6;
+      border-radius: 10px;
+
+      dt {
+        font-size: 20px;
+        color: colors.$GRAYD;
+      }
+
+      dd {
+        font-size: 13px;
+        color: colors.$GRAYA;
+
+        svg {
+          width: 12px;
+        }
+      }
+
+      .rankIntenPlus::before {
+        content: '+';
+      }
+    }
+
+    .info {
+      text-align: left;
+
+      dt {
+        max-width: 215px;
+        overflow: hidden;
+        font-size: 18px;
+        color: colors.$GRAYE;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      dd {
+        font-size: 13px;
+        color: colors.$GRAYA;
+      }
+    }
+  }
+
+  .innerWrapper:hover {
+    background-color: rgba($color: colors.$PRIMARY_GRAY, $alpha: 90%);
+
+    .rank {
+      border-color: colors.$PRIMARY;
+
+      dt,
+      dd {
+        color: colors.$PRIMARY;
+      }
+    }
+
+    .info {
+      dt,
+      dd {
+        color: colors.$PRIMARY;
+      }
+    }
+  }
+}
+
+.movieCard + .movieCard {
+  margin-top: 20px;
+}
