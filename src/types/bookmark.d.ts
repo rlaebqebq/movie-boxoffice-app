@@ -1,5 +1,5 @@
 export interface IBookmarkItem {
-  title: string
+  movieNm: string
   openDt: string
   movieCd: string
   backdropLink: string

@@ -20,7 +20,7 @@ import CalcWeek from 'utils/calcWeek'
 import { InfoCompany, InfoTitle, InfoGenre, InfoPlot } from './Movieinfo'
 
 import emptyPoster from 'assets/emptyPoster.png'
-import { BackIcon, BookmarkIcon } from 'assets/svg'
+import { CloseIcon, BookmarkIcon } from 'assets/svg'
 import styles from './movieDetail.module.scss'
 
 const InfoTags = lazy(() => import('./Movieinfo/infoTags'))
@@ -33,7 +33,7 @@ const MovieDetail = () => {
   const [posterLink, setPosterLink] = useRecoilState(targetPosterLinkState)
 
   const movieCd = useRecoilValue(targetMovieCdState)
-  const title = useRecoilValue(targetMovieNmState)
+  const movieNm = useRecoilValue(targetMovieNmState)
   const movieOpenDt = useRecoilValue(targetMovieOpenDtState)
   const todayDt = useRecoilValue(todayDtState)
 
@@ -47,7 +47,7 @@ const MovieDetail = () => {
   const weekRecord = CalcWeek({ todayDt, movieOpenDt, dateGap })
 
   const onClickHandler = () => {
-    setBookmarkList(isBookmark ? delBookmark(movieCd) : addBookmark({ title, openDt, movieCd, backdropLink }))
+    setBookmarkList(isBookmark ? delBookmark(movieCd) : addBookmark({ movieNm, openDt, movieCd, backdropLink }))
   }
 
   const checkHasImage = (sourceLink: string) => {
@@ -62,8 +62,8 @@ const MovieDetail = () => {
   return (
     <Suspense fallback={<Loading />}>
       <div className={styles.wrapper}>
-        <NavLink to='/' className={styles.backIcon}>
-          <BackIcon />
+        <NavLink to='/' className={styles.closeIcon}>
+          <CloseIcon />
         </NavLink>
         <div className={cx(styles.infoWrapper)} style={{ backgroundImage: `url(${posterLink})` }}>
           <div className={styles.title}>

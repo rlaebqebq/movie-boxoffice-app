@@ -1,6 +1,6 @@
 export interface IDailyBoxOfficeList {
   rnum: string
-  rank: number
+  rank: string
   rankInten: string
   rankOldAndNew: string
   movieCd: string

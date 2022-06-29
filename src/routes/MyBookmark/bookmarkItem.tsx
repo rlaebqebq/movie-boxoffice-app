@@ -11,7 +11,7 @@ import { isBookmarked } from 'utils/localStorage'
 import { BookmarkIcon } from 'assets/svg'
 import styles from './myBookmark.module.scss'
 
-const BookmarkItem = ({ title, openDt, movieCd, backdropLink }: IBookmarkItem) => {
+const BookmarkItem = ({ movieNm, openDt, movieCd, backdropLink }: IBookmarkItem) => {
   const [, setTargetMovieCd] = useRecoilState(targetMovieCdState)
   const [, setTargetMovieOpenDt] = useRecoilState(targetMovieOpenDtState)
   const [, setTargetMovieNmState] = useRecoilState(targetMovieNmState)
@@ -29,12 +29,12 @@ const BookmarkItem = ({ title, openDt, movieCd, backdropLink }: IBookmarkItem) =
       <NavLink to='/movieinfo'>
         <button
           className={styles.innerWrapper}
-          value={`${openDt}/${movieCd}/${title}`}
+          value={`${openDt}/${movieCd}/${movieNm}`}
           type='button'
           onClick={handleMovieTarget}
         >
           <dl className={styles.info}>
-            <dt>{title}</dt>
+            <dt>{movieNm}</dt>
             <dd>개봉일&nbsp;:&nbsp;{openDt}</dd>
           </dl>
         </button>

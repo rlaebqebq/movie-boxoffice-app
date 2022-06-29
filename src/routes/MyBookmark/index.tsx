@@ -1,3 +1,4 @@
+import MovieCard from 'components/MovieCard'
 import { useRecoilValue } from 'hooks/state'
 import { bookMarkList } from 'states'
 import { IBookmarkItem } from 'types'
@@ -15,17 +16,9 @@ const MyBookmark = () => {
       <div className={styles.overflowWrapper}>
         {list.length > 0 ? (
           <ul className={styles.movieWrapper}>
-            {list.map((item) => {
-              return (
-                <BookmarkItem
-                  key={item.movieCd}
-                  title={item.title}
-                  openDt={item.openDt}
-                  movieCd={item.movieCd}
-                  backdropLink={item.backdropLink}
-                />
-              )
-            })}
+            {list.map((item) => (
+              <MovieCard key={item.movieCd} item={item} hasRank={false} backdropLink={item.backdropLink} />
+            ))}
           </ul>
         ) : (
           <p className={styles.defaultMSG}>북마크가 비었습니다.</p>
