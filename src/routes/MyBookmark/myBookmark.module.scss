@@ -7,7 +7,6 @@
   h2 {
     margin: 10px 0 30px;
     font-size: 24px;
-    font-weight: 500;
     color: colors.$GRAYE;
     text-align: center;
   }
@@ -16,74 +15,15 @@
     height: 660px;
     overflow-y: scroll;
 
-    .movieWrapper {
-      li {
-        position: relative;
-        overflow: hidden;
-        background: no-repeat left center;
-        background-size: cover;
-        border-radius: 10px;
-
-        .bookmark {
-          position: absolute;
-          right: 12px;
-          width: 25px;
-          height: 25px;
-          fill: colors.$GRAY6;
-        }
-
-        .bookmarkChecked {
-          fill: colors.$PRIMARY;
-        }
-
-        .innerWrapper {
-          display: flex;
-          width: 100%;
-          padding: 20px 15px;
-          line-height: 30px;
-          background-color: rgba(#35353d, $alpha: 50%);
-
-          .info {
-            @include flexbox.flexbox($jc: between, $ai: stretch, $fd: col);
-            margin-left: 10px;
-            text-align: left;
-
-            dt {
-              max-width: 290px;
-              overflow: hidden;
-              font-size: 18px;
-              color: colors.$WHITE;
-              text-overflow: ellipsis;
-              white-space: nowrap;
-            }
-
-            dd {
-              font-size: 13px;
-              color: colors.$GRAYD;
-            }
-          }
-        }
-
-        .innerWrapper:hover {
-          background-color: rgba($color: colors.$GRAYA, $alpha: 40%);
-
-          .info {
-            dt {
-              color: colors.$WHITE;
-            }
-          }
-        }
-      }
-
-      li + li {
-        margin-top: 20px;
-      }
-
-      .defaultMSG {
-        line-height: 600px;
-        color: colors.$GRAYA;
-        text-align: center;
-      }
+    li:first-of-type {
+      margin-top: 0;
     }
+  }
+
+  .defaultMSG {
+    font-size: 13px;
+    line-height: 600px;
+    color: colors.$GRAY6;
+    text-align: center;
   }
 }
