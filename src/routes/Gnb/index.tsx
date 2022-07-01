@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import cx from 'classnames'
-import { BookmarkIcon, BoxofficeIcon, HomeIcon } from 'assets/svg'
+import { BookmarkIcon, HomeIcon } from 'assets/svg'
 import styles from './gnb.module.scss'
 
 const Gnb = () => {
@@ -10,11 +10,6 @@ const Gnb = () => {
         <li>
           <NavLink to='/' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
             <HomeIcon />
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to='/boxoffice' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
-            <BoxofficeIcon />
           </NavLink>
         </li>
         <li>
