@@ -2,102 +2,36 @@
 @use '/src/styles/mixins/flexbox';
 
 .wrapper {
-  position: relative;
   padding: 40px 30px 0;
 
-  .searchBarWrapper {
-    position: relative;
-    // margin-bottom: 50px;
+  .headerWrapper {
+    @include flexbox.flexbox($jc: between, $ai: center);
+    margin-bottom: 20px;
 
-    .closeIcon {
-      position: absolute;
-      top: 0;
-      right: 30px;
-      width: 16px;
-      z-index: 100;
-      width: 20px;
-      fill: colors.$GRAYE;
-      transition: fill ease 0.2s;
-  
-      &:hover {
-        fill: colors.$PRIMARY;
-      }
-  
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
     }
 
-    .searchBar {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 0;
-      height: 56px;
-      background-color: colors.$PRIMARY_GRAY;
-      border-radius: 10px;
-      transition: width ease 0.2s;
-
-      input {
-        display: none;
-        margin-left: 25px;
-        line-height: 56px;
-      }
-
-      input.open {
-        display: block;
-      }
-
-      button {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 20px;
-        height: 20px;
-        line-height: 56px;
-        transition: right ease 0.2s;
-
-        svg {
-          width: 20px;
-          height: 56px;
-          fill: colors.$GRAYE;
-        }
-      }
-    }
-
-    .searchBar.open {
-      width: 100%;
-
-      button {
-        right: 20px;
-      }
-    }
-
-    div {
-      img {
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-      }
-
-      span:first-of-type {
+    p {
+      &:first-of-type {
         color: colors.$GRAY6;
       }
 
-      span:last-of-type {
+      &:last-of-type {
+        margin-top: 5px;
         font-size: 20px;
-        line-height: 2;
         color: colors.$GRAYE;
-      }
-
-      &.open {
-        opacity: 0;
+        letter-spacing: 0.3px;
       }
     }
   }
 
   h1 {
-    margin: 50px 0 10px;
+    margin: 50px 0 20px;
     font-size: 20px;
-    font-weight: 500;
     color: colors.$GRAYE;
-    letter-spacing: 1px;
+    letter-spacing: 0.3px;
   }
 }
