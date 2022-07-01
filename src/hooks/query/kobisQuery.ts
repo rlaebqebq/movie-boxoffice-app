@@ -68,6 +68,7 @@ export const useSearchMovieQuery = (movieNm: string) => {
   return useInfiniteQuery(['movies', movieNm], ({ pageParam = 1 }) => getSearchMovieApi({ movieNm, pageParam }), {
     enabled: !!movieNm,
     getNextPageParam: (lastPage) => {
+      if (lastPage.data.movieListResult.totCnt === 0) return undefined
       if (!lastPage.isLast) return lastPage.nextPage
       return undefined
     },
