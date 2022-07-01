@@ -10,6 +10,10 @@ export const targetMovieNmState = atom<string>({
   key: '#targetMovieNmState',
   default: '',
 })
+export const targetMovieNmEnState = atom<string>({
+  key: '#targetMovieNmEnState',
+  default: '',
+})
 
 export const targetMovieOpenDtState = atom<Dayjs>({
   key: '#targetMovieOpenDtState',

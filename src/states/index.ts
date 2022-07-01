@@ -4,6 +4,7 @@ import { statusKrToEn, dailyBoxofficeDropdown, dailyBoxofficeStatus } from './dr
 import {
   targetMovieCdState,
   targetMovieNmState,
+  targetMovieNmEnState,
   targetMovieOpenDtState,
   targetBackdropLinkState,
   targetPosterLinkState,
@@ -19,6 +20,7 @@ export {
   dailyBoxofficeStatus,
   targetMovieCdState,
   targetMovieNmState,
+  targetMovieNmEnState,
   targetMovieOpenDtState,
   targetBackdropLinkState,
   targetPosterLinkState,
