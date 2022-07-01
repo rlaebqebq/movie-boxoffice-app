@@ -9,8 +9,8 @@ const InfoTitle = ({ data }: Props) => {
 
   const dataActor = () => {
     const result = []
-    const datalength = data.actors.length > 5 ? 5 : data.actors.length
-    for (let i = 0; i < datalength; i += 1) {
+    const actorLength = data.actors.length > 5 ? 5 : data.actors.length
+    for (let i = 0; i < actorLength; i += 1) {
       result.push(<span key={`actorsNm-${i}`}>&nbsp;{data.actors[i].peopleNm}</span>)
     }
     return <p>출현&nbsp;:{result}</p>
@@ -24,8 +24,14 @@ const InfoTitle = ({ data }: Props) => {
         const key = `directors-${item}-${index}`
         return <p key={key}>감독&nbsp;:&nbsp;{item.peopleNm !== (undefined || null) && item.peopleNm}</p>
       })}
-      {dataActor()}
-      <p>{data.openDt !== (undefined || null) && `${data.prdtStatNm} : ${data.openDt}`}</p>
+      {data.actors.length > 0 && dataActor()}
+      <p>
+        {data.openDt !== (undefined || null) &&
+          `${data.prdtStatNm} : ${data.openDt.substring(0, 4)}-${data.openDt.substring(4, 6)}-${data.openDt.substring(
+            6,
+            8
+          )}`}
+      </p>
     </>
   )
 }
