@@ -1,7 +1,5 @@
-import loadable from '@loadable/component'
 import MovieCard from 'components/MovieCard'
 import { IMovieList } from 'types'
-import styles from './movieList.module.scss'
 
 interface IProps {
   data: IMovieList[]
@@ -10,8 +8,8 @@ interface IProps {
 const MovieList = ({ data }: IProps) => {
   return (
     <ul>
-      {data.map((item, movieIndex) => (
-        <MovieCard key={item.movieCd} item={item} hasRank={false} />
+      {data.map((item) => (
+        <MovieCard key={item.movieCd} item={item} hasRank={false} movieDetail={item.openDt.length > 0} />
       ))}
     </ul>
   )
