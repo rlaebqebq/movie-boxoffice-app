@@ -3,6 +3,7 @@
 
 .movieCard {
   position: relative;
+  margin-top: 20px;
   overflow: hidden;
   background: no-repeat left center;
   background-size: cover;
@@ -25,7 +26,6 @@
     width: 100%;
     padding: 20px 15px;
     line-height: 30px;
-    // background-color: colors.$PRIMARY_GRAY;
     background-color: rgba($color: colors.$PRIMARY_GRAY, $alpha: 40%);
     border-radius: 10px;
 
@@ -66,7 +66,7 @@
       text-align: left;
 
       dt {
-        max-width: 215px;
+        max-width: 293px;
         overflow: hidden;
         font-size: 18px;
         color: colors.$GRAYE;
@@ -75,13 +75,14 @@
       }
 
       dd {
+        display: inline-block;
         font-size: 13px;
         color: colors.$GRAYA;
       }
     }
   }
 
-  .innerWrapper:hover {
+  .movieDetail:hover {
     background-color: rgba($color: colors.$PRIMARY_GRAY, $alpha: 90%);
 
     .rank {
@@ -100,8 +101,4 @@
       }
     }
   }
-}
-
-.movieCard + .movieCard {
-  margin-top: 20px;
 }
