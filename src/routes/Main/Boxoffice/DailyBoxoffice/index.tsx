@@ -1,7 +1,6 @@
 import dayjs from 'dayjs'
-import { lazy, Suspense, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
-import { Loading } from 'components'
 import { useRecoilState } from 'hooks/state'
 import { useSearchDailyQuery } from 'hooks/query'
 import { todayDtState } from 'states'

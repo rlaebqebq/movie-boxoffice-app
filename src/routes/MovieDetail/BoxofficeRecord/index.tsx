@@ -1,11 +1,11 @@
 import { useMemo } from 'react'
 
-import { Dropdown } from 'components'
 import { useRecoilState, useRecoilValue } from 'hooks/state'
 import { dailyBoxofficeStatus, dailyBoxofficeDropdown, statusKrToEn } from 'states'
 import { IWeekRecordData } from 'types'
 
 import DrawGraph from './drawGraph'
+import Dropdown from 'components/Dropdown'
 
 interface Props {
   data: IWeekRecordData[]

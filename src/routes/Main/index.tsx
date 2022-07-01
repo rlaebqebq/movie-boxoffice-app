@@ -1,4 +1,3 @@
-import { Toggle } from 'components'
 import { useRecoilValue } from 'hooks/state'
 import { showTypeState } from 'states'
 
@@ -8,6 +7,7 @@ import WeeklyBoxoffice from './Boxoffice/WeeklyBoxoffice'
 
 import userImage from 'assets/userImage.png'
 import styles from './main.module.scss'
+import Toggle from 'components/Toggle'
 
 const Main = () => {
   const showTypeValue = useRecoilValue(showTypeState)

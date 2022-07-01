@@ -1,4 +1,4 @@
-import { Loading } from 'components'
+import Loading from 'components/Loading'
 import { lazy, Suspense } from 'react'
 import { InfiniteData } from 'react-query'
 import { IMoviesInfiniteResponse } from 'types/searchMovie'

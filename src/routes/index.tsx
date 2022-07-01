@@ -2,13 +2,13 @@ import { Routes, Route } from 'react-router-dom'
 import { useMount } from 'react-use'
 import { lazy, Suspense } from 'react'
 
-import { Loading } from 'components'
 import { useSetRecoilState } from 'hooks/state'
 import { bookMarkList } from 'states'
 import { IBookmarkItem } from 'types'
 import { getBookmark } from 'utils/localStorage'
 
 import styles from './routes.module.scss'
+import Loading from 'components/Loading'
 
 const Gnb = lazy(() => import('./Gnb'))
 const Main = lazy(() => import('./Main'))

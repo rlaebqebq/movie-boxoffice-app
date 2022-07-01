@@ -1,4 +1,4 @@
-import { MovieCard } from 'components'
+import MovieCard from 'components/MovieCard'
 import { ICommonBoxOfficeResult } from 'types'
 import styles from '../boxoffice.module.scss'
 
