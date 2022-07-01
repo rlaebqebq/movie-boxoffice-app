@@ -8,8 +8,7 @@ import { todayDtState } from 'states'
 
 import { ArrowleftIcon, ArrowrightIcon } from 'assets/svg'
 import styles from '../boxoffice.module.scss'
-
-const BoxofficeList = lazy(() => import('./boxofficeList'))
+import BoxofficeList from './boxofficeList'
 
 interface IProps {
   inView: boolean
@@ -47,9 +46,7 @@ const DailyBoxoffice = ({ inView }: IProps) => {
           <ArrowrightIcon />
         </button>
       </div>
-      <Suspense fallback={<Loading />}>
-        <BoxofficeList data={data} />
-      </Suspense>
+      <BoxofficeList data={data} />
     </>
   )
 }

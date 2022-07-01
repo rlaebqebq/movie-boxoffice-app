@@ -1,15 +1,13 @@
 import dayjs from 'dayjs'
-import { lazy, Suspense, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
-import { Loading } from 'components'
 import { useRecoilState } from 'hooks/state'
 import { useSearchWeeklyQuery } from 'hooks/query'
 import { latestSundayDtState } from 'states'
 
 import { ArrowleftIcon, ArrowrightIcon } from 'assets/svg'
 import styles from '../boxoffice.module.scss'
-
-const BoxofficeList = lazy(() => import('./boxofficeList'))
+import BoxofficeList from './boxofficeList'
 
 interface IProps {
   inView: boolean
@@ -47,11 +45,8 @@ const WeeklyBoxoffice = ({ inView }: IProps) => {
           <ArrowrightIcon />
         </button>
       </div>
-      <Suspense fallback={<Loading />}>
-        <BoxofficeList data={data} />
-      </Suspense>
+      <BoxofficeList data={data} />
     </>
-    // </div>
   )
 }
 

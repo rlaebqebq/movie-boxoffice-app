@@ -13,7 +13,7 @@ interface Props {
 
 const BoxofficeRecord = ({ data }: Props) => {
   const [dailyState, setDailyState] = useRecoilState(dailyBoxofficeStatus)
-  const adList = useRecoilValue(dailyBoxofficeDropdown)
+  const dropdownList = useRecoilValue(dailyBoxofficeDropdown)
 
   const xdata = Object.values(data).map((item) => item.date)
 
@@ -38,7 +38,7 @@ const BoxofficeRecord = ({ data }: Props) => {
 
   return (
     <>
-      <Dropdown list={adList} action={setDailyState} selected={dailyState} />
+      <Dropdown list={dropdownList} action={setDailyState} selected={dailyState} />
       <DrawGraph xdata={xdata} ydata={filterData} />
     </>
   )
