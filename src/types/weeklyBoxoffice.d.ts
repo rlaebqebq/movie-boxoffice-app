@@ -23,7 +23,6 @@ export interface IWeeklyBoxOfficeResult {
   boxofficeType: string
   showRange: string
   weeklyBoxOfficeList: IWeeklyBoxOfficeList[]
-  // yearWeekTime: string
 }
 
 export interface IWeeklyBoxofficeAPIRes {

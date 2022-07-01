@@ -34,9 +34,9 @@ export interface ISearchMovieAPIRes {
 }
 
 export interface IMoviesInfiniteResponse {
-  totCnt: number
-  movieList: IMovieList[]
+  // totCnt: number
+  data: ISearchMovieAPIRes
   nextPage: number
   isLast: boolean
-  movieListResult: {}
+  // movieListResult: {}
 }
