@@ -1,5 +1,5 @@
 import styles from './toggle.module.scss'
-import { ChangeEvent, MouseEvent } from 'react'
+import { ChangeEvent } from 'react'
 import { useRecoilState } from 'hooks/state'
 import { showTypeState } from 'states'
 
@@ -9,7 +9,7 @@ interface IProps {
 }
 
 const Toggle = ({ dataLeft, dataRight }: IProps) => {
-  const [mediaType, setMediaType] = useRecoilState(showTypeState)
+  const [, setMediaType] = useRecoilState(showTypeState)
 
   const handleToggle = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.currentTarget.checked === false) setMediaType('daily')

@@ -1,7 +1,7 @@
 import cx from 'classnames'
 import dayjs from 'dayjs'
 import { useNavigate } from 'react-router-dom'
-import { MouseEvent, useEffect, useState } from 'react'
+import { MouseEvent } from 'react'
 
 import { BookmarkIcon } from 'assets/svg'
 import { useRecoilState } from 'hooks/state'

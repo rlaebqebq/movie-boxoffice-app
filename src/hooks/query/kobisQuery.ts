@@ -2,7 +2,7 @@ import { useQuery, useInfiniteQuery } from 'react-query'
 
 import { isAxiosError } from 'hooks/worker/axios'
 import { getDailyBoxofficeApi, getMovieDetailApi, getWeeklyBoxofficeApi, getSearchMovieApi } from 'utils/kobis'
-import { IDailyBoxofficeAPIRes, IWeeklyBoxofficeAPIRes, IMovieDetailAPIRes, ISearchMovieAPIRes } from 'types'
+import { IDailyBoxofficeAPIRes, IWeeklyBoxofficeAPIRes, IMovieDetailAPIRes } from 'types'
 
 export const useSearchDailyQuery = (targetDt: string) => {
   return useQuery<IDailyBoxofficeAPIRes, Error>(
