@@ -1,4 +1,5 @@
 import { IBookmarkItem } from './bookmark.d'
+import { ICommonBoxOfficeResult } from './commonBoxoffice.d'
 import { IDailyBoxofficeAPIRes, IDailyBoxOfficeResult, IDailyBoxOfficeList } from './dailyBoxoffice.d'
 import { IMovieDetailAPIRes, IMovieInfo, IGenre } from './movieInfo.d'
 import { IMoviePosterAPIRes } from './moviePoster.d'
@@ -9,6 +10,7 @@ import { IWeekRecordData } from './weekRecord.d'
 
 export type {
   IBookmarkItem,
+  ICommonBoxOfficeResult,
   IDailyBoxofficeAPIRes,
   IDailyBoxOfficeResult,
   IDailyBoxOfficeList,

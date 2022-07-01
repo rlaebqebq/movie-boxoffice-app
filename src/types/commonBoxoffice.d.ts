@@ -24,5 +24,4 @@ export interface ICommonBoxOfficeResult {
   showRange: string
   weeklyBoxOfficeList?: IWeeklyBoxOfficeList[]
   dailyBoxOfficeList?: IDailyBoxOfficeList[]
-  // yearWeekTime: string
 }
