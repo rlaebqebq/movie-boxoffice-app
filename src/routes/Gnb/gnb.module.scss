@@ -6,7 +6,6 @@
     @include flexbox.flexbox($jc: between, $ai: center);
     position: absolute;
     bottom: 0;
-    // z-index: 10;
     width: 100%;
     padding: 0 70px;
     background-color: colors.$BG;
@@ -30,34 +29,5 @@
     .isActive {
       fill: colors.$GRAYF;
     }
-  }
-
-  .backIcon,
-  .menuIcon,
-  .closeIcon {
-    position: absolute;
-    top: 40px;
-    z-index: 100;
-    width: 20px;
-    fill: colors.$GRAYE;
-    transition: fill ease 0.2s;
-
-    &:hover {
-      fill: colors.$PRIMARY;
-    }
-  }
-
-  .closeIcon {
-    top: 36px;
-    width: 16px;
-  }
-
-  .backIcon {
-    left: 30px;
-  }
-
-  .menuIcon,
-  .closeIcon {
-    right: 30px;
   }
 }
