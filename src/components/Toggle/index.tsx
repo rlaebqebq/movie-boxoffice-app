@@ -1,7 +1,9 @@
-import styles from './toggle.module.scss'
 import { ChangeEvent } from 'react'
+
 import { useRecoilState } from 'hooks/state'
 import { showTypeState } from 'states'
+
+import styles from './toggle.module.scss'
 
 interface IProps {
   dataLeft: string
@@ -15,6 +17,7 @@ const Toggle = ({ dataLeft, dataRight }: IProps) => {
     if (e.currentTarget.checked === false) setMediaType('daily')
     else setMediaType('weekly')
   }
+
   return (
     <div className={styles.toggleWrapper}>
       <input type='checkbox' id='toggleTitle' onChange={handleToggle} />

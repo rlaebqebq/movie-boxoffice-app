@@ -3,12 +3,12 @@ import dayjs from 'dayjs'
 import { useNavigate } from 'react-router-dom'
 import { MouseEvent } from 'react'
 
-import { BookmarkIcon } from 'assets/svg'
 import { useRecoilState } from 'hooks/state'
-
 import { targetMovieCdState, targetMovieNmState, targetMovieOpenDtState } from 'states'
-import { IMovieCard } from 'types/movie.d'
+import { IMovieCard } from 'types'
 import { isBookmarked } from 'utils/localStorage'
+
+import { BookmarkIcon } from 'assets/svg'
 import styles from './movieCard.module.scss'
 
 interface IProps {
@@ -17,6 +17,7 @@ interface IProps {
   backdropLink?: string
   movieDetail: boolean
 }
+
 const MovieCard = ({ item, hasRank, backdropLink, movieDetail }: IProps) => {
   const [, setTargetMovieOpenDt] = useRecoilState(targetMovieOpenDtState)
   const [, setTargetMovieCd] = useRecoilState(targetMovieCdState)

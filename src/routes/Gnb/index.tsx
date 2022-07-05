@@ -1,5 +1,6 @@
-import { NavLink } from 'react-router-dom'
 import cx from 'classnames'
+import { NavLink } from 'react-router-dom'
+
 import { BookmarkIcon, HomeIcon } from 'assets/svg'
 import styles from './gnb.module.scss'
 

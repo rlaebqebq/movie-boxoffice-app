@@ -1,13 +1,14 @@
 import { useRecoilValue } from 'hooks/state'
 import { showTypeState } from 'states'
 
-import SearchBar from './SearchBar'
+import Toggle from 'components/Toggle'
 import DailyBoxoffice from './Boxoffice/DailyBoxoffice'
 import WeeklyBoxoffice from './Boxoffice/WeeklyBoxoffice'
 
 import userImage from 'assets/userImage.png'
 import styles from './main.module.scss'
-import Toggle from 'components/Toggle'
+
+import SearchBar from './SearchBar'
 
 const Main = () => {
   const showTypeValue = useRecoilValue(showTypeState)

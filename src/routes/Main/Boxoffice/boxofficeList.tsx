@@ -1,6 +1,7 @@
-import styles from './boxoffice.module.scss'
 import MovieCard from 'components/MovieCard'
-import { ICommonBoxOfficeResult } from 'types/commonBoxoffice'
+import { ICommonBoxOfficeResult } from 'types'
+
+import styles from './boxoffice.module.scss'
 
 interface IProps {
   data?: ICommonBoxOfficeResult
