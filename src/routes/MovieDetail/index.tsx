@@ -56,17 +56,26 @@ const MovieDetail = () => {
     )
   }
 
-  const checkHasImage = (sourceLink: string) => {
-    if (openDt.length > 0) return `https://image.tmdb.org/t/p/w500${sourceLink}`
-    return emptyPoster
-  }
   useEffect(() => {
+    const checkHasImage = (sourceLink: string) => {
+      if (openDt.length > 0) return `https://image.tmdb.org/t/p/w500${sourceLink}`
+      return emptyPoster
+    }
     setMovieNmEn(String(infoData?.movieNmEn))
     setPosterLink(hasData ? checkHasImage(String(tmdbData.data?.results[0].poster_path)) : emptyPoster)
     setBackdropLink(hasData ? checkHasImage(String(tmdbData.data?.results[0].backdrop_path)) : '')
     setIsBookmark(isBookmarked(movieCd))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [hasData, movieCd, bookmarkList, tmdbData.data?.results, setBackdropLink, setPosterLink, setMovieNmEn])
+  }, [
+    hasData,
+    movieCd,
+    bookmarkList,
+    tmdbData.data?.results,
+    infoData?.movieNmEn,
+    openDt.length,
+    setBackdropLink,
+    setPosterLink,
+    setMovieNmEn,
+  ])
 
   return (
     <div className={styles.wrapper}>
