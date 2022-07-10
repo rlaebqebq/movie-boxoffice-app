@@ -9,9 +9,11 @@ import { IBookmarkItem } from 'types'
 import { getBookmark } from 'utils/localStorage'
 
 import styles from './routes.module.scss'
+import { lazy, Suspense } from 'react'
+import Gnb from './Gnb'
 
-const Gnb = loadable(() => import('./Gnb'))
-const Main = loadable(() => import('./Main'), { fallback: <Loading /> })
+const Main = lazy(() => import('./Main'))
+// const Main = loadable(() => import('./Main'), { fallback: <Loading /> })
 const SearchResult = loadable(() => import('./SearchResult'))
 const MyBookmark = loadable(() => import('./MyBookmark'), { fallback: <Loading /> })
 const MovieDetail = loadable(() => import('./MovieDetail'), { fallback: <Loading /> })
@@ -24,17 +26,19 @@ const App = () => {
   })
 
   return (
-    <div className={styles.appWrapper}>
-      <div className={styles.innerWrapper}>
-        <Gnb />
-        <Routes>
-          <Route path='/' element={<Main />} />
-          <Route path='search' element={<SearchResult />} />
-          <Route path='mybookmark' element={<MyBookmark />} />
-          <Route path='movieinfo' element={<MovieDetail />} />
-        </Routes>
+    <Suspense>
+      <div className={styles.appWrapper}>
+        <div className={styles.innerWrapper}>
+          <Gnb />
+          <Routes>
+            <Route path='/' element={<Main />} />
+            <Route path='search' element={<SearchResult />} />
+            <Route path='mybookmark' element={<MyBookmark />} />
+            <Route path='movieinfo' element={<MovieDetail />} />
+          </Routes>
+        </div>
       </div>
-    </div>
+    </Suspense>
   )
 }
 
