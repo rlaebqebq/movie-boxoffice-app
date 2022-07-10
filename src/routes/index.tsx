@@ -1,8 +1,10 @@
 import { Routes, Route } from 'react-router-dom'
+import { ErrorBoundary } from 'react-error-boundary'
 import { useMount } from 'react-use'
 import { lazy, Suspense } from 'react'
 
 import Loading from 'components/LoadingPage'
+import ErrorPage from 'components/ErrorPage'
 import { useSetRecoilState } from 'hooks/state'
 import { bookMarkList } from 'states'
 import { IBookmarkItem } from 'types'
@@ -10,8 +12,6 @@ import { getBookmark } from 'utils/localStorage'
 
 import Gnb from './Gnb'
 import styles from './routes.module.scss'
-import { ErrorBoundary } from 'react-error-boundary'
-import ErrorPage from 'components/ErrorPage'
 
 const Main = lazy(() => import('./Main'))
 const SearchResult = lazy(() => import('./SearchResult'))
