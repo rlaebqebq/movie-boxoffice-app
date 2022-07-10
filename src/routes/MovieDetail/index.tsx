@@ -20,7 +20,7 @@ import CalcWeek from 'utils/calcWeek'
 import { InfoCompany, InfoTitle, InfoGenre, InfoPlot, InfoTags } from './Movieinfo'
 import BoxofficeRecord from './BoxofficeRecord'
 
-import emptyPoster from 'assets/emptyPoster.png'
+import emptyPoster from 'assets/emptyPoster.webp'
 import { CloseIcon, BookmarkIcon } from 'assets/svg'
 import styles from './movieDetail.module.scss'
 
