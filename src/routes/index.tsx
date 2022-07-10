@@ -29,16 +29,16 @@ const App = () => {
     <div className={styles.appWrapper}>
       <div className={styles.innerWrapper}>
         <Gnb />
-        <Suspense fallback={<Loading />}>
-          <ErrorBoundary fallback={<ErrorPage />}>
+        <ErrorBoundary fallback={<ErrorPage />}>
+          <Suspense fallback={<Loading />}>
             <Routes>
               <Route path='/' element={<Main />} />
               <Route path='search' element={<SearchResult />} />
               <Route path='mybookmark' element={<MyBookmark />} />
               <Route path='movieinfo' element={<MovieDetail />} />
             </Routes>
-          </ErrorBoundary>
-        </Suspense>
+          </Suspense>
+        </ErrorBoundary>
       </div>
     </div>
   )
