@@ -29,7 +29,7 @@ const WeeklyBoxoffice = ({ inView }: IProps) => {
     const newDateString = `${data?.showRange.substring(2, 4)}/${data?.showRange.substring(
       4,
       6
-    )}/${data?.showRange.substring(6, 9)}${data?.showRange.substring(15, 17)}`
+    )}/${data?.showRange.substring(6, 9)}${data?.showRange.substring(13, 17)}`
     return setDateRange(newDateString)
   }, [data, setDateRange])
 

@@ -8,5 +8,5 @@ export const todayDtState = atom<Dayjs>({
 
 export const latestSundayDtState = atom<Dayjs>({
   key: '#latestSundayState',
-  default: dayjs().day() !== 0 ? dayjs().subtract(dayjs().day(), 'day') : dayjs(),
+  default: dayjs().day() === 0 ? dayjs().subtract(7, 'day') : dayjs().subtract(dayjs().day(), 'day'),
 })
