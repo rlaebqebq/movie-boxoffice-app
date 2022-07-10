@@ -31,7 +31,7 @@ const SearchBar = () => {
         autoCapitalize='off'
         placeholder='Search'
       />
-      <button type='submit' name='submitButton'>
+      <button type='submit' aria-label='submitButton'>
         <SearchIcon type='button' />
       </button>
     </form>
