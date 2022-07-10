@@ -20,148 +20,136 @@
 # 📁 폴더 구조
 <details>
 <summary>펼치기</summary>
-
 📦src<br />
+ ┣ 📄index.tsx<br />
  ┣ 📂assets<br />
  ┃ ┣ 📂svg<br />
- ┃ ┃ ┣ 📜arrow-down.svg<br />
- ┃ ┃ ┣ 📜arrow-left-long.svg<br />
- ┃ ┃ ┣ 📜arrow-left.svg<br />
- ┃ ┃ ┣ 📜arrow-right.svg<br />
- ┃ ┃ ┣ 📜arrow-up.svg<br />
- ┃ ┃ ┣ 📜bars.svg<br />
- ┃ ┃ ┣ 📜bookmark.svg<br />
- ┃ ┃ ┣ 📜film.svg<br />
- ┃ ┃ ┣ 📜house.svg<br />
- ┃ ┃ ┣ 📜index.ts<br />
- ┃ ┃ ┣ 📜magnifying-glass.svg<br />
- ┃ ┃ ┣ 📜ranking-star.svg<br />
- ┃ ┃ ┣ 📜spinner.svg<br />
- ┃ ┃ ┣ 📜ticket.svg<br />
- ┃ ┃ ┣ 📜user.svg<br />
- ┃ ┃ ┗ 📜xmark.svg<br />
- ┃ ┣ 📜.DS_Store<br />
- ┃ ┣ 📜emptyPoster.png<br />
- ┃ ┗ 📜userImage.png<br />
+ ┃ ┃ ┣ 📄arrow-down.svg<br />
+ ┃ ┃ ┣ 📄arrow-left.svg<br />
+ ┃ ┃ ┣ 📄arrow-right.svg<br />
+ ┃ ┃ ┣ 📄bookmark.svg<br />
+ ┃ ┃ ┣ 📄house.svg<br />
+ ┃ ┃ ┣ 📄index.ts<br />
+ ┃ ┃ ┣ 📄magnifying-glass.svg<br />
+ ┃ ┃ ┣ 📄spinner.svg<br />
+ ┃ ┃ ┣ 📄user.svg<br />
+ ┃ ┃ ┗ 📄xmark.svg<br />
+ ┃ ┣ 📄emptyPoster.webp<br />
+ ┃ ┗ 📄userImage.webp<br />
  ┣ 📂components<br />
  ┃ ┣ 📂Dropdown<br />
- ┃ ┃ ┣ 📜dropdown.module.scss<br />
- ┃ ┃ ┗ 📜index.tsx<br />
+ ┃ ┃ ┣ 📄dropdown.module.scss<br />
+ ┃ ┃ ┗ 📄index.tsx<br />
  ┃ ┣ 📂Loading<br />
- ┃ ┃ ┣ 📜.DS_Store<br />
- ┃ ┃ ┣ 📜index.tsx<br />
- ┃ ┃ ┗ 📜loading.module.scss<br />
+ ┃ ┃ ┣ 📄.DS_Store<br />
+ ┃ ┃ ┣ 📄index.tsx<br />
+ ┃ ┃ ┗ 📄loading.module.scss<br />
  ┃ ┣ 📂MovieCard<br />
- ┃ ┃ ┣ 📜index.tsx<br />
- ┃ ┃ ┗ 📜movieCard.module.scss<br />
+ ┃ ┃ ┣ 📄index.tsx<br />
+ ┃ ┃ ┗ 📄movieCard.module.scss<br />
  ┃ ┣ 📂Toggle<br />
- ┃ ┃ ┣ 📜index.tsx<br />
- ┃ ┃ ┗ 📜toggle.module.scss<br />
- ┃ ┗ 📜.DS_Store<br />
+ ┃ ┃ ┣ 📄index.tsx<br />
+ ┃ ┃ ┗ 📄toggle.module.scss<br />
  ┣ 📂hooks<br />
  ┃ ┣ 📂query<br />
- ┃ ┃ ┣ 📜index.ts<br />
- ┃ ┃ ┣ 📜kobisQuery.ts<br />
- ┃ ┃ ┣ 📜koreafilmQuery.ts<br />
- ┃ ┃ ┗ 📜tmdbQuery.ts<br />
+ ┃ ┃ ┣ 📄index.ts<br />
+ ┃ ┃ ┣ 📄kobisQuery.ts<br />
+ ┃ ┃ ┣ 📄koreafilmQuery.ts<br />
+ ┃ ┃ ┗ 📄tmdbQuery.ts<br />
  ┃ ┣ 📂state<br />
- ┃ ┃ ┗ 📜index.ts<br />
+ ┃ ┃ ┗ 📄index.ts<br />
  ┃ ┗ 📂worker<br />
- ┃ ┃ ┣ 📜axios.ts<br />
- ┃ ┃ ┣ 📜index.tsx<br />
- ┃ ┃ ┣ 📜useAxios.tsx<br />
- ┃ ┃ ┗ 📜useAxiosCore.tsx<br />
+ ┃ ┃ ┣ 📄axios.ts<br />
+ ┃ ┃ ┣ 📄index.tsx<br />
+ ┃ ┃ ┣ 📄useAxios.tsx<br />
+ ┃ ┃ ┗ 📄useAxiosCore.tsx<br />
  ┣ 📂routes<br />
  ┃ ┣ 📂Gnb<br />
- ┃ ┃ ┣ 📜gnb.module.scss<br />
- ┃ ┃ ┗ 📜index.tsx<br />
+ ┃ ┃ ┣ 📄gnb.module.scss<br />
+ ┃ ┃ ┗ 📄index.tsx<br />
  ┃ ┣ 📂Main<br />
  ┃ ┃ ┣ 📂Boxoffice<br />
  ┃ ┃ ┃ ┣ 📂DailyBoxoffice<br />
- ┃ ┃ ┃ ┃ ┣ 📜boxofficeList.tsx<br />
- ┃ ┃ ┃ ┃ ┗ 📜index.tsx<br />
+ ┃ ┃ ┃ ┃ ┣ 📄boxofficeList.tsx<br />
+ ┃ ┃ ┃ ┃ ┗ 📄index.tsx<br />
  ┃ ┃ ┃ ┣ 📂WeeklyBoxoffice<br />
- ┃ ┃ ┃ ┃ ┣ 📜boxofficeList.tsx<br />
- ┃ ┃ ┃ ┃ ┗ 📜index.tsx<br />
- ┃ ┃ ┃ ┣ 📜boxoffice.module.sc<br />ss
- ┃ ┃ ┃ ┗ 📜boxofficeList.tsx<br />
+ ┃ ┃ ┃ ┃ ┣ 📄boxofficeList.tsx<br />
+ ┃ ┃ ┃ ┃ ┗ 📄index.tsx<br />
+ ┃ ┃ ┃ ┣ 📄boxoffice.module.scss<br />
+ ┃ ┃ ┃ ┗ 📄boxofficeList.tsx<br />
  ┃ ┃ ┣ 📂SearchBar<br />
- ┃ ┃ ┃ ┣ 📜index.tsx<br />
- ┃ ┃ ┃ ┗ 📜searchBar.module.sc<br />ss
- ┃ ┃ ┣ 📜index.tsx<br />
- ┃ ┃ ┗ 📜main.module.scss<br />
+ ┃ ┃ ┃ ┣ 📄index.tsx<br />
+ ┃ ┃ ┃ ┗ 📄searchBar.module.scss<br />
+ ┃ ┃ ┣ 📄index.tsx<br />
+ ┃ ┃ ┗ 📄main.module.scss<br />
  ┃ ┣ 📂MovieDetail<br />
  ┃ ┃ ┣ 📂BoxofficeRecord<br />
- ┃ ┃ ┃ ┣ 📜drawGraph.tsx<br />
- ┃ ┃ ┃ ┣ 📜index.tsx<br />
- ┃ ┃ ┃ ┣ 📜recordGraphStyle.ts<br />
- ┃ ┃ ┃ ┗ 📜recordItem.ts<br />
+ ┃ ┃ ┃ ┣ 📄drawGraph.tsx<br />
+ ┃ ┃ ┃ ┣ 📄index.tsx<br />
+ ┃ ┃ ┃ ┣ 📄recordGraphStyle.ts<br />
+ ┃ ┃ ┃ ┗ 📄recordItem.ts<br />
  ┃ ┃ ┣ 📂Movieinfo<br />
- ┃ ┃ ┃ ┣ 📜genreDict.ts<br />
- ┃ ┃ ┃ ┣ 📜index.ts<br />
- ┃ ┃ ┃ ┣ 📜infoCompany.tsx<br />
- ┃ ┃ ┃ ┣ 📜infoGenre.tsx<br />
- ┃ ┃ ┃ ┣ 📜infoPlot.tsx<br />
- ┃ ┃ ┃ ┣ 📜infoTags.tsx<br />
- ┃ ┃ ┃ ┗ 📜infoTitle.tsx<br />
- ┃ ┃ ┣ 📜index.tsx<br />
- ┃ ┃ ┗ 📜movieDetail.module.sc<br />ss
+ ┃ ┃ ┃ ┣ 📄genreDict.ts<br />
+ ┃ ┃ ┃ ┣ 📄index.ts<br />
+ ┃ ┃ ┃ ┣ 📄infoCompany.tsx<br />
+ ┃ ┃ ┃ ┣ 📄infoGenre.tsx<br />
+ ┃ ┃ ┃ ┣ 📄infoPlot.tsx<br />
+ ┃ ┃ ┃ ┣ 📄infoTags.tsx<br />
+ ┃ ┃ ┃ ┗ 📄infoTitle.tsx<br />
+ ┃ ┃ ┣ 📄index.tsx<br />
+ ┃ ┃ ┗ 📄movieDetail.module.scss<br />
  ┃ ┣ 📂MyBookmark<br />
- ┃ ┃ ┣ 📜bookmarkItem.tsx<br />
- ┃ ┃ ┣ 📜index.tsx<br />
- ┃ ┃ ┗ 📜myBookmark.module.scs<br />s
+ ┃ ┃ ┣ 📄bookmarkItem.tsx<br />
+ ┃ ┃ ┣ 📄index.tsx<br />
+ ┃ ┃ ┗ 📄myBookmark.module.scss<br />
  ┃ ┣ 📂SearchResult<br />
  ┃ ┃ ┣ 📂MovieList<br />
- ┃ ┃ ┃ ┗ 📜index.tsx<br />
+ ┃ ┃ ┃ ┗ 📄index.tsx<br />
  ┃ ┃ ┣ 📂MoviePages<br />
- ┃ ┃ ┃ ┗ 📜index.tsx<br />
- ┃ ┃ ┣ 📜index.tsx<br />
- ┃ ┃ ┗ 📜searchResult.module.s<br />css
- ┃ ┣ 📜index.tsx<br />
- ┃ ┗ 📜routes.module.scss<br />
+ ┃ ┃ ┃ ┗ 📄index.tsx<br />
+ ┃ ┃ ┣ 📄index.tsx<br />
+ ┃ ┃ ┗ 📄searchResult.module.scss<br />
+ ┃ ┣ 📄index.tsx<br />
+ ┃ ┗ 📄routes.module.scss<br />
  ┣ 📂states<br />
- ┃ ┣ 📜bookmark.ts<br />
- ┃ ┣ 📜date.ts<br />
- ┃ ┣ 📜dropdown.ts<br />
- ┃ ┣ 📜index.ts<br />
- ┃ ┣ 📜movie.ts<br />
- ┃ ┗ 📜toggle.ts<br />
+ ┃ ┣ 📄bookmark.ts<br />
+ ┃ ┣ 📄date.ts<br />
+ ┃ ┣ 📄dropdown.ts<br />
+ ┃ ┣ 📄index.ts<br />
+ ┃ ┣ 📄movie.ts<br />
+ ┃ ┗ 📄toggle.ts<br />
+ ┣ 📂types<br />
+ ┃ ┣ 📄bookmark.d.ts<br />
+ ┃ ┣ 📄commonBoxoffice.d.ts<br />
+ ┃ ┣ 📄dailyBoxoffice.d.ts<br />
+ ┃ ┣ 📄index.ts<br />
+ ┃ ┣ 📄movie.d.ts<br />
+ ┃ ┣ 📄movieInfo.d.ts<br />
+ ┃ ┣ 📄moviePoster.d.ts<br />
+ ┃ ┣ 📄searchMovie.d.ts<br />
+ ┃ ┣ 📄tmdbImage.d.ts<br />
+ ┃ ┣ 📄weekRecord.d.ts<br />
+ ┃ ┗ 📄weeklyBoxoffice.d.ts<br />
+ ┣ 📂utils<br />
+ ┃ ┣ 📄calcWeek.ts<br />
+ ┃ ┣ 📄kobis.ts<br />
+ ┃ ┣ 📄koreafilm.ts<br />
+ ┃ ┣ 📄localStorage.ts<br />
+ ┃ ┣ 📄tmdb.ts<br />
+ ┃ ┗ 📄url.ts<br />
  ┣ 📂styles<br />
  ┃ ┣ 📂base<br />
- ┃ ┃ ┣ 📜_fonts.scss<br />
- ┃ ┃ ┣ 📜_more.scss<br />
- ┃ ┃ ┣ 📜_reset.scss<br />
- ┃ ┃ ┗ 📜font.ts<br />
+ ┃ ┃ ┣ 📄_fonts.scss<br />
+ ┃ ┃ ┣ 📄_more.scss<br />
+ ┃ ┃ ┣ 📄_reset.scss<br />
+ ┃ ┃ ┗ 📄font.ts<br />
  ┃ ┣ 📂constants<br />
- ┃ ┃ ┗ 📜_colors.scss<br />
+ ┃ ┃ ┗ 📄_colors.scss<br />
  ┃ ┣ 📂mixins<br />
- ┃ ┃ ┗ 📜_flexbox.scss<br />
- ┃ ┗ 📜index.scss<br />
- ┣ 📂types<br />
- ┃ ┣ 📜bookmark.d.ts<br />
- ┃ ┣ 📜commonBoxoffice.d.ts<br />
- ┃ ┣ 📜dailyBoxoffice.d.ts<br />
- ┃ ┣ 📜index.ts<br />
- ┃ ┣ 📜movie.d.ts<br />
- ┃ ┣ 📜movieInfo.d.ts<br />
- ┃ ┣ 📜moviePoster.d.ts<br />
- ┃ ┣ 📜searchMovie.d.ts<br />
- ┃ ┣ 📜tmdbImage.d.ts<br />
- ┃ ┣ 📜weekRecord.d.ts<br />
- ┃ ┗ 📜weeklyBoxoffice.d.ts<br />
- ┣ 📂utils<br />
- ┃ ┣ 📜calcWeek.ts<br />
- ┃ ┣ 📜kobis.ts<br />
- ┃ ┣ 📜koreafilm.ts<br />
- ┃ ┣ 📜localStorage.ts<br />
- ┃ ┣ 📜tmdb.ts<br />
- ┃ ┗ 📜url.ts<br />
- ┣ 📜index.tsx<br />
- ┣ 📜react-app-env.d.ts<br />
- ┣ 📜reportWebVitals.ts<br />
- ┗ 📜setupTests.ts<br />
+ ┃ ┃ ┗ 📄_flexbox.scss<br />
+ ┗ ┗ 📄index.scss<br />
 
-</details>
+<br /></details>
 
 <br/>
 
@@ -192,21 +180,18 @@
 
 # 🏞 기능 설명
 
-### 일별 박스오피스
-- 일별로 박스오피스 순위를 확인할 수 있습니다.
-- 오늘 박스오피스는 아직 집계되지 않았으므로 어제 박스오피스까지 조회 가능합니다.
+### 일별/주간 박스오피스
+- 일별/주간 별로 박스오피스 순위를 확인할 수 있습니다.
+- 일별/주간 박스오피스는 토글 버튼으로 전환 가능합니다.
+- 오늘/이번 주 박스오피스는 아직 집계되지 않았으므로 어제/저번주 박스오피스까지 조회 가능합니다.
+- 검색 날짜 범위는 검색 날짜 버튼의 좌우 화살표를 누르면 변경됩니다.
 
 |![Kapture 2022-06-16 at 19 05 23](https://user-images.githubusercontent.com/50236673/174047080-a272e434-a734-461d-bec1-39897f6e2727.gif)|![Kapture 2022-06-16 at 19 04 45](https://user-images.githubusercontent.com/50236673/174047221-f3695cf9-30d6-447a-bcfd-4a7e906bf2da.gif)|![Kapture 2022-06-16 at 18 54 25](https://user-images.githubusercontent.com/50236673/174046527-db8b661c-01a0-40b6-8398-1544c92e79aa.gif)|
 |:---:|:---:|:---:|
 
-### 주간 박스오피스
-- 주간별로 박스오피스 순위를 확인할 수 있습니다.
-- 이번 주 박스오피스는 아직 집계되지 않았으므로 저번주 박스오피스까지 조회 가능합니다.
-
 ### 영화 검색
 - 검색어를 입력하면 검색어에 따른 영화 검색 결과 목록을 보여줍니다.
-- 마우스를 올렸을 때 하이라이트 표시가 되는 영화는 영화 상세정보를 조회할 수 있습니다.
-- 마우스를 올렸을 때 하이라이트 표시가 되지 않는 영화는 영화 상세정보를 조회할 수 없습니다.
+- 마우스를 올렸을 때 글자색이 변하지 않거나 '정보 없음' 문구가 있는 영화는 영화 상세정보를 조회할 수 없습니다.
 
 ### 영화 상세정보
 - 영화 상세정보 페이지는 박스오피스 목록, 검색 결과 페이지, 내 즐겨찾기 목록에서 이동 가능합니다.
@@ -227,7 +212,9 @@
 <br />
 
 ### 추후 구현할 기능, 개선할 점, 아쉬운 점
-✅ 영화진흥위원회 api는 영화 포스터 이미지 제공을 안 하므로, 영화 포스터 가져오는 기능 추가 예정 👉 영화 상세정보 페이지에 영화 포스터, 줄거리 추가<br />
-✅ 영화 상세정보 그래프를 영화가 개봉한 날짜부터 조회한 날짜까지의 박스오피스 순위 변화, 스크린수, 관객 수, 그래프로 변경 예정 👉 조회한 날짜부터 일주일 전 데이터까지 불러오는 것으로 변경<br />
-✅ 한국영화데이터베이스 API는 https로 요청했을 때 응답안하는 점 (https 지원안함) 👉 TMDB API로 교체<br />
-☑️ TMDB API 기반 영화 검색/추천 기능
+☑️ 영화진흥위원회 api는 영화 포스터 이미지 제공을 안 하므로, 영화 포스터 가져오는 기능 추가 예정<br />
+✅ 영화 상세정보 페이지에 영화 포스터, 줄거리 추가<br /><br />
+☑️ 영화 상세정보 그래프를 영화가 개봉한 날짜부터 조회한 날짜까지의 박스오피스 순위 변화, 스크린수, 관객 수, 그래프로 변경 예정<br />
+✅ 조회한 날짜부터 일주일 전 데이터까지 불러오는 것으로 변경<br /><br />
+☑️ 한국영화데이터베이스 Api는 https로 요청했을 때 응답안하는 점 (https 지원안함)<br />
+✅ TMDB Api로 교체. 국내 영화 Api와 해외 영화 Api 간 호환 문제로 일부 영화 상세 페이지 조회 불가<br /><br />
