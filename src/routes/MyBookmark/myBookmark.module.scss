@@ -18,6 +18,18 @@
     li:first-of-type {
       margin-top: 0;
     }
+
+    dt,
+    dd {
+      color: colors.$GRAYF !important;
+    }
+
+    li:hover {
+      dt,
+      dd {
+        color: colors.$PRIMARY !important;
+      }
+    }
   }
 
   .defaultMSG {
