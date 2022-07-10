@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import { useMount } from 'react-use'
 import { lazy, Suspense } from 'react'
 
-import Loading from 'components/Loading'
+import Loading from 'components/LoadingPage'
 import { useSetRecoilState } from 'hooks/state'
 import { bookMarkList } from 'states'
 import { IBookmarkItem } from 'types'
@@ -10,6 +10,8 @@ import { getBookmark } from 'utils/localStorage'
 
 import Gnb from './Gnb'
 import styles from './routes.module.scss'
+import { ErrorBoundary } from 'react-error-boundary'
+import ErrorPage from 'components/ErrorPage'
 
 const Main = lazy(() => import('./Main'))
 const SearchResult = lazy(() => import('./SearchResult'))
@@ -28,12 +30,14 @@ const App = () => {
       <div className={styles.innerWrapper}>
         <Gnb />
         <Suspense fallback={<Loading />}>
-          <Routes>
-            <Route path='/' element={<Main />} />
-            <Route path='search' element={<SearchResult />} />
-            <Route path='mybookmark' element={<MyBookmark />} />
-            <Route path='movieinfo' element={<MovieDetail />} />
-          </Routes>
+          <ErrorBoundary fallback={<ErrorPage />}>
+            <Routes>
+              <Route path='/' element={<Main />} />
+              <Route path='search' element={<SearchResult />} />
+              <Route path='mybookmark' element={<MyBookmark />} />
+              <Route path='movieinfo' element={<MovieDetail />} />
+            </Routes>
+          </ErrorBoundary>
         </Suspense>
       </div>
     </div>

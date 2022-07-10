@@ -2,7 +2,7 @@ import { useInView } from 'react-intersection-observer'
 import { NavLink, useSearchParams } from 'react-router-dom'
 import { useEffect } from 'react'
 
-import Loading from 'components/Loading'
+import Loading from 'components/LoadingPage'
 import { useSearchMovieQuery } from 'hooks/query'
 
 import MoviePages from './MoviePages'
