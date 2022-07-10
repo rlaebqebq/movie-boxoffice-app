@@ -27,11 +27,9 @@
     ]
   },
   "dependencies": {
-    "@loadable/component": "^5.15.2",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
-    "@types/loadable__component": "^5.13.4",
     "axios": "^0.27.2",
     "classnames": "^2.3.1",
     "dayjs": "^1.11.2",

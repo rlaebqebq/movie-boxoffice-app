@@ -1,9 +1,7 @@
-import loadable from '@loadable/component'
 import { InfiniteData } from 'react-query'
 
 import { IMoviesInfiniteResponse } from 'types'
-
-const MovieList = loadable(() => import('../MovieList'))
+import MovieList from '../MovieList'
 
 interface IProps {
   data?: InfiniteData<IMoviesInfiniteResponse>

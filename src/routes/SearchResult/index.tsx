@@ -1,4 +1,3 @@
-import loadable from '@loadable/component'
 import { useInView } from 'react-intersection-observer'
 import { NavLink, useSearchParams } from 'react-router-dom'
 import { useEffect } from 'react'
@@ -6,12 +5,9 @@ import { useEffect } from 'react'
 import Loading from 'components/Loading'
 import { useSearchMovieQuery } from 'hooks/query'
 
+import MoviePages from './MoviePages'
 import { CloseIcon } from 'assets/svg'
 import styles from './searchResult.module.scss'
-
-const MoviePages = loadable(() => import('./MoviePages'), {
-  fallback: <Loading />,
-})
 
 const SearchResult = () => {
   const { ref, inView } = useInView()
@@ -30,7 +26,7 @@ const SearchResult = () => {
 
   return (
     <div className={styles.wrapper}>
-      {/* {(isFetching || isLoading) && <Loading />} */}
+      {(isFetching || isLoading) && <Loading />}
       <NavLink to='/' className={styles.closeIcon}>
         <CloseIcon />
       </NavLink>

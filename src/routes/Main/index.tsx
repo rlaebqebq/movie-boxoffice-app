@@ -2,10 +2,10 @@ import { useRecoilValue } from 'hooks/state'
 import { showTypeState } from 'states'
 
 import Toggle from 'components/Toggle'
-import Search from './Search'
-import DailyBoxoffice from './Boxoffice/DailyBoxoffice'
-import WeeklyBoxoffice from './Boxoffice/WeeklyBoxoffice'
+import Boxoffice from './Boxoffice'
+import SearchBar from './SearchBar'
 
+import userImage from 'assets/userImage.webp'
 import styles from './main.module.scss'
 
 const Main = () => {
@@ -13,11 +13,17 @@ const Main = () => {
 
   return (
     <div className={styles.wrapper}>
-      <Search />
+      <div className={styles.headerWrapper}>
+        <div>
+          <p>Welcome stranger! 👋</p>
+          <p>Let&apos;s relax and watch a movie</p>
+        </div>
+        <img src={userImage} alt={userImage} />
+      </div>
+      <SearchBar />
       <h2>Boxoffice Ranking 🏆</h2>
       <Toggle dataLeft='today' dataRight='week' />
-      <DailyBoxoffice inView={showTypeValue === 'daily'} />
-      <WeeklyBoxoffice inView={showTypeValue === 'weekly'} />
+      <Boxoffice inView={showTypeValue} />
     </div>
   )
 }
