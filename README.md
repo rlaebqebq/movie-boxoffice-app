@@ -4,7 +4,7 @@
 영화진흥위원회, TMDB api를 사용한 박스오피스 및 영화 상세정보 조회 어플리케이션입니다.
 - **배포 URL** <br/> https://movie-boxoffice-app.netlify.app/
 
-|![Kapture 2022-06-16 at 19 19 40](https://user-images.githubusercontent.com/50236673/174049693-3ccab5a3-7e7a-4e08-a4e5-b6337f724ac0.gif)|![Kapture 2022-06-16 at 19 19 22](https://user-images.githubusercontent.com/50236673/174049557-040632f8-b702-41bd-8cbc-8644da3dca36.gif)|![Kapture 2022-06-16 at 19 18 31](https://user-images.githubusercontent.com/50236673/174049457-69c149f2-e573-47fc-81d4-8fb752d2ccf2.gif)
+|![Kapture 2022-07-11 at 11 45 16](https://user-images.githubusercontent.com/50236673/178179347-68efd709-3a22-43dc-bd6f-6ab1a4b826a6.gif)|![Kapture 2022-07-11 at 11 46 50](https://user-images.githubusercontent.com/50236673/178179452-56a4e6f1-f069-4a46-b8d7-6201f38bebe2.gif)|![Kapture 2022-07-11 at 11 48 07](https://user-images.githubusercontent.com/50236673/178179554-ad761efe-975e-434d-8280-23082fa774c3.gif)
 |:---:|:---:|:---:|
 
 <br/>
@@ -185,7 +185,7 @@
 - 오늘/이번 주 박스오피스는 아직 집계되지 않았으므로 어제/저번주 박스오피스까지 조회 가능합니다.
 - 검색 날짜 범위는 검색 날짜 버튼의 좌우 화살표를 누르면 변경됩니다.
 
-|![Kapture 2022-06-16 at 19 05 23](https://user-images.githubusercontent.com/50236673/174047080-a272e434-a734-461d-bec1-39897f6e2727.gif)|![Kapture 2022-06-16 at 19 04 45](https://user-images.githubusercontent.com/50236673/174047221-f3695cf9-30d6-447a-bcfd-4a7e906bf2da.gif)|![Kapture 2022-06-16 at 18 54 25](https://user-images.githubusercontent.com/50236673/174046527-db8b661c-01a0-40b6-8398-1544c92e79aa.gif)|
+|![Kapture 2022-07-11 at 12 00 37](https://user-images.githubusercontent.com/50236673/178180875-94f3b021-38c6-4b69-82bc-0785fdbeb263.gif)|![Kapture 2022-07-11 at 11 50 36](https://user-images.githubusercontent.com/50236673/178179822-85cf2eb6-18eb-48f2-8e3a-92c467f653f8.gif)|![Kapture 2022-07-11 at 11 51 18](https://user-images.githubusercontent.com/50236673/178179926-9a66ae1b-0d05-462e-9cb7-dbff22d4cb91.gif)|
 |:---:|:---:|:---:|
 
 ### 영화 검색
@@ -197,7 +197,7 @@
 - 선택한 영화가 박스오피스에 올라왔다면 조회일로부터 일주일 동안의 박스오피스 순위, 매출액, 관객 수, 스크린수, 상영횟수를 그래프로 보여줍니다.
 - 선택한 영화가 조회 기간(조회일로부터 일주일) 내 박스오피스 차트에 오르지 못했다면 해당일 그래프 정보가 없습니다.
 
-|![Kapture 2022-06-16 at 18 44 56](https://user-images.githubusercontent.com/50236673/174043083-94d2dc3b-d2d8-4a3d-a896-4b9bcae37163.gif)|![Kapture 2022-06-16 at 18 21 11](https://user-images.githubusercontent.com/50236673/174038177-4b1f7968-c0ee-4928-81f9-57c119bc2dbc.gif)|![Kapture 2022-06-16 at 18 20 39](https://user-images.githubusercontent.com/50236673/174038138-944f6d94-8d8a-4851-8062-3c4b4cd9130b.gif)|
+|![Kapture 2022-07-11 at 11 56 49](https://user-images.githubusercontent.com/50236673/178180445-ac9b89a3-4e64-4dbb-b0a1-2d56c4decdbe.gif)|![Kapture 2022-07-11 at 11 53 43](https://user-images.githubusercontent.com/50236673/178180136-4ac64d31-75a5-45d0-98c2-6454138e87a9.gif)|![Kapture 2022-07-11 at 11 55 02](https://user-images.githubusercontent.com/50236673/178180298-274cd35c-cf0f-4d42-9a09-70982e02f6c5.gif)|
 |:---:|:---:|:---:|
 
 ### 내 즐겨찾기
@@ -205,7 +205,7 @@
 - 즐겨찾기에 추가된 영화는 일별 박스오피스 목록, 내 즐겨찾기 목록에서 확인 가능합니다
 - 즐겨찾기 추가한 영화는 localStorage에 저장이 되므로 탭이나 창을 닫아도 데이터는 브라우저에 그대로 남아있어 이후에도 확인 가능합니다.
 
-|![Kapture 2022-06-16 at 18 41 16](https://user-images.githubusercontent.com/50236673/174042335-5348e6ad-cc1c-47cc-9d80-47400f8aca1a.gif)|![Kapture 2022-06-16 at 18 48 15](https://user-images.githubusercontent.com/50236673/174043987-fc9d7721-0cad-4425-aa4c-e833a2cd2f37.gif)|![Kapture 2022-06-16 at 19 09 35](https://user-images.githubusercontent.com/50236673/174049416-5abfb024-a510-46f9-83b4-5195756b5019.gif)|
+|![Kapture 2022-07-11 at 11 45 16](https://user-images.githubusercontent.com/50236673/178179347-68efd709-3a22-43dc-bd6f-6ab1a4b826a6.gif)|![Kapture 2022-07-11 at 11 58 12](https://user-images.githubusercontent.com/50236673/178180602-f94de579-f0f1-41a1-997f-8205b2885762.gif)|![Kapture 2022-07-11 at 11 58 52](https://user-images.githubusercontent.com/50236673/178180619-c4629d39-923a-4217-907f-48aaafccdda3.gif)|
 |:---:|:---:|:---:|
 
 <br />
